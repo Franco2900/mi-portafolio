@@ -1,0 +1,11 @@
+h4,h5 {
+    text-align: center;
+}
+
+.img-uniform 
+{
+    width: 100%;        /* Ocupa ancho total de la columna */
+    height: 250px;      /* Altura fija */
+    object-fit: cover;  /* Recorta sin deformar */
+    display: block;     /* Elimina espacios en línea */
+}

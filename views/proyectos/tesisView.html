@@ -1,0 +1,183 @@
+<link rel="stylesheet" type="text/css" href="/css/proyectos.css">
+
+<h2>Resumen</h2>
+
+<p>
+  Sitio web para cosechar, normalizar y actualizar la información de las revistas científicas argentinas
+  en diferentes repositorios bibliográficos de forma automática, y para crear un listado unificado
+  de toda la información recolectada. 
+</p>
+
+<p>
+  <strong>Repositorio GitHub <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/IARCA" target="_blank">IARCA</a>
+</p>
+
+<h2>Tecnologías usadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    BackEnd: <br>
+    NodeJS <i class="fab fa-node-js"></i> con el framework Express 
+  </div>
+
+  <div class="col-4">
+    Base de datos: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    FrontEnd: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> y EJS
+  </div>
+  
+</div>
+<br>
+
+<h2>Descripción completa del proyecto</h2>
+
+<p>
+  Este es el proyecto que realicé como trabajo final para mi carrera de Licenciatura en Sistemas en la
+  Universidad Nacional de Lanús. Su nombre, IARCA, significa Índice Automatizado de Revistas Científicas
+  Argentinas.
+  <br />
+
+  <h5>Origen del problema</h5>
+  Gracias a las nuevas tecnologías de la informática, a partir de la década de 1990 se 
+  produjo un auge en la creación de revistas científicas. La digitalización facilitó la edición 
+  y distribución de estas publicaciones, al mismo tiempo que redujo significativamente los costos de producción y mantenimiento.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Cantidad de revistas científicas argentinas nuevas por década</strong>
+  </div>
+
+  <img
+  src="/images/proyectos/tesis 1.png"
+  alt="Imagen 1 de la tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+  />
+  
+  Fuente: Políticas de promoción del conocimiento y derechos de propiedad intelectual - Centro 
+  Interdisciplinario de Estudios en Ciencia, Tecnología e Innovación (2023)
+  <br></br>
+
+  &emsp;&emsp; Con nuevas tecnologías aparecen también nuevos desafíos. En el caso de las revistas
+  científicas, el principal problema es la interoperabilidad entre sistemas debido a la falta de un estándar
+  sobre qué metadatos utilizar. Cada repositorio bibliográfico solicita distintos metadatos y exige reglas diferentes.
+  <br />
+  
+  &emsp;&emsp; Esta problemática provoca que las revistas científicas argentinas estén dispersas en 
+  múltiples repositorios, cada uno con sus propios criterios. Como resultado, no es posible visualizar todas las 
+  publicaciones en un único lugar. Esto ocasiona problemas simples, como desconocer la cantidad total existente, y también dificultades más graves, como la imposibilidad de evaluar correctamente la calidad editorial.
+  <br><br />
+
+  <h5>Objetivo</h5>
+  El objetivo fue desarrollar un programa que recolecte y normalice los datos de las revistas 
+  científicas argentinas para mostrarlos en un único repositorio. Aunque ya existen trabajos de índole
+  similar, como la base de datos <a href="https://www.caicyt-conicet.gov.ar/malena/">Malena</a> del CONICET,
+  elaborada por expertos seleccionados, el proyecto IARCA se diferencia principalmente en que todo el proceso
+  se realiza de forma automática, sin intervención humana.
+  <br />
+
+  &emsp;&emsp; Para lograrlo, delimitamos qué campos cosechar, de qué bases de datos recolectar y aplicamos técnicas de web scraping y uso de API.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Bases de datos cosechadas</strong>
+  </div>
+  <img
+  src="/images/proyectos/tesis 6.png"
+  alt="Imagen 6 de la tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+  />
+  <br/>
+
+  <h5>Funciones varias</h5>
+  Además de realizar la cosecha y normalización de la información, se brinda al usuario un
+  medio para comprobar por sí mismo si los datos fueron recolectados correctamente. Para cada revista
+  científica cosechada se ofrece, junto con sus datos, la URL del sitio de origen. Al hacer clic en la URL, el usuario accede directamente a la fuente.
+  <br>
+  
+  &emsp;&emsp; 
+  Dado que se reunieron datos de miles de revistas científicas, añadimos distintos filtros para que un usuario 
+  pueda buscar una revista en específico (por título, ISSN impreso, ISSN electrónico o institución). 
+  <br>
+
+  &emsp;&emsp;
+  El usuario puede descargar todos los datos de un repositorio en específico o del listado final en 
+  formato .csv o .json. Se investigó la legalidad y ética del web scraping para determinar si era 
+  posible publicar los datos cosechados, y se concluyó que no existe inconveniente en que el usuario los descargue, ya que provienen de repositorios bibliográficos públicos y no generan perjuicio económico.
+  (Fuente: Tutorial: Legality and Ethics of Web Scraping - Murray State University). 
+  <br>
+
+  &emsp;&emsp;
+  Finalmente, se realizó el despliegue de la tesis para que pueda visualizarse en línea. Está disponible en el siguiente enlace: <a href="https://isco.unla.edu.ar/iarca" target="_blank">IARCA</a>. 
+  <br />
+
+</p>
+
+
+
+<h4>Home</h4>
+<img
+  src="/images/proyectos/tesis 2.png"
+  alt="Foto 2 tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br />
+
+
+<h4>Repositorio - Núcleo Básico de Revistas Científicas Argentinas</h4>
+<img
+  src="/images/proyectos/tesis 3.png"
+  alt="Foto 3 tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br />
+
+
+<h4>Repositorio - Latindex</h4>
+<img
+  src="/images/proyectos/tesis 4.png"
+  alt="Foto 4 tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br />
+
+<h4>Listado Final</h4>
+<img
+  src="/images/proyectos/tesis 5.png"
+  alt="Foto 5 tesis"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br />
+
+
+<h2>Video de muestra</h2>
+<iframe
+  src="https://www.youtube.com/embed/-O2fhbP2kHs"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2>Lo que aprendí</h2>
+<p> 
+  • API — Conjunto de funciones y protocolos que permiten que diferentes aplicaciones se comuniquen entre sí. <br />
+  • Web Scraping — Técnica para extraer información de sitios web de manera automatizada. <br />
+</p>

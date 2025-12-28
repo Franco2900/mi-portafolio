@@ -1,0 +1,3 @@
+La imagen del logo debe tener una proporción 4:1 (ancho:alto)
+
+Las imagenes con nombre fondo, se pueden usar como backgroung-image en el body del layout

@@ -1,0 +1,14 @@
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+}
+
+.img-uniform 
+{
+    width: 100%;        /* Ocupa ancho total de la columna */
+    object-fit: cover;  /* Recorta sin deformar */
+    display: block;     /* Elimina espacios en línea */
+}

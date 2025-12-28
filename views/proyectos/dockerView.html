@@ -1,0 +1,130 @@
+<link rel="stylesheet" type="text/css" href="/css/proyectos.css">
+
+<h2>Resumen</h2>
+
+<p>
+    Aplicación web conectada a una base de datos MySQL, desplegada en contenedores Docker
+</p>
+
+<p>
+    <strong>Repositorio GitHub <i class="fab fa-github"></i>: </strong>
+    <a href="https://github.com/Franco2900/docker-practica" target="_blank">Práctica Docker</a>
+</p>
+
+<h2>Tecnologías usadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+    <div class="col-3">
+        Backend: <br>
+        NodeJS <i class="fab fa-node-js"></i> con el framework Express 
+    </div>
+
+    <div class="col-3">
+        Base de datos: <br>
+        SQL <i class="fas fa-database"></i>
+    </div>
+    
+    <div class="col-3">
+        Frontend: <br>
+        Bootstrap <i class="fab fa-bootstrap"></i> y EJS
+    </div>
+    
+    <div class="col-3">
+        Infraestructura: <br>
+        Docker <i class="fa-brands fa-docker"></i>
+    </div>
+
+</div>
+<br>
+
+<h2>Descripción completa del proyecto</h2>
+
+<p>
+
+    No importa qué tan buen programador uno pueda ser, si el usuario final no tiene las herramientas
+    necesarias instaladas en su computadora para ver el programa desarrollado y así probarlo y evaluarlo, 
+    el trabajo realizado no se puede considerar como finalizado. Aquí es donde se usa Docker, que permite
+    probar cualquier programa en cualquier computadora gracias a los contenedores.
+    <br />
+
+    &emsp;&emsp; Los contenedores de Docker son, en esencia, máquinas virtuales en miniatura. Están 
+    encapsulados y aislados, pero además son más rápidas que las máquinas virtuales porque utilizan
+    muchos menos recursos gracias a que los contenedores actúan como si fueran una aplicación más en
+    la computadora.
+    <br />
+
+    &emsp;&emsp; En esta ocasión hice una página web bastante simple con login y registro que funcionan
+    gracias a una base de datos MySQL. Tanto el sitio web como MySQL tienen cada uno sus contenedores,
+    y ambos contenedores están dentro de la misma red. El contenedor web tiene un puerto expuesto al host
+    que permite al usuario probar el sitio desde cualquier navegador de su computadora. El contenedor SQL
+    tiene un script .sql con el cual crea la base de datos, sus tablas y sus datos al iniciarse por primera
+    vez.
+    <br />
+    
+    &emsp;&emsp; Para que los cambios que haga el usuario en la base de datos, como crear una cuenta 
+    nueva al registrarse, no se pierdan después de cerrar los contenedores y sean persistentes en el 
+    tiempo, el contenedor SQL utiliza un volumen.
+    <br />
+
+    &emsp;&emsp; Por otro lado, existen dos versiones a usar con Docker: la versión para producción y la
+    versión para desarrollo. Esta última versión está configurada para reiniciar el servidor ante cualquier 
+    cambio en el código (hot reload), así el desarrollador puede ver en vivo los cambios que hace al  
+    trabajar, mientras que la primera versión no tiene esto ya que está pensada para que la utilice un
+    usuario final.
+    <br />
+
+</p>
+
+
+<h4>Contenedores en Docker Desktop</h4>
+<img
+  src="/images/proyectos/docker 1.png"
+  alt="Docker Desktop"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br>
+
+
+<h4>Home del sitio web</h4>
+<img
+  src="/images/proyectos/docker 2.png"
+  alt="Sitio web home"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br>
+
+
+<h4>Versiones para producción y desarrollo</h4>
+<img
+  src="/images/proyectos/docker 3.png"
+  alt="Versiones Docker"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)"
+/>
+<br>
+
+<h2>Video de muestra</h2>
+<iframe
+  src="https://www.youtube.com/embed/wtCC2xlm_yM"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<p> 
+  • Imágenes — Configuración y dependencias necesarias para que una aplicación se pueda ejecutar.<br /> 
+  • Contenedores — Instancias en ejecución de una imagen. <br /> 
+  • Puertos — Exposición del contenedor hacia el host. <br /> 
+  • Redes — Conexiones virtuales que permiten la comunicación entre contenedores. <br /> 
+  • Volúmenes — Espacios de almacenamiento persistente para conservar los datos fuera del ciclo de vida del contenedor. <br /> 
+  • Docker Compose — Herramienta para definir y ejecutar aplicaciones multicontenedor mediante archivos YAML. <br /> 
+  • Docker Compose Dev — Configuración especial para entornos de desarrollo. <br /> 
+  • Hot Reload — Técnica que refleja cambios en el código automáticamente dentro del contenedor sin necesidad de reconstruir la imagen. <br /> 
+</p>
