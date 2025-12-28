@@ -1,0 +1,85 @@
+header {
+  background-color: #4cafaf;
+  color: white;
+  padding: 0px;
+}
+
+body {
+  /* background-image: url('./images/fondo.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Estilos generales para ambos navs */
+nav {
+  display: flex;
+  padding: 5px 0;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+nav a[aria-current="page"] {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #f1d600;
+}
+
+/* Estilo del navbar principal */
+.main-nav {
+  justify-content: center;      
+  background-color: #333;
+}
+
+/* Enlaces del navbar principal */
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Estilo del navbar funcional */
+.util-nav {
+  justify-content: flex-start;
+  background-color: #516f74;     
+}
+
+/* Enlaces del navbar de funcionalidad */
+.util-nav a {
+  margin: 0 !important;
+}
+
+
+.plantillaSecundaria {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.perfil-img {
+  width: 40px; 
+  height: 40px; 
+}
+
+footer {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+
+/* Modo claro */
+.light-mode {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo oscuro */
+.dark-mode {
+  background-color: #111;
+  color: #eee;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

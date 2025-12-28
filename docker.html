@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de prueba</title>
+     
+  <!-- Hoja de estilo del layout (personalizada, sigue local) -->
+  <link rel="stylesheet" type="text/css" href="./css/layout.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Flag Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css" rel="stylesheet">
+
+</head>
+
+<body class='light-mode' >
+
+  <div id="header"></div>
+  <div id="navbar"></div>
+
+  <main id="main-container" class="container">
+    <!-- Contenido de la vista acá -->
+    <div id="dockerView" style="padding-top: 20px; padding-bottom: 20px;"></div>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+
+  <!-- Funciones utiles que se usan en todas las vistas -->
+  <script src="./js/zoomImagenes.js"></script>
+
+  <script> 
+
+    async function cargarFragmentoHTML(id, file) 
+    { 
+      const res = await fetch(file);                            // Busco el archivo HTMLs
+      document.getElementById(id).innerHTML = await res.text(); // Pongo el HTML en el div con ID
+    } 
+
+    // Cargo el layout
+    cargarFragmentoHTML("header",  "./partials/header.html"); 
+    cargarFragmentoHTML("navbar",  "./partials/navbar.html"); 
+    cargarFragmentoHTML("footer",  "./partials/footer.html"); 
+
+    // Cargo la vista
+    cargarFragmentoHTML("dockerView", "./views/proyectos/dockerView.html"); 
+  </script>
+
+</body>
+
+</html>
