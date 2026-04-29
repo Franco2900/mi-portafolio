@@ -5,10 +5,13 @@
   
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Mi portafolio</title>
+     <meta name="description" content="Portafolio de Franco Figueroa, desarrollador web en Buenos Aires. Descubre mis proyectos, habilidades en programación y formas de contacto.">
+
+     <title>Portafolio de Franco Figueroa</title>
+     <link rel="icon" type="image/x-icon" href="images/style/favicon.ico">
      
-     <!-- Hoja de estilo del layout (personalizada, sigue local) -->
-     <link rel="stylesheet" type="text/css" href="./css/layout.css">
+     <!-- Hoja de estilo del layout -->
+     <link href="css/layout.css" rel="stylesheet" type="text/css">
 
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,10 +31,11 @@
 
      <div id="header"></div>
      <div id="navbar"></div>
+     <div id="fondo"></div>
 
      <main id="main-container" class="container">
           <!-- Contenido de la vista acá -->
-          <div id="homeView" style="padding-top: 20px; padding-bottom: 20px;"></div>
+          <div id="indexView" style="padding-top: 20px; padding-bottom: 20px;"></div>
      </main>
 
      <div id="footer"></div>
@@ -51,14 +55,28 @@
           { 
                const res = await fetch(file);                            // Busco el archivo HTMLs
                document.getElementById(id).innerHTML = await res.text(); // Pongo el HTML en el div con ID
+          
+               // MEDIDA PARA EVITAR PONER LOS DATOS PERSONALES COMO TEXTO PLANO Y ASÍ EVITAR LOS BOTS QUE RECOLECTAN INFORMACIÓN AUTOMATICAMENTE
+               // Después de cargar el HTML, actualizo los spans dinamicamente
+               
+               const emailSpans = document.querySelectorAll(".email");
+               emailSpans.forEach(span => {
+                    if (!span.innerText)  span.innerText = "franco2900" + "@" + "gmail.com";
+               });
+
+               const telefonoSpans = document.querySelectorAll(".telefono");
+               telefonoSpans.forEach(span => {
+                    if (!span.innerText) span.innerText = "(+54) " + "9 " + "11-" + "6499-" + "9382";
+               });
           } 
 
           // Cargo el layout
           cargarFragmentoHTML("header",  "./partials/header.html"); 
-          cargarFragmentoHTML("footer",  "./partials/footer.html"); 
+          cargarFragmentoHTML("footer",  "./partials/footer.html");
+          cargarFragmentoHTML("fondo",   "./partials/fondo.html"); 
 
           // Cargo la vista
-          cargarFragmentoHTML("homeView", "./views/homeView.html"); 
+          cargarFragmentoHTML("indexView", "./views/indexView.html"); 
      </script>
 
 </body>

@@ -5,7 +5,8 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App de prueba</title>
+  <title>Portafolio de Franco Figueroa</title>
+  <link rel="icon" type="image/x-icon" href="images/style/favicon.ico">
      
   <!-- Hoja de estilo del layout (personalizada, sigue local) -->
   <link rel="stylesheet" type="text/css" href="./css/layout.css">
@@ -28,15 +29,18 @@
 
   <div id="header"></div>
   <div id="navbar"></div>
+  <div id="fondo"></div>
 
   <main id="main-container" class="container">
+    
     <!-- Contenido de la vista acá -->
-    <div id="contactoView" style="padding-top: 20px; padding-bottom: 20px;"></div>
+    <div id="supermercadoView" style="padding-top: 20px; padding-bottom: 20px;"></div>
+  
   </main>
 
   <div id="footer"></div>
 
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -45,7 +49,7 @@
 
   <!-- Funciones utiles que se usan en todas las vistas -->
   <script src="./js/zoomImagenes.js"></script>
-  
+
 
   <script> 
 
@@ -53,14 +57,28 @@
     { 
       const res = await fetch(file);                            // Busco el archivo HTMLs
       document.getElementById(id).innerHTML = await res.text(); // Pongo el HTML en el div con ID
+    
+      // MEDIDA PARA EVITAR PONER LOS DATOS PERSONALES COMO TEXTO PLANO Y ASÍ EVITAR LOS BOTS QUE RECOLECTAN INFORMACIÓN AUTOMATICAMENTE
+      // Después de cargar el HTML, actualizo los spans dinamicamente
+      
+      const emailSpans = document.querySelectorAll(".email");
+      emailSpans.forEach(span => {
+        if (!span.innerText)  span.innerText = "franco2900" + "@" + "gmail.com";
+      });
+
+      const telefonoSpans = document.querySelectorAll(".telefono");
+      telefonoSpans.forEach(span => {
+        if (!span.innerText) span.innerText = "(+54) " + "9 " + "11-" + "6499-" + "9382";
+      });
     } 
 
     // Cargo el layout
-    cargarFragmentoHTML("header",  "./partials/header.html"); 
-    cargarFragmentoHTML("footer",  "./partials/footer.html"); 
+    cargarFragmentoHTML("header",  "./partials/header.html");
+    cargarFragmentoHTML("footer",  "./partials/footer.html");
+    cargarFragmentoHTML("fondo",   "./partials/fondo.html"); 
 
     // Cargo la vista
-    cargarFragmentoHTML("contactoView", "./views/contactoView.html"); 
+    cargarFragmentoHTML("supermercadoView", "./views/proyectos/supermercadoView.html"); 
   </script>
 
 </body>
