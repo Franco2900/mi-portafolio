@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Proyectos -->
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/tesis.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/casino.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/empresaTransporte.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/autoescuela.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/docker.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/supermercado.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

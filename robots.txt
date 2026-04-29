@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://franco2900.github.io/mi-portafolio/sitemap.xml

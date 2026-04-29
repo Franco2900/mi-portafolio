@@ -1,14 +1,77 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* gris claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Títulos principales */
 h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #0d6efd; /* azul Bootstrap */
+    margin-top: 40px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Subtítulos */
+h4 {
+    text-align: center;
+    font-weight: bold;
+    color: #198754; /* verde Bootstrap */
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+/* Párrafos */
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Imágenes uniformes */
+.img-uniform {
+    width: 100%;
+    /*height: 300px;*/       /* altura fija */
+    object-fit: cover;   /* recorta sin deformar */
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img-uniform:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* Cards para tecnologías */
+.row .col-4 {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
     text-align: center;
 }
 
-p {
-    text-align: justify;
+.row .col-4:hover {
+    transform: translateY(-5px);
 }
 
-.img-uniform 
-{
-    width: 100%;        /* Ocupa ancho total de la columna */
-    object-fit: cover;  /* Recorta sin deformar */
-    display: block;     /* Elimina espacios en línea */
+/* Iframes (videos, certificados) */
+iframe {
+    border: 2px solid #0d6efd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+/* Listas de aprendizaje */
+p strong {
+    color: #dc3545; /* rojo Bootstrap */
 }

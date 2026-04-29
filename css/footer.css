@@ -1,0 +1,43 @@
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+/* Primera fila (ubicación, teléfono, email) */
+footer .row:first-child {
+    background-color: #389696;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+footer .row:first-child i {
+    font-size: 1rem;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Segunda fila (GitHub) */
+footer .row:last-child {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+footer .row:last-child i {
+    font-size: 1.3rem;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
