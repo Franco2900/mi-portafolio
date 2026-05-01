@@ -58,6 +58,25 @@ iframe {
 }
 
 
+.contact-card h6 {
+  min-height: 40px;       /* altura fija para los títulos */
+  display: flex;
+  align-items: center;    /* centra verticalmente */
+  justify-content: center;/* centra horizontalmente */
+  text-align: center;
+}
+
+
+.contact-card span,
+.contact-card a {
+  display: block;          /* que ocupe todo el ancho */
+  text-align: center;      /* centra el texto */
+  word-break: break-word;  /* permite cortar palabras largas */
+  overflow-wrap: anywhere; /* fuerza salto si no hay espacio */
+  margin-top: 5px;         /* separa del icono */
+}
+
+
 .project-card img {
     transition: transform 0.3s, box-shadow 0.3s;
     border-radius: 8px;
@@ -123,4 +142,28 @@ iframe {
   .iframe-container iframe {
     height: 400px;    /* más bajo en celular */
   }
+  .contact-card span,
+  .contact-card a {
+    font-size: 14px;       /* texto más chico en celular */
+    line-height: 1.4;      /* más aire entre líneas */
+  }
+}
+
+
+.pdf-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.pdf-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;              /* espacio entre ícono y texto */
+  text-decoration: none;
+  font-weight: bold;
+  color: #0d6efd;        /* azul Bootstrap */
+}
+
+.pdf-link a:hover {
+  text-decoration: underline;
 }
