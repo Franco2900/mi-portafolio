@@ -35,6 +35,7 @@ p {
 /* Imágenes uniformes */
 .img-uniform {
     width: 100%;
+    height: auto;        /* respeta la proporcion declarada en width/height del <img> */
     /*height: 300px;*/       /* altura fija */
     object-fit: cover;   /* recorta sin deformar */
     display: block;
