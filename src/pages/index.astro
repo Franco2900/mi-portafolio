@@ -1,0 +1,237 @@
+---
+import Base from '../layouts/Base.astro';
+import { pages } from '../data/pages';
+
+const meta = pages['home'];
+---
+
+<Base
+  title={meta.title}
+  description={meta.description}
+  path=""
+  nav="home"
+  css={['css/index.css']}
+>
+  <h1 class="page-title">{meta.h1}</h1>
+  <p class="page-subtitle">Desarrollador Backend &middot; Licenciado en Sistemas (UNLa)</p>
+
+<img src="images/style/mi cara.webp" 
+     alt="Franco Figueroa" 
+     class="img-fluid float-end w-25 ms-3 mb-3 img-profile" width="600" height="450">
+
+<h4 id="introduccion">Introducción <i class="fas fa-user"></i> </h4>
+Hola, soy Franco Figueroa y soy Licenciado en Sistemas graduado de la Universidad Nacional de Lanús (UNLa). 
+Actualmente estoy dando mis primeros pasos en el mundo laboral de la informática.
+Este es mi portafolio en el cual muestro cuales son mis capacidades como programador y mi experiencia a través de diferentes proyectos.
+<br>
+<p>
+Además de los proyectos que muestro aquí, también desarrollo software y programas a medida según las necesidades o peticiones específicas de cada cliente. 
+Me gusta escuchar las ideas y transformarlas en soluciones tecnológicas prácticas, adaptadas a cada situación particular.
+</p>
+
+
+
+<h4 id="habilidades">Mis habilidades <i class="fas fa-code"></i> </h4>
+Mi punto más fuerte es NodeJS como backend pero también puedo defenderme un poco con el frontend usando EJS.
+El framework que uso para hacer mis proyectos web es Express. Suelo usar MySQL para hacer las bases de datos pero
+si hace falta se un poco de MongoDB. He aquí un pequeño resumen de mis habilidades:
+<br>
+
+<div class="row">
+
+     <div class="col-4 skill-card">
+          <strong>Habilidades Backend</strong> <br>
+          NodeJS <i class="fab fa-node-js"></i> <br>
+          SQL/MySQL <i class="fas fa-database"></i> <br>
+          Python, C++ <i class="fab fa-python"></i> <i class="fa-solid fa-c"></i> <br>
+          Docker <i class="fa-brands fa-docker"></i> <br>
+     </div>
+
+    <div class="col-4 skill-card">
+          <strong>Habilidades Frontend</strong> <br>
+          HTML5 <i class="fab fa-html5"></i>, CSS3 <i class="fab fa-css3-alt"></i> <br>
+          Bootstrap <i class="fab fa-bootstrap"></i>, Font Awesome <i class="fab fa-font-awesome"></i> <br>
+          EJS <br>
+          React <i class="fab fa-react"></i><br>
+    </div>
+
+    <div class="col-4 skill-card">
+          <strong>Habilidades Blandas</strong> <br>
+          Español nativo <i class="fi fi-es"></i> <br>
+          Inglés C1 <i class="fi fi-gb"></i> <br>
+          Comunicación <br>
+          Creatividad aplicada al análisis de datos <br>
+    </div>
+
+</div>
+<br>
+
+
+<h4>Certificado de ingles</h4>
+<div class="pdf-link">
+  <a href="certificados/EF SET Certificate.pdf" target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-file-pdf fa-2x" style="color:#dc3545;"></i>
+    <span>Ver Certificado PDF</span>
+  </a>
+</div>
+<br>
+
+<h4 id="contacto">Mis datos de contacto <i class="fas fa-envelope"></i> </h4>
+<div class="row">
+
+     <div class="col-3 contact-card">
+          <h6>Email</h6>
+          <img 
+               src="images/style/email.webp" 
+               class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
+          >
+          <span class="email"></span>
+     </div>
+
+     
+     <div class="col-3 contact-card">
+          <h6>Linkedin</h6>
+          <img 
+               src="images/style/linkedin.webp" 
+               class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
+          >
+          <a 
+               href="https://www.linkedin.com/in/franco-ariel-figueroa-746678363" 
+               target="_blank" 
+               rel="noopener noreferrer"
+          >
+               Ver Cuenta Linkedin
+          </a>
+     </div>
+
+     <div class="col-3 contact-card">
+          <h6>Curriculum Vitae</h6>
+          <img 
+               src="images/style/cv.webp" 
+               class="contact-icon border border-dark border-1"
+          >
+          <a 
+               href="cv/CV - Franco Ariel Figueroa.pdf" 
+               target="_blank" 
+               rel="noopener noreferrer"
+          >
+               Ver CV
+          </a>
+     </div>
+
+</div>
+
+<br>
+
+
+<h4 id="proyectos">Mis proyectos <i class="fas fa-project-diagram"></i> </h4>
+Estos son algunos proyectos que he hecho y que sirven para mostrar mis habilidades como programador. Dentro
+del enlace de cada proyecto habrá imagenes del proyecto más un video explicativo y un enlace al repositorio GitHub para que
+puedas ver el código. 
+<br>
+
+
+<h5>Proyectos acádemicos</h5>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href="tesis.html">
+               Tesis <br>
+               <img src="images/proyectos/tesis 3-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="1140" loading="lazy" decoding="async">
+          </a>
+     </div>
+
+</div>
+
+<br>
+
+<h5>Proyectos personales</h5>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href="tiendaJuegosDeMesa.html">
+               <span>Tiendas de juegos de mesa</span>
+               <img 
+                    src="images/proyectos/tienda juegos de mesa 1-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="372" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href="casino.html">
+          <span>Casino</span>
+          <img 
+               src="images/proyectos/casino 1-thumb.webp" 
+               class="img-uniform border border-dark border-1" width="800" height="676" loading="lazy" decoding="async"
+          >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href="empresaTransporte.html">
+          <span>Empresa de transporte</span>
+          <img 
+               src="images/proyectos/empresa transporte 1-thumb.webp" 
+               class="img-uniform border border-dark border-1" width="800" height="856" loading="lazy" decoding="async"
+          >
+          </a>
+     </div>
+
+
+</div>
+
+<br>
+
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href="autoescuela.html">
+               Autoescuela <br>
+               <img 
+                    src="images/proyectos/autoescuela 1-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="929" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href="docker.html">
+               Docker <br>
+               <img 
+                    src="images/proyectos/docker 1-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="424" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href="supermercado.html">
+               Supermercado <br>
+               <img 
+                    src="images/proyectos/supermercado 1-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="999" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+</div>
+
+
+<h4>Clientes <i class="bi bi-people"></i></h4>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href="https://franco2900.github.io/VicioMesa/">
+               VicioMesa <br>
+               <img 
+                    src="images/proyectos/viciomesa 1-thumb.webp" 
+                    class="img-uniform border border-dark border-1" width="800" height="970" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+</div>
+
+</Base>
