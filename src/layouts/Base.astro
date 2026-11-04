@@ -118,7 +118,7 @@ const ogImageUrl = new URL(ogImage, SITE).href;
        El sitio queda con un solo script propio (el zoom de imagenes). -->
   <script is:inline src={url("js/zoomImagenes.js")}></script>
 
-  <!-- Los datos de contacto se arman en runtime para no dejarlos en texto plano en el HTML. -->
+  <!-- El email se arma en runtime para no dejarlo en texto plano en el HTML. -->
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.email').forEach((el) => {

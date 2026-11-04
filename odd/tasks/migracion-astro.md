@@ -77,6 +77,8 @@ generador de sitio estático real, para que:
       metadata sin servidor + `--all` para todas las páginas.
 - [x] T22 Skill `astro-pages`: la regla del base path y dónde vive cada cosa.
 - [x] T23 Agente `site-verifier`: verificación read-only con reporte compacto.
+- [x] T24 Eliminar el teléfono del sitio: tarjeta de contacto, footer, script de
+      relleno y el asset `telefono.webp`.
 
 ## Acceptance criteria
 
@@ -117,12 +119,24 @@ Evidencia visual (headless Edge, 1400x2200, mismo servidor):
   Causa raíz: URLs relativas. Se revierte la decisión y se prefijan las 110
   referencias con `BASE_URL`. Se agregan el skill `visual-qa`, el skill
   `astro-pages` y el agente `site-verifier`.
+- 2026-11-04: auditoría de exposición de datos de contacto. Verificado: el sitio
+  publicado nunca estuvo roto (GitHub Pages redirige la URL sin barra final); el
+  email está en crudo en 4 commits públicos y en 25 metadatos de commit vía la API
+  pública. El usuario decide eliminar el teléfono.
 
 ## Known issues (no bloqueantes)
 
-- `.email` y `.telefono` se siguen rellenando por script: sin JS el dato de
-  contacto no aparece. Decisión pendiente del usuario (era una elección previa
-  del sitio, no un descuido de la migración).
+- `.email` se sigue rellenando por script: sin JS el email no aparece, y Google
+  tampoco lo indexa. El teléfono **se eliminó del sitio** (`col-4` en las tarjetas
+  de contacto, dos columnas en el footer). Decisión pendiente del usuario sobre
+  cómo publicar el email: ver `security/contact-data-exposure`.
+- **El teléfono y el email están en crudo en 4 commits públicos**:
+  `7518e5a`, `74bffcc`, `c69ea92`, `a0c7a5d` — en `partials/footer.html`
+  (`franco2900@gmail.com`). Además `franco2900@gmail.com` figura como autor en
+  25 commits y la API pública de GitHub lo devuelve sin autenticación.
+- El email y el teléfono también están en crudo en `json/preguntasChatbot.json`,
+  que está en el stash (`5bc1062`), **no publicado**. Si el chatbot se commitea
+  tal cual, se publican.
 - **Código muerto preexistente en `public/js/zoomImagenes.js`**: de las 3 funciones,
   `hacerZoomImagen` y `mostrarImagenEnOverlay` no las llama nadie y la segunda
   depende de `#overlay` y `#overlay-img`, elementos que **no existen en ninguna
