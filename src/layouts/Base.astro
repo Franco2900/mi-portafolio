@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Fondo from '../components/Fondo.astro';
@@ -44,7 +45,7 @@ const ogImageUrl = new URL(ogImage, SITE).href;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
-  <link rel="icon" type="image/x-icon" href="images/style/favicon.ico">
+  <link rel="icon" type="image/x-icon" href={url("images/style/favicon.ico")}>
 
   <title>{title}</title>
 
@@ -70,7 +71,7 @@ const ogImageUrl = new URL(ogImage, SITE).href;
   <!-- Orden de cascada: layout.css antes de Bootstrap, igual que antes de la migracion.
        `integrity` + `crossorigin` fijan cada hoja a una version exacta: si el CDN
        sirve otro contenido, el navegador la descarta en vez de ejecutarla. -->
-  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href={url("css/layout.css")}>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -95,9 +96,9 @@ const ogImageUrl = new URL(ogImage, SITE).href;
     integrity="sha384-TeDUCuZ+Uyp1Vv0n275nnm//ANAlP5GFHCnSF4iiAdrYmBZMM6syYgykpq4kGTqL"
     crossorigin="anonymous"
   >
-  <link rel="stylesheet" href="css/fondo.css">
-  <link rel="stylesheet" href="css/footer.css">
-  {css.map((href) => <link rel="stylesheet" href={href} />)}
+  <link rel="stylesheet" href={url("css/fondo.css")}>
+  <link rel="stylesheet" href={url("css/footer.css")}>
+  {css.map((href) => <link rel="stylesheet" href={url(href)} />)}
 </head>
 
 <body class="light-mode">
@@ -115,7 +116,7 @@ const ogImageUrl = new URL(ogImage, SITE).href;
   <!-- Sin Bootstrap JS: el navbar no usa toggler, collapse, modal, dropdown ni tooltip.
        Sin Font Awesome JS: la version CSS ya dibuja los mismos iconos con menos peso.
        El sitio queda con un solo script propio (el zoom de imagenes). -->
-  <script is:inline src="js/zoomImagenes.js"></script>
+  <script is:inline src={url("js/zoomImagenes.js")}></script>
 
   <!-- Los datos de contacto se arman en runtime para no dejarlos en texto plano en el HTML. -->
   <script is:inline>

@@ -1,11 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
 import { pages } from '../data/pages';
+import { url } from '../lib/url';
 
 const meta = pages['notFound'];
 // Un 404 se sirve para cualquier ruta faltante, asi que el link de vuelta
-// tiene que ser absoluto respecto del base del sitio.
-const home = import.meta.env.BASE_URL;
+// tiene que ser absoluto respecto del base del sitio, con barra final.
+const home = url('');
 ---
 
 <Base title={meta.title} description={meta.description} path="404.html" nav="project">

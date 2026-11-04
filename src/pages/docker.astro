@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import { pages } from '../data/pages';
 
@@ -95,7 +96,7 @@ const meta = pages['docker'];
 
 <h4>DER - phpmyadmin</h4>
 <img
-  src="images/diagramas/DER docker - phpmyadmin.webp"
+  src={url("images/diagramas/DER docker - phpmyadmin.webp")}
   alt="DER 1"
   class="img-uniform border border-dark border-1"
   style="cursor: pointer;"
@@ -108,7 +109,7 @@ const meta = pages['docker'];
 
 <h4>Contenedores en Docker Desktop</h4>
 <img
-  src="images/proyectos/docker 1.webp"
+  src={url("images/proyectos/docker 1.webp")}
   alt="Docker Desktop"
   class="img-uniform border border-dark border-1"
   style="cursor: pointer;"
@@ -119,7 +120,7 @@ const meta = pages['docker'];
 
 <h4>Home del sitio web</h4>
 <img
-  src="images/proyectos/docker 2.webp"
+  src={url("images/proyectos/docker 2.webp")}
   alt="Sitio web home"
   class="img-uniform border border-dark border-1"
   style="cursor: pointer;"
@@ -130,7 +131,7 @@ const meta = pages['docker'];
 
 <h4>Versiones para producción y desarrollo</h4>
 <img
-  src="images/proyectos/docker 3.webp"
+  src={url("images/proyectos/docker 3.webp")}
   alt="Versiones Docker"
   class="img-uniform border border-dark border-1"
   style="cursor: pointer;"

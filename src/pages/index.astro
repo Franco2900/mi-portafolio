@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import Base from '../layouts/Base.astro';
 import { pages } from '../data/pages';
 
@@ -15,7 +16,7 @@ const meta = pages['home'];
   <h1 class="page-title">{meta.h1}</h1>
   <p class="page-subtitle">Desarrollador Backend &middot; Licenciado en Sistemas (UNLa)</p>
 
-<img src="images/style/mi cara.webp" 
+<img src={url("images/style/mi cara.webp")} 
      alt="Franco Figueroa" 
      class="img-fluid float-end w-25 ms-3 mb-3 img-profile" width="600" height="450">
 
@@ -69,7 +70,7 @@ si hace falta se un poco de MongoDB. He aquí un pequeño resumen de mis habilid
 
 <h4>Certificado de ingles</h4>
 <div class="pdf-link">
-  <a href="certificados/EF SET Certificate.pdf" target="_blank" rel="noopener noreferrer">
+  <a href={url("certificados/EF SET Certificate.pdf")} target="_blank" rel="noopener noreferrer">
     <i class="fa-solid fa-file-pdf fa-2x" style="color:#dc3545;"></i>
     <span>Ver Certificado PDF</span>
   </a>
@@ -82,7 +83,7 @@ si hace falta se un poco de MongoDB. He aquí un pequeño resumen de mis habilid
      <div class="col-3 contact-card">
           <h6>Email</h6>
           <img alt="" 
-               src="images/style/email.webp" 
+               src={url("images/style/email.webp")} 
                class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
           >
           <span class="email"></span>
@@ -92,7 +93,7 @@ si hace falta se un poco de MongoDB. He aquí un pequeño resumen de mis habilid
      <div class="col-3 contact-card">
           <h6>Linkedin</h6>
           <img alt="" 
-               src="images/style/linkedin.webp" 
+               src={url("images/style/linkedin.webp")} 
                class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
           >
           <a 
@@ -107,11 +108,11 @@ si hace falta se un poco de MongoDB. He aquí un pequeño resumen de mis habilid
      <div class="col-3 contact-card">
           <h6>Curriculum Vitae</h6>
           <img alt="" 
-               src="images/style/cv.webp" 
+               src={url("images/style/cv.webp")} 
                class="contact-icon border border-dark border-1" width="474" height="474" loading="lazy" decoding="async"
           >
           <a 
-               href="cv/CV - Franco Ariel Figueroa.pdf" 
+               href={url("cv/CV - Franco Ariel Figueroa.pdf")} 
                target="_blank" 
                rel="noopener noreferrer"
           >
@@ -135,9 +136,9 @@ puedas ver el código.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href="tesis.html">
+          <a href={url("tesis.html")}>
                Tesis <br>
-               <img alt="" src="images/proyectos/tesis 3-thumb.webp" 
+               <img alt="" src={url("images/proyectos/tesis 3-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="1140" loading="lazy" decoding="async">
           </a>
      </div>
@@ -150,30 +151,30 @@ puedas ver el código.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href="tiendaJuegosDeMesa.html">
+          <a href={url("tiendaJuegosDeMesa.html")}>
                <span>Tiendas de juegos de mesa</span>
                <img alt="" 
-                    src="images/proyectos/tienda juegos de mesa 1-thumb.webp" 
+                    src={url("images/proyectos/tienda juegos de mesa 1-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="372" loading="lazy" decoding="async"
                >
           </a>
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href="casino.html">
+          <a href={url("casino.html")}>
           <span>Casino</span>
           <img alt="" 
-               src="images/proyectos/casino 1-thumb.webp" 
+               src={url("images/proyectos/casino 1-thumb.webp")} 
                class="img-uniform border border-dark border-1" width="800" height="676" loading="lazy" decoding="async"
           >
           </a>
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href="empresaTransporte.html">
+          <a href={url("empresaTransporte.html")}>
           <span>Empresa de transporte</span>
           <img alt="" 
-               src="images/proyectos/empresa transporte 1-thumb.webp" 
+               src={url("images/proyectos/empresa transporte 1-thumb.webp")} 
                class="img-uniform border border-dark border-1" width="800" height="856" loading="lazy" decoding="async"
           >
           </a>
@@ -187,30 +188,30 @@ puedas ver el código.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href="autoescuela.html">
+          <a href={url("autoescuela.html")}>
                Autoescuela <br>
                <img alt="" 
-                    src="images/proyectos/autoescuela 1-thumb.webp" 
+                    src={url("images/proyectos/autoescuela 1-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="929" loading="lazy" decoding="async"
                >
           </a>
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href="docker.html">
+          <a href={url("docker.html")}>
                Docker <br>
                <img alt="" 
-                    src="images/proyectos/docker 1-thumb.webp" 
+                    src={url("images/proyectos/docker 1-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="424" loading="lazy" decoding="async"
                >
           </a>
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href="supermercado.html">
+          <a href={url("supermercado.html")}>
                Supermercado <br>
                <img alt="" 
-                    src="images/proyectos/supermercado 1-thumb.webp" 
+                    src={url("images/proyectos/supermercado 1-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="999" loading="lazy" decoding="async"
                >
           </a>
@@ -226,7 +227,7 @@ puedas ver el código.
           <a href="https://franco2900.github.io/VicioMesa/">
                VicioMesa <br>
                <img alt="" 
-                    src="images/proyectos/viciomesa 1-thumb.webp" 
+                    src={url("images/proyectos/viciomesa 1-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="970" loading="lazy" decoding="async"
                >
           </a>
