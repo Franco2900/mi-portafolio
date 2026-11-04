@@ -5,7 +5,9 @@ footer {
 
 /* Primera fila (ubicación, teléfono, email) */
 footer .row:first-child {
-    background-color: #389696;
+    /* #389696 daba 3.52:1 contra blanco y no pasaba WCAG AA (4.5:1).
+       #2a7575 da 5.38:1: pasa AA y AAA para texto grande. */
+    background-color: #2a7575;
     padding: 5px;
     font-size: 1rem;
     text-align: center;
