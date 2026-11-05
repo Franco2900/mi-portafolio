@@ -65,8 +65,9 @@ const { h1 } = Astro.props;
     deliberada: las validaciones y las reglas de negocio están exclusivamente en <code>services/</code>,
     nunca en los blueprints ni en los modelos. La persistencia es SQLite con SQLAlchemy, y el esquema se
     versiona con Flask-Migrate/Alembic en vez de recrearse en cada arranque. La sesión es una cookie
-    firmada de Flask con <code>HttpOnly</code> y <code>SameSite=Lax</code>, y los decoradores
-    <code>@login_required</code> y <code>@require_roles</code> centralizan los guards.
+    firmada de Flask con <code>HttpOnly</code> y <code>SameSite=Lax</code>, y los
+    decoradores <code>@login_required</code> y <code>@require_roles</code> centralizan
+    los guards.
 </p>
 
 <p>
