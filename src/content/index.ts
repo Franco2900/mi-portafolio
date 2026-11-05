@@ -18,6 +18,15 @@ import AutoescuelaEn from './en/autoescuela.astro';
 import DockerEn from './en/docker.astro';
 import TiendaJuegosDeMesaEn from './en/tiendaJuegosDeMesa.astro';
 
+import HomePt from './pt/home.astro';
+import TesisPt from './pt/tesis.astro';
+import SupermercadoPt from './pt/supermercado.astro';
+import CasinoPt from './pt/casino.astro';
+import EmpresaTransportePt from './pt/empresaTransporte.astro';
+import AutoescuelaPt from './pt/autoescuela.astro';
+import DockerPt from './pt/docker.astro';
+import TiendaJuegosDeMesaPt from './pt/tiendaJuegosDeMesa.astro';
+
 /**
  * Cuerpo de cada pagina por idioma. Un idioma puede estar incompleto: las rutas
  * se generan a partir de estas claves, asi que una traduccion a medias compila.
@@ -42,6 +51,16 @@ export const content = {
     autoescuela: AutoescuelaEn,
     docker: DockerEn,
     tiendaJuegosDeMesa: TiendaJuegosDeMesaEn,
+  },
+  pt: {
+    home: HomePt,
+    tesis: TesisPt,
+    supermercado: SupermercadoPt,
+    casino: CasinoPt,
+    empresaTransporte: EmpresaTransportePt,
+    autoescuela: AutoescuelaPt,
+    docker: DockerPt,
+    tiendaJuegosDeMesa: TiendaJuegosDeMesaPt,
   },
 };
 

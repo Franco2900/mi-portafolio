@@ -12,6 +12,7 @@
 export const languages = {
   es: { name: 'Español', flag: 'es', tag: 'es', ogLocale: 'es_AR' },
   en: { name: 'English', flag: 'gb', tag: 'en', ogLocale: 'en_US' },
+  pt: { name: 'Português', flag: 'br', tag: 'pt-BR', ogLocale: 'pt_BR' },
 } as const;
 
 export const defaultLang = 'es' as const;
@@ -70,5 +71,28 @@ export const ui: Record<Lang, Record<string, string>> = {
     'home.certificate': 'English certificate',
     'home.projects': 'My projects',
     'home.academic': 'Academic projects',
+  },
+  pt: {
+    'nav.home': 'Home',
+    'nav.homeAria': 'Ir para o início',
+    'nav.language': 'Idioma',
+    'nav.intro': 'Introdução',
+    'nav.skills': 'Habilidades',
+    'nav.contact': 'Contato',
+    'nav.projects': 'Projetos',
+    'nav.summary': 'Resumo',
+    'nav.technologies': 'Tecnologias',
+    'nav.description': 'Descrição',
+    'nav.images': 'Imagens',
+    'nav.video': 'Vídeo',
+    'nav.learned': 'O que aprendi',
+    'footer.location': 'Localização: Buenos Aires, Argentina',
+    'footer.email': 'Email:',
+    'footer.github': 'GitHub: Franco2900',
+    'home.contact': 'Meus dados de contato',
+    'home.skills': 'Minhas habilidades',
+    'home.certificate': 'Certificado de inglês',
+    'home.projects': 'Meus projetos',
+    'home.academic': 'Projetos acadêmicos',
   },
 };
