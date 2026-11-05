@@ -130,17 +130,19 @@ Evidencia visual (headless Edge, 1400x2200, mismo servidor):
   tampoco lo indexa. El teléfono **se eliminó del sitio** (`col-4` en las tarjetas
   de contacto, dos columnas en el footer). Decisión pendiente del usuario sobre
   cómo publicar el email: ver `security/contact-data-exposure`.
-- **El teléfono y el email estaban en crudo en 4 commits públicos**:
-  `7518e5a`, `74bffcc`, `c69ea92`, `a0c7a5d` — en `partials/footer.html` y
-  `views/{contacto,home}View.html`. La reescritura de historia borró el número de
-  todos los commits; el email sigue como autor en 25 commits y la API pública de
-  GitHub lo devuelve sin autenticación.
+- **El teléfono estaba en crudo en 4 commits públicos** — `partials/footer.html`
+  y `views/{contacto,home}View.html`, más el relleno por JS de los nueve shells
+  HTML. La reescritura con `git filter-repo --replace-text` borró el número de
+  los 28 commits, incluidos el stash y el tag local, y se publicó con
+  force-push. La historia pública quedó en 13 commits con SHAs nuevos (tip
+  `8f5e930`). El email sigue como autor en todos los commits y la API pública de
+  GitHub lo devuelve sin autenticación: no se tocó, no estaba autorizado.
 - **El teléfono sigue visible en `cv/CV - Franco Ariel Figueroa.pdf`**: el texto
   del PDF está codificado con el subset de la fuente, así que un reemplazo de
   texto no lo alcanza. Solo se corrige regenerando el CV. Lo mismo aplica a
   cualquier copia ya descargada.
 - El email y el teléfono también estaban en crudo en `json/preguntasChatbot.json`,
-  en el stash (`5bc1062`), **no publicado**. La reescritura limpió el número del
+  en el stash (`97f61a4`), **no publicado**. La reescritura limpió el número del
   stash; el email sigue ahí. Si el chatbot se commitea tal cual, se publica.
 - **Código muerto preexistente en `public/js/zoomImagenes.js`**: de las 3 funciones,
   `hacerZoomImagen` y `mostrarImagenEnOverlay` no las llama nadie y la segunda
