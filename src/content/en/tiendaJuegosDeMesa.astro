@@ -1,0 +1,188 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Website where board games can be posted for sale and purchase. Users can 
+  write comments on the products and rate them with stars.
+</p>
+
+<p>
+  <strong>GitHub repository <i class="fab fa-github"></i>:</strong>
+  <a href="https://github.com/Franco2900/Practica-1---Tienda-juegos-de-mesa" target="_blank">Practice 1</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend:<br>
+    NodeJS <i class="fab fa-node-js"></i> with the Express framework
+  </div>
+
+  <div class="col-4">
+    Database:<br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend:<br>
+    Bootstrap <i class="fab fa-bootstrap"></i> and EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Whenever I did practice projects, they were meant to create small pieces of code and understand how
+  a concept, a feature or a module works. The big projects I did were always for university and in groups.
+  That is why this is my first big project built entirely by me.<br />
+
+  &emsp;&emsp;Store websites are one of the first things people practice, and since I really like
+  board games, one day I decided to make a website as if I were a seller of these products.<br />
+
+  &emsp;&emsp;Below is a complete description of all the features available on the website.
+  To start, the site is divided into the following sections: Home; 
+  Products, which in turn is split into Buy and Sell; Contact, with all the ways to get in touch and a FAQ;
+  Log in and Register, to access the account; and finally Profile, where the user can
+  change their name, password and profile picture.<br />
+
+  &emsp;&emsp;Unregistered visitors can only see the Buy section to browse the available products,
+  but they can't interact until they log in. Registered users with the regular user role can
+  buy products, give them a rating of up to 5 stars (the system automatically updates each
+  product's overall rating every time a user rates it), buy one or several products at a
+  time, leave comments and reply to other users' comments. Admins have the same
+  features as a regular user, plus the ability to publish new items for sale.
+</p>
+
+
+<h2>Database Entity-Relationship Diagram (ERD)</h2>
+
+<h4>ERD - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER tienda juegos de mesa - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="845" height="563" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 1.webp")}
+  alt="Board game photo 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1349" height="628" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Contact</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 5.webp")}
+  alt="Board game photo 5"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1257" height="578" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Log in and Register</h4>
+<div class="row">
+  <div class="col-6">
+    <img
+      src={url("images/proyectos/tienda juegos de mesa 2.webp")}
+      alt="Board game photo 2"
+      class="img-uniform border border-dark border-1"
+      style="cursor: pointer;"
+      onclick="mostrarImagenEnNuevaVentana(this)" width="521" height="302" loading="lazy" decoding="async"
+    />
+    <br>
+  </div>
+
+  <div class="col-6">
+    <img
+      src={url("images/proyectos/tienda juegos de mesa 3.webp")}
+      alt="Board game photo 3"
+      class="img-uniform border border-dark border-1"
+      style="cursor: pointer;"
+      onclick="mostrarImagenEnNuevaVentana(this)" width="530" height="328" loading="lazy" decoding="async"
+    />
+    <br>
+  </div>
+</div>
+
+<h4>Profile</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 4.webp")}
+  alt="Board game photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="580" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Product – Buy</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 6.webp")}
+  alt="Board game photo 6"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1232" height="634" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Selected product</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 7.webp")}
+  alt="Board game photo 7"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1536" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Product – Sell</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 8.webp")}
+  alt="Board game photo 8"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="866" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/lW8mQdWcw0g"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p>
+  • Routing — Process of defining the routes of a web application, indicating which content or action runs based on the requested URL. <br />
+  • GET and POST methods — Ways to send data between client and server: GET to retrieve information and POST to send or modify data. <br />
+  • EJS — Template engine that lets you embed JavaScript in HTML to generate dynamic pages. <br />
+  • Middleware — Intermediate functions that process requests before they reach the controller, useful for validation, authentication or error handling. <br />
+  • Connecting to and working with a database — Integration of the application with data storage systems (such as SQL or NoSQL) to save, query and update information. <br />
+  • User session management — Mechanism to keep a user's information while they browse the application, such as their login state or preferences. <br />
+</p>

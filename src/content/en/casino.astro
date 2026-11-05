@@ -1,0 +1,168 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Website where you can play different casino games and bet
+</p>
+
+<p>
+  <strong>GitHub repository <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/Practica-2---Casino" target="_blank">Practice 2</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> with the Express framework 
+  </div>
+
+  <div class="col-4">
+    Database: <br>
+    MongoDB <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg" alt="MongoDB logo" width="24" height="24">
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> and EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  A website where users can spend their chips to play different casino games. Originally
+  it was going to have several more games, but with only 2 games it works well enough to show the project running correctly. 
+  You can play the slot machine and Blackjack.
+  <br />
+
+  &emsp;&emsp;The games are another of my university assignments. In the first years we are asked to build 
+  different games in Python, to mix a programming language we had never seen until then with
+  something fun. The games my group made were casino games, so I decided to redo them but in
+  JavaScript and making them feel more like a real casino by adding a chip system with which the
+  player can choose how many chips to bet.
+  <br />
+
+  &emsp;&emsp;This time I took the opportunity to study how to better organize the structure of the projects, because
+  in the previous one, route handling, server logic and the database CRUD were all
+  controlled in the same file. In a small project this may not cause any problem, but in larger
+  projects it makes development and maintenance considerably more complex.
+  <br />
+
+  &emsp;&emsp;I also took the chance to review MongoDB, since only one course is taught on that 
+  database.
+  <br />
+
+</p>
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/casino 1.webp")}
+  alt="Casino photo 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1148" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Games</h4>
+<img
+  src={url("images/proyectos/casino 2.webp")}
+  alt="Casino photo 2"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1360" height="547" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Promotions</h4>
+<img
+  src={url("images/proyectos/casino 3.webp")}
+  alt="Casino photo 3"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="896" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Contact</h4>
+<img
+  src={url("images/proyectos/casino 4.webp")}
+  alt="Casino photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="824" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Slots</h4>
+<img
+  src={url("images/proyectos/casino 5.webp")}
+  alt="Casino photo 5"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1114" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack</h4>
+<img
+  src={url("images/proyectos/casino 6.webp")}
+  alt="Casino photo 6"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2366" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack 2nd image</h4>
+<img
+  src={url("images/proyectos/casino 7.webp")}
+  alt="Casino photo 7"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="650" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack 3rd image</h4>
+<img
+  src={url("images/proyectos/casino 8.webp")}
+  alt="Casino photo 8"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="920" height="631" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/k_JF4i7jkUk"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • MVC pattern (model, view, controller) — Architecture that separates data logic, the interface and flow control in an application. <br /> 
+  • MongoDB — Document-oriented NoSQL database, ideal for handling large volumes of flexible data. <br /> 
+  • New graphic design modules: Bootstrap Icons — Official Bootstrap icon set for enriching the design of web applications. <br /> 
+</p>

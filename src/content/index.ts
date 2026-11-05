@@ -10,6 +10,13 @@ import DockerEs from './es/docker.astro';
 import TiendaJuegosDeMesaEs from './es/tiendaJuegosDeMesa.astro';
 
 import HomeEn from './en/home.astro';
+import TesisEn from './en/tesis.astro';
+import SupermercadoEn from './en/supermercado.astro';
+import CasinoEn from './en/casino.astro';
+import EmpresaTransporteEn from './en/empresaTransporte.astro';
+import AutoescuelaEn from './en/autoescuela.astro';
+import DockerEn from './en/docker.astro';
+import TiendaJuegosDeMesaEn from './en/tiendaJuegosDeMesa.astro';
 
 /**
  * Cuerpo de cada pagina por idioma. Un idioma puede estar incompleto: las rutas
@@ -28,6 +35,13 @@ export const content = {
   },
   en: {
     home: HomeEn,
+    tesis: TesisEn,
+    supermercado: SupermercadoEn,
+    casino: CasinoEn,
+    empresaTransporte: EmpresaTransporteEn,
+    autoescuela: AutoescuelaEn,
+    docker: DockerEn,
+    tiendaJuegosDeMesa: TiendaJuegosDeMesaEn,
   },
 };
 

@@ -1,0 +1,155 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+    Web application connected to a MySQL database, deployed in Docker containers
+</p>
+
+<p>
+    <strong>GitHub repository <i class="fab fa-github"></i>: </strong>
+    <a href="https://github.com/Franco2900/docker-practica" target="_blank">Docker practice</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+    <div class="col-3">
+        Backend: <br>
+        NodeJS <i class="fab fa-node-js"></i> with the Express framework 
+    </div>
+
+    <div class="col-3">
+        Database: <br>
+        SQL <i class="fas fa-database"></i>
+    </div>
+    
+    <div class="col-3">
+        Frontend: <br>
+        Bootstrap <i class="fab fa-bootstrap"></i> and EJS
+    </div>
+    
+    <div class="col-3">
+        Infrastructure: <br>
+        Docker <i class="fa-brands fa-docker"></i>
+    </div>
+
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+
+    No matter how good a programmer you are, if the end user doesn't have the tools
+    needed installed on their computer to see the program you built and test and evaluate it, 
+    the work can't be considered finished. This is where Docker comes in, letting
+    any program run on any computer thanks to containers.
+    <br />
+
+    &emsp;&emsp; Docker containers are, in essence, miniature virtual machines. They are 
+    encapsulated and isolated, but they are also faster than virtual machines because they use
+    far fewer resources, since containers behave as if they were just another application on
+    the computer.
+    <br />
+
+    &emsp;&emsp; This time I made a fairly simple web page with login and registration that work
+    thanks to a MySQL database. Both the website and MySQL each have their own containers,
+    and both containers are on the same network. The web container has a port exposed to the host
+    that lets the user try the site from any browser on their computer. The SQL container
+    has a .sql script that creates the database, its tables and its data the first time
+    it starts.
+    <br />
+    
+    &emsp;&emsp; So that the changes the user makes to the database, such as creating a new account 
+    when registering, are not lost after closing the containers and persist over 
+    time, the SQL container uses a volume.
+    <br />
+
+    &emsp;&emsp; On the other hand, there are two versions to use with Docker: the
+    production version and the development version. The latter is configured to restart the server on any 
+    code change (hot reload), so the developer can see their changes live while  
+    working, whereas the first version doesn't have this since it is meant for an 
+    end user.
+    <br />
+
+</p>
+
+
+<h2>Database Entity-Relationship Diagram (ERD)</h2>
+
+<h4>ERD - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER docker - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="487" height="241" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Containers in Docker Desktop</h4>
+<img
+  src={url("images/proyectos/docker 1.webp")}
+  alt="Docker Desktop"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1365" height="723" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Website home</h4>
+<img
+  src={url("images/proyectos/docker 2.webp")}
+  alt="Website home"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1353" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Production and development versions</h4>
+<img
+  src={url("images/proyectos/docker 3.webp")}
+  alt="Docker versions"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="182" height="110" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/wtCC2xlm_yM"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Images — Configuration and dependencies needed for an application to run.<br /> 
+  • Containers — Running instances of an image. <br /> 
+  • Ports — Exposure of the container to the host. <br /> 
+  • Networks — Virtual connections that allow communication between containers. <br /> 
+  • Volumes — Persistent storage spaces to keep data beyond the container's lifecycle. <br /> 
+  • Docker Compose — Tool for defining and running multi-container applications through YAML files. <br /> 
+  • Docker Compose Dev — Special configuration for development environments. <br /> 
+  • Hot Reload — Technique that reflects code changes automatically inside the container without rebuilding the image. <br /> 
+</p>

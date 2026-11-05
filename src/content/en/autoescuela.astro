@@ -1,0 +1,226 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Website to manage the students and classes of a driving school
+</p>
+
+<p>
+  <strong>GitHub repository <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/Practica-4---Autoescuela" target="_blank">Practice 4</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> with the Express framework 
+  </div>
+
+  <div class="col-4">
+    Database: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> and EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+
+  In this project I wanted to put into practice everything I had learned, both backend and frontend,
+  so it can be seen as a leap from my first practice project to the current one. I combined
+  a bit of everything I knew up to that point.
+  <br />
+
+  &emsp;&emsp; It is a website that serves to advertise a driving school and to let 
+  teachers manage student and class data from anywhere at 
+  any time, whether on a computer or a phone.
+  <br />
+
+  &emsp;&emsp;Users can create, update and delete students just as they can with classes. Classes
+  can only be created on the enabled working days and hours. Each working day has two shifts: the 1st
+  shift from 9:00 to 13:00 and the 2nd shift from 14:00 to 18:00. Saturdays have a single shift from 9:00 to 13:00
+  and on Sundays no classes can be created.
+  <br />
+
+  &emsp;&emsp;Besides students and their classes, users can also create, update and delete events.
+  These serve to prevent classes from being created on certain days and hours for whatever reason, such as
+  a VTV inspection, a teacher being away at a given moment or any other.
+  <br />
+
+  &emsp;&emsp;Classes have different filters to make them easier to find. By default, all
+  classes from the current day onward are shown; past classes are not shown. Users can
+  search for classes within a given date range, search only for today's classes or search for the classes
+  of a given student by typing their first name or last name or a combination of both (in the last
+  case, the classes of the searched student are shown together with the rest of the classes that exist/existed for the other 
+  students at the times the searched student has/had classes).
+  <br />
+
+  &emsp;&emsp;Finally, if students have the email field filled in, an email is sent to them automatically
+  to remind them of their next class 24 hours in advance.
+  <br />
+
+  <strong>NOTE: STUDENT DATA IS SAMPLE DATA, NOT REAL</strong>
+
+</p>
+
+
+<h2>Database Entity-Relationship Diagram (ERD)</h2>
+
+<h4>ERD - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER autoescuela - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="998" height="451" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/autoescuela 1.webp")}
+  alt="Driving school photo 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1577" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Contact</h4>
+<img
+  src={url("images/proyectos/autoescuela 2.webp")}
+  alt="Driving school photo 2"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1066" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Students</h4>
+<img
+  src={url("images/proyectos/autoescuela 3.webp")}
+  alt="Driving school photo 3"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1711" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Student classes modal</h4>
+<img
+  src={url("images/proyectos/autoescuela 4.webp")}
+  alt="Driving school photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Student payments modal</h4>
+<img
+  src={url("images/proyectos/autoescuela 5.webp")}
+  alt="Driving school photo 5"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Payment edit modal</h4>
+<img
+  src={url("images/proyectos/autoescuela 6.webp")}
+  alt="Driving school photo 6"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Student edit modal (part 1)</h4>
+<img
+  src={url("images/proyectos/autoescuela 7.webp")}
+  alt="Driving school photo 7"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Student edit modal (part 2)</h4>
+<img
+  src={url("images/proyectos/autoescuela 8.webp")}
+  alt="Driving school photo 8"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+
+<h4>Classes</h4>
+<img
+  src={url("images/proyectos/autoescuela 9.webp")}
+  alt="Driving school photo 9"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1489" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Classes - Search by date range</h4>
+<img
+  src={url("images/proyectos/autoescuela 10.webp")}
+  alt="Driving school photo 10"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="988" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/oEyTbVFL7UQ"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Favicon — Website icon for tabs and bookmarks. <br /> 
+  • Modal — Modal window to show content or forms without changing page. <br /> 
+  • Exact location with Google Maps — Map integration to show and select precise locations. <br /> 
+</p>

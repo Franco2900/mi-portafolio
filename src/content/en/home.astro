@@ -1,5 +1,6 @@
 ---
 import { url } from '../../lib/url';
+import { localizePath, slugPath } from '../../i18n/utils';
 
 interface Props {
   h1: string;
@@ -118,9 +119,6 @@ if needed I know a bit of MongoDB. Here is a short summary of my skills:
 <br>
 
 
-<!-- Los proyectos todavia no estan traducidos: las fichas enlazan a la version
-     en espanol. Cuando exista src/content/en/<slug>.astro, estos href pasan a
-     localizePath(slugPath(slug), 'en'). -->
 <h4 id="proyectos">My projects <i class="fas fa-project-diagram"></i> </h4>
 These are some of the projects I have built and that show my skills as a developer. Each
 project link opens images of the project, an explanatory video and a link to the GitHub repository so
@@ -132,7 +130,7 @@ you can read the code.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href={url("tesis.html")}>
+          <a href={localizePath(slugPath('tesis'), 'en')}>
                Thesis <br>
                <img alt="" src={url("images/proyectos/tesis 3-thumb.webp")} 
                     class="img-uniform border border-dark border-1" width="800" height="1140" loading="lazy" decoding="async">
@@ -147,7 +145,7 @@ you can read the code.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href={url("tiendaJuegosDeMesa.html")}>
+          <a href={localizePath(slugPath('tiendaJuegosDeMesa'), 'en')}>
                <span>Board game store</span>
                <img alt="" 
                     src={url("images/proyectos/tienda juegos de mesa 1-thumb.webp")} 
@@ -157,7 +155,7 @@ you can read the code.
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href={url("casino.html")}>
+          <a href={localizePath(slugPath('casino'), 'en')}>
           <span>Casino</span>
           <img alt="" 
                src={url("images/proyectos/casino 1-thumb.webp")} 
@@ -167,7 +165,7 @@ you can read the code.
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href={url("empresaTransporte.html")}>
+          <a href={localizePath(slugPath('empresaTransporte'), 'en')}>
           <span>Transport company</span>
           <img alt="" 
                src={url("images/proyectos/empresa transporte 1-thumb.webp")} 
@@ -184,7 +182,7 @@ you can read the code.
 <div class="row">
 
      <div class="col-4 text-center project-card">
-          <a href={url("autoescuela.html")}>
+          <a href={localizePath(slugPath('autoescuela'), 'en')}>
                Driving school <br>
                <img alt="" 
                     src={url("images/proyectos/autoescuela 1-thumb.webp")} 
@@ -194,7 +192,7 @@ you can read the code.
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href={url("docker.html")}>
+          <a href={localizePath(slugPath('docker'), 'en')}>
                Docker <br>
                <img alt="" 
                     src={url("images/proyectos/docker 1-thumb.webp")} 
@@ -204,7 +202,7 @@ you can read the code.
      </div>
 
      <div class="col-4 text-center project-card">
-          <a href={url("supermercado.html")}>
+          <a href={localizePath(slugPath('supermercado'), 'en')}>
                Supermarket <br>
                <img alt="" 
                     src={url("images/proyectos/supermercado 1-thumb.webp")} 

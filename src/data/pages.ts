@@ -80,6 +80,42 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
         'Web system that harvests, normalizes and updates information on Argentine scientific journals from bibliographic repositories and builds a single unified listing.',
       h1: 'Thesis: harvesting Argentine scientific journals',
     },
+    supermercado: {
+      title: 'Online supermarket with admin panel | Franco Figueroa',
+      description:
+        'Web-based online supermarket with cart, favorites, purchase history, PDF receipts and an admin panel with sales reports and user role management.',
+      h1: 'Online supermarket system',
+    },
+    casino: {
+      title: 'Online casino games | Franco Figueroa',
+      description:
+        'Website with several casino games and a betting system, built with Node.js, Express and MongoDB as practice for backend logic and state management.',
+      h1: 'Online casino games',
+    },
+    empresaTransporte: {
+      title: 'Website for a transport company | Franco Figueroa',
+      description:
+        'Corporate website for a transport company: service presentation, contact information, a responsive Bootstrap design and multilingual support.',
+      h1: 'Website for a transport company',
+    },
+    autoescuela: {
+      title: 'Driving school management: students and classes | Franco Figueroa',
+      description:
+        'Web application to manage the students and classes of a driving school, with create, update and delete actions, tracking and email reminders.',
+      h1: 'Driving school student and class management',
+    },
+    docker: {
+      title: 'Node.js application deployed with Docker | Franco Figueroa',
+      description:
+        'Web application connected to a MySQL database and deployed in Docker containers, with the detail of the Dockerfile and the runtime environment.',
+      h1: 'Web application with MySQL deployed in Docker',
+    },
+    tiendaJuegosDeMesa: {
+      title: 'Board game store with reviews | Franco Figueroa',
+      description:
+        'Online board game store where users post products, write comments, rate them with stars and reply to each other. Built with Node.js and MySQL.',
+      h1: 'Board game store',
+    },
   },
 };
 

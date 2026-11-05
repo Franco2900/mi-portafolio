@@ -1,0 +1,194 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Website that harvests, normalizes and updates information on Argentine scientific journals
+  from different bibliographic repositories automatically, and builds a unified listing
+  of all the information collected. 
+</p>
+
+<p>
+  <strong>GitHub repository <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/IARCA" target="_blank">IARCA</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> with the Express framework 
+  </div>
+
+  <div class="col-4">
+    Database: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> and EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  This is the project I built as my final thesis for my B.Sc. in Computer Systems at the
+  National University of Lanús. Its name, IARCA, stands for Automated Index of Argentine
+  Scientific Journals (Índice Automatizado de Revistas Científicas Argentinas).
+  <br />
+
+  <h5>Origin of the problem</h5>
+  Thanks to new computing technologies, the 1990s saw
+  a boom in the creation of scientific journals. Digitization made editing
+  and distributing these publications easier, while at the same time significantly reducing production and maintenance costs.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Number of new Argentine scientific journals per decade</strong>
+  </div>
+
+  <img
+  src={url("images/proyectos/tesis 1.webp")}
+  alt="Thesis image 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="966" height="402" loading="lazy" decoding="async"
+  />
+  
+  Source: Políticas de promoción del conocimiento y derechos de propiedad intelectual - Centro 
+  Interdisciplinario de Estudios en Ciencia, Tecnología e Innovación (2023)
+  <br>
+
+  &emsp;&emsp; New technologies also bring new challenges. In the case of scientific
+  journals, the main problem is interoperability between systems, due to the lack of a standard
+  on which metadata to use. Each bibliographic repository asks for different metadata and enforces different rules.
+  <br />
+  
+  &emsp;&emsp; This problem leaves Argentine scientific journals scattered across 
+  multiple repositories, each with its own criteria. As a result, it is not possible to view all the 
+  publications in a single place. This causes simple problems, such as not knowing the total number that exists, and also more serious difficulties, such as the inability to correctly assess editorial quality.
+  <br><br />
+
+  <h5>Goal</h5>
+  The goal was to develop a program that harvests and normalizes data from Argentine scientific 
+  journals to display it in a single repository. Although similar work already exists,
+  such as the CONICET <a href="https://www.caicyt-conicet.gov.ar/malena/">Malena</a> database,
+  built by selected experts, the IARCA project differs mainly in that the whole process
+  runs automatically, without human intervention.
+  <br />
+
+  &emsp;&emsp; To achieve this, we defined which fields to harvest, which databases to collect from, and applied web scraping techniques and API usage.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Harvested databases</strong>
+  </div>
+  <img
+  src={url("images/proyectos/tesis 6.webp")}
+  alt="Thesis image 6"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1200" height="562" loading="lazy" decoding="async"
+  />
+  <br/>
+
+  <h5>Other features</h5>
+  Besides harvesting and normalizing the information, the user is given a
+  way to check for themselves whether the data was collected correctly. For each harvested scientific
+  journal, the URL of the source site is provided alongside its data. Clicking the URL takes the user straight to the source.
+  <br>
+  
+  &emsp;&emsp; 
+  Since data from thousands of scientific journals was gathered, we added different filters so a user 
+  can search for one specific journal (by title, print ISSN, electronic ISSN or institution). 
+  <br>
+
+  &emsp;&emsp;
+  The user can download all the data from a specific repository or from the final listing in 
+  .csv or .json format. We researched the legality and ethics of web scraping to determine whether it was 
+  possible to publish the harvested data, and concluded that there is no issue with the user downloading it, since it comes from public bibliographic repositories and causes no economic harm.
+  (Source: Tutorial: Legality and Ethics of Web Scraping - Murray State University). 
+  <br>
+
+  &emsp;&emsp;
+  Finally, the thesis was deployed so it can be viewed online. It is available at the following link: <a href="https://isco.unla.edu.ar/iarca" target="_blank">IARCA</a>. 
+  <br />
+
+</p>
+
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/tesis 2.webp")}
+  alt="Thesis photo 2"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1970" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Repository - Núcleo Básico de Revistas Científicas Argentinas</h4>
+<img
+  src={url("images/proyectos/tesis 3.webp")}
+  alt="Thesis photo 3"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1935" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Repository - Latindex</h4>
+<img
+  src={url("images/proyectos/tesis 4.webp")}
+  alt="Thesis photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1912" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Final listing</h4>
+<img
+  src={url("images/proyectos/tesis 5.webp")}
+  alt="Thesis photo 5"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2797" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/-O2fhbP2kHs"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • API — Set of functions and protocols that let different applications communicate with each other. <br />
+  • Web Scraping — Technique for extracting information from websites automatically. <br />
+</p>

@@ -1,0 +1,186 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Summary <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Website to advertise a transport company
+</p>
+
+<p>
+  <strong>GitHub repository <i class="fab fa-github"></i>:</strong>
+  <a href="https://github.com/Franco2900/Practica-3---Empresa-de-transporte" target="_blank">Practice 3</a>
+</p>
+
+<h2 id="tecnologias">Technologies used <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> with the Express framework 
+  </div>
+
+  <div class="col-4">
+    Database: <br>
+    None
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> – Font Awesome <i class="fab fa-font-awesome"></i> – Flag Icons <i class="fi fi-ar"></i> – EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Full project description <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Until now, all my practice projects were about the backend, giving little importance to the frontend. I only
+  used it to show the program running and that was it. That is why this time I decided to focus
+  more on the frontend than on the backend.
+  <br />
+
+  &emsp;&emsp;I focused on CSS styling and responsive design so it looks right on phones.
+  I also built a few image features; for example, some images have options
+  that let you view them better, either through a zoom, an overlay or by opening the 
+  image directly in a new tab.
+  <br />
+
+  &emsp;&emsp;Besides good design, I took the opportunity to learn new topics such as cookies
+  and locale files, which let me add options to change the language the text is shown in. I also 
+  learned how to send emails automatically, so a user can fill out a form on the website 
+  and the email arrives at the desired address.
+  <br />
+</p>
+
+
+<h2 id="imagenes">Project images <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/empresa transporte 1.webp")}
+  alt="Transport company photo 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Options to change the language</h4>
+<img
+  src={url("images/proyectos/empresa transporte 2.webp")}
+  alt="Transport company photo 2"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="233" height="191" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Website in English</h4>
+<img
+  src={url("images/proyectos/empresa transporte 3.webp")}
+  alt="Transport company photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Website in Portuguese</h4>
+<img
+  src={url("images/proyectos/empresa transporte 4.webp")}
+  alt="Transport company photo 4"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>International Freight</h4>
+<img
+  src={url("images/proyectos/empresa transporte 5.webp")}
+  alt="Transport company photo 5"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1557" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Logistics</h4>
+<img
+  src={url("images/proyectos/empresa transporte 6.webp")}
+  alt="Transport company photo 6"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2071" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Dispatch</h4>
+<img
+  src={url("images/proyectos/empresa transporte 7.webp")}
+  alt="Transport company photo 7"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1570" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Dispatch</h4>
+<img
+  src={url("images/proyectos/empresa transporte 8.webp")}
+  alt="Transport company photo 8"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1348" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Special projects</h4>
+<img
+  src={url("images/proyectos/empresa transporte 9.webp")}
+  alt="Transport company photo 9"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1181" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Contact form</h4>
+<img
+  src={url("images/proyectos/empresa transporte 10.webp")}
+  alt="Transport company photo 10"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1438" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="video">Sample videos <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/qgEAZhJbhAw"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">What I learned <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Cookies — Small files that store information in the user's browser, such as preferences. <br /> 
+  • Locale files — Files that contain language translations to internationalize an application. <br /> 
+  • Automatic email sending — Feature that lets an application schedule and send emails automatically. <br /> 
+  • .env files — Documents that store environment variables (such as keys or settings) outside the main code for greater security. <br /> 
+  • New graphic design modules: Font Awesome and Flag Icons — Icon libraries that make it easier to add graphics and flags to web interfaces. <br /> 
+</p>
