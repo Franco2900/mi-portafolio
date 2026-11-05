@@ -1,6 +1,6 @@
 # Feature: Campus Virtual project page
 
-**Status:** in progress — the page is live in the three languages; two author decisions are open
+**Status:** done — the page is live in the three languages; the demo video and a reseed upstream remain
 **Created:** 2026-11-05
 **Branch:** astro-migration
 
@@ -109,7 +109,7 @@ contains an email address.
 - 2026-11-05: T1 done. `codigo/` was confirmed to be its own repository
   (`Franco2900/campus-virtual`, public, with CI) and added to `.git/info/exclude`, so nothing under
   it can reach the portfolio's history.
-- 2026-11-05: T2–T9 done, in four work units:
+- 2026-11-05: T2–T9 done, in six work units:
 
   | Commit | Work unit |
   | --- | --- |
@@ -117,6 +117,8 @@ contains an email address.
   | `8cb6476` | `feat(proyectos): add the Campus Virtual page in three languages` |
   | `eb98a90` | `feat(proyectos): feature Campus Virtual in the home and the sitemap` |
   | `2221964` | `fix(proyectos): keep the space before the inline code spans` |
+  | `30574cc` | `chore(proyectos): use a dark screenshot without test data` |
+  | `8671e32` | `fix(proyectos): scope the layering claim to the business rules` |
 
   Ten files: three page bodies, seven images, three homes, `pages.ts`, `index.ts`, `sitemap.xml`.
 
@@ -138,6 +140,10 @@ images                                   7 WebP, source dimensions preserved
 Visual review: desktop at 1400 px in the three languages, the home, and a real 390 px layout through
 an iframe. The images, the switcher, the tables and the dark theme all render correctly.
 
+After the two decisions were applied the whole check ran again: 28 pages, `cv_verify.py` passing in
+the three languages, every internal reference resolving, and a scan for text glued to an inline
+element returning only the two footer hits that all 28 pages share.
+
 ### Findings from the independent verification
 
 The verifier re-derived parity with its own parser (121 tags counted its own way), rebuilt the site,
@@ -150,14 +156,17 @@ ChromaDB + `nomic-embed-text` and the Ollama-down behaviour. It found three issu
 1. **Fixed** (`2221964`). Astro trims whitespace at the edge of a line, so a word ending a line next
    to a `<code>` element starting the next one rendered glued. Exactly one such boundary per new
    page, and none anywhere else on the site.
-2. **Open — author's call.** The page says validations and business rules live *exclusively* in
+2. **Fixed** (`8671e32`). The page said validations and business rules live *exclusively* in
    `services/`, never in the blueprints. `codigo/backend/blueprints/auth.py:43-49` validates the
    login payload in the blueprint itself. The project's own `AGENTS.md` states the same absolute
-   rule, so the page echoes the project's documented convention rather than inventing anything —
-   but the code does not match it.
-3. **Open — author's call.** `public/images/proyectos/campus virtual 6.webp` (the dark-theme
-   screenshot) shows a course named "Smoke Course V2" with the code `SMKD6C21E`, a smoke-test
-   artifact left in the demo data.
+   rule, so the page was echoing the project's documented convention rather than inventing
+   anything — but the code did not match it. The wording now says what the code does: the business
+   rules live in `services/`, and the blueprints only validate the shape of the request. The author
+   chose the reword over leaving the claim as written.
+3. **Fixed** (`30574cc`). `public/images/proyectos/campus virtual 6.webp` showed a course named
+   "Smoke Course V2" with the code `SMKD6C21E`, a smoke-test artifact left in the demo data. Every
+   image in the `03`–`06` range of `design-system/` carries it, so the image was swapped for the
+   sign-in screen in dark theme from the same set, and its `alt` text updated in `8671e32`.
 
 ## Known gaps
 
@@ -172,6 +181,8 @@ ChromaDB + `nomic-embed-text` and the Ollama-down behaviour. It found three issu
 ## Follow-ups
 
 - Record the demo video and add the section.
-- Decide on the `services/`-validation wording and on the dark-theme screenshot.
-- Reseed the Campus Virtual demo data so the screenshots do not show smoke-test rows.
-- Record the final state once the two open decisions are settled.
+- The two decisions the verification left open are settled; nothing is pending on the page itself.
+- Upstream, in `campus-virtual`: reseed the demo data and re-capture the `design-system/`
+  screenshots, which all still show the smoke-test row.
+- Receipt-driven review will not run in this runtime; that is an environment limitation, not a debt
+  on this page.
