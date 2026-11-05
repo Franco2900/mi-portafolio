@@ -1,12 +1,15 @@
 ---
 import { localizePath, slugPath, useTranslations } from '../i18n/utils';
 import type { Lang } from '../i18n/ui';
+import LangSwitch from './LangSwitch.astro';
 
 interface Props {
   lang: Lang;
+  /** Slug de la pagina actual: el selector de idiomas tiene que llevarte a ella. */
+  slug: string;
 }
 
-const { lang } = Astro.props;
+const { lang, slug } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -49,5 +52,6 @@ const t = useTranslations(lang);
         </a>
       </li>
     </ul>
+    <LangSwitch lang={lang} slug={slug} />
   </div>
 </nav>

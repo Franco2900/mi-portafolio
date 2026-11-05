@@ -1,7 +1,7 @@
 ---
-import { localizePath, slugPath } from '../i18n/utils';
-import type { Lang } from '../i18n/ui';
 import { hasSlug } from '../content';
+import { languages, locales, type Lang } from '../i18n/ui';
+import { localizePath, slugPath, useTranslations } from '../i18n/utils';
 
 interface Props {
   lang: Lang;
@@ -10,28 +10,47 @@ interface Props {
 }
 
 const { lang, slug } = Astro.props;
+const t = useTranslations(lang);
 
-// Si la pagina todavia no existe en el otro idioma, el enlace cae al home de
-// ese idioma en vez de a un 404.
-const esSlug = hasSlug('es', slug) ? slug : 'home';
-const enSlug = hasSlug('en', slug) ? slug : 'home';
-
-const esHref = localizePath(slugPath(esSlug), 'es');
-const enHref = localizePath(slugPath(enSlug), 'en');
+// Si la pagina todavia no existe en otro idioma, ese boton cae al home de ese
+// idioma en vez de a un 404. Hoy los tres idiomas estan completos, pero una
+// traduccion a medias tiene que seguir compilando y sin enlaces muertos.
+const targetOf = (code: Lang) => (hasSlug(code, slug) ? slug : 'home');
 ---
 
-<nav class="container-fluid py-2 text-center" style="background-color: #333;" aria-label={lang === 'es' ? 'Idioma' : 'Language'}>
-  <a
-    class="text-white fw-bold text-decoration-none me-2"
-    href={esHref}
-    aria-current={lang === 'es' ? 'page' : undefined}
-    hreflang="es"
-  >ES</a>
-  <span class="text-white">|</span>
-  <a
-    class="text-white fw-bold text-decoration-none ms-2"
-    href={enHref}
-    aria-current={lang === 'en' ? 'page' : undefined}
-    hreflang="en"
-  >EN</a>
+<nav
+  class="lang-switch d-flex flex-wrap justify-content-center gap-2 py-2"
+  aria-label={t('nav.language')}
+>
+  {locales.map((code) => (
+    <a
+      class={`btn btn-sm d-inline-flex align-items-center gap-2 ${
+        code === lang ? 'btn-light fw-bold' : 'btn-outline-light'
+      }`}
+      href={localizePath(slugPath(targetOf(code)), code)}
+      hreflang={languages[code].tag}
+      aria-current={code === lang ? 'page' : undefined}
+    >
+      <span class={`fi fi-${languages[code].flag}`} aria-hidden="true"></span>
+      <span>{languages[code].name}</span>
+    </a>
+  ))}
 </nav>
+
+<style>
+  /*
+   * En pantallas chicas el navbar apila sus items en columna y ocupa el ancho
+   * completo, asi que el selector tiene que bajar a su propia fila: si comparte
+   * la fila con la lista queda comprimido y se corta el nombre del idioma.
+   * Desde `lg` el navbar es horizontal y el selector entra a la derecha.
+   */
+  .lang-switch {
+    flex-basis: 100%;
+  }
+
+  @media (min-width: 992px) {
+    .lang-switch {
+      flex-basis: auto;
+    }
+  }
+</style>

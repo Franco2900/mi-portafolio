@@ -2,11 +2,10 @@
 import { url } from '../lib/url';
 import { localizePath, slugPath } from '../i18n/utils';
 import { hasSlug } from '../content';
-import type { Lang } from '../i18n/ui';
+import { defaultLang, languages, locales, type Lang } from '../i18n/ui';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Fondo from '../components/Fondo.astro';
-import LangSwitch from '../components/LangSwitch.astro';
 import NavbarIndex from '../components/NavbarIndex.astro';
 import NavbarProject from '../components/NavbarProject.astro';
 
@@ -42,14 +41,19 @@ const {
 const SITE = 'https://franco2900.github.io/mi-portafolio/';
 const canonical = new URL(localizePath(slugPath(slug), lang), SITE).href;
 const ogImageUrl = new URL(ogImage, SITE).href;
-const ogLocale = lang === 'es' ? 'es_AR' : 'en_US';
+const ogLocale = languages[lang].ogLocale;
 
-// Alternates solo para las traducciones que existen: un hreflang a una pagina
-// que todavia no se genero es un 404 para los buscadores.
-const defaultUrl = new URL(localizePath(slugPath(slug), 'es'), SITE).href;
-const englishUrl = hasSlug('en', slug)
-  ? new URL(localizePath(slugPath(slug), 'en'), SITE).href
-  : null;
+// Un hreflang por idioma donde la pagina exista de verdad: declarar uno que
+// todavia no se genero es un 404 para los buscadores. El idioma por defecto va
+// siempre, para que su par nunca quede sin declarar (el 404, por ejemplo).
+const alternates = locales
+  .filter((code) => code === defaultLang || hasSlug(code, slug))
+  .map((code) => ({
+    tag: languages[code].tag,
+    href: new URL(localizePath(slugPath(slug), code), SITE).href,
+  }));
+
+const defaultUrl = new URL(localizePath(slugPath(slug), defaultLang), SITE).href;
 ---
 
 <!DOCTYPE html>
@@ -60,8 +64,7 @@ const englishUrl = hasSlug('en', slug)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
-  <link rel="alternate" hreflang="es" href={defaultUrl}>
-  {englishUrl ? <link rel="alternate" hreflang="en" href={englishUrl}> : null}
+  {alternates.map((alt) => <link rel="alternate" hreflang={alt.tag} href={alt.href} />)}
   <link rel="alternate" hreflang="x-default" href={defaultUrl}>
   <link rel="icon" type="image/x-icon" href={url("images/style/favicon.ico")}>
 
@@ -122,14 +125,12 @@ const englishUrl = hasSlug('en', slug)
 <body class="light-mode">
 
   <Header lang={lang} />
-  {nav === 'home' ? <NavbarIndex lang={lang} /> : <NavbarProject lang={lang} />}
+  {nav === 'home' ? <NavbarIndex lang={lang} slug={slug} /> : <NavbarProject lang={lang} slug={slug} />}
   <Fondo />
 
   <main id="main-container" class="container">
     <slot />
   </main>
-
-  <LangSwitch lang={lang} slug={slug} />
 
   <Footer lang={lang} />
 
