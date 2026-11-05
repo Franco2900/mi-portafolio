@@ -1,0 +1,168 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Site no qual é possível jogar diferentes jogos de cassino e apostar
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/Practica-2---Casino" target="_blank">Prática 2</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados: <br>
+    MongoDB <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mongodb.svg" alt="Logo do MongoDB" width="24" height="24">
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> e EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Um site onde os usuários podem gastar suas fichas para jogar diferentes jogos de cassino. Originalmente
+  teria vários jogos a mais, mas com apenas 2 jogos já dá para mostrar o funcionamento correto do projeto.
+  É possível jogar caça-níqueis e Blackjack.
+  <br />
+
+  &emsp;&emsp;Os jogos são outra das atividades práticas da minha universidade. Nos primeiros anos, pedem que façamos
+  diferentes jogos em Python para misturar uma linguagem de programação que nunca havíamos visto até aquele momento com
+  algo divertido. Os jogos que fiz com meu grupo eram de cassino, então decidi refazê-los, mas em
+  JavaScript e como se fossem mais parecidos com um cassino de verdade, adicionando um sistema de fichas com o qual o
+  jogador pode escolher quantas fichas apostar.
+  <br />
+
+  &emsp;&emsp;Nesta ocasião, aproveitei para estudar como organizar melhor a estrutura dos projetos, porque
+  no trabalho anterior o gerenciamento das rotas, a lógica do servidor e o CRUD do banco de dados eram
+  controlados no mesmo arquivo. Em um projeto pequeno isso pode não causar nenhum problema, mas em projetos mais
+  maiores dificulta muito o desenvolvimento e a manutenção.
+  <br />
+
+  &emsp;&emsp;Também aproveitei para fazer uma revisão de MongoDB, já que só é oferecida uma disciplina sobre esse
+  banco de dados.
+  <br />
+
+</p>
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/casino 1.webp")}
+  alt="Foto 1 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1148" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Jogos</h4>
+<img
+  src={url("images/proyectos/casino 2.webp")}
+  alt="Foto 2 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1360" height="547" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Promoções</h4>
+<img
+  src={url("images/proyectos/casino 3.webp")}
+  alt="Foto 3 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="896" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Contato</h4>
+<img
+  src={url("images/proyectos/casino 4.webp")}
+  alt="Foto 4 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="824" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Caça-níqueis</h4>
+<img
+  src={url("images/proyectos/casino 5.webp")}
+  alt="Foto 5 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1114" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack</h4>
+<img
+  src={url("images/proyectos/casino 6.webp")}
+  alt="Foto 6 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2366" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack - 2ª imagem</h4>
+<img
+  src={url("images/proyectos/casino 7.webp")}
+  alt="Foto 7 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="650" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Blackjack - 3ª imagem</h4>
+<img
+  src={url("images/proyectos/casino 8.webp")}
+  alt="Foto 8 do cassino"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="920" height="631" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/k_JF4i7jkUk"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Padrão MVC (model, view, controller) — Arquitetura que separa a lógica de dados, a interface e o controle de fluxo em uma aplicação. <br /> 
+  • MongoDB — Banco de dados NoSQL orientado a documentos, ideal para lidar com grandes volumes de dados flexíveis. <br /> 
+  • Novos módulos de design gráfico: Bootstrap Icons — Conjunto de ícones oficiais do Bootstrap para enriquecer o design de aplicações web. <br /> 
+</p>

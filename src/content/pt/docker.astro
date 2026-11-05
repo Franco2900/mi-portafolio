@@ -1,0 +1,155 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+    Aplicação web conectada a um banco de dados MySQL, implantada em contêineres Docker
+</p>
+
+<p>
+    <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+    <a href="https://github.com/Franco2900/docker-practica" target="_blank">Prática Docker</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+    <div class="col-3">
+        Backend: <br>
+        NodeJS <i class="fab fa-node-js"></i> com o framework Express
+    </div>
+
+    <div class="col-3">
+        Banco de dados: <br>
+        SQL <i class="fas fa-database"></i>
+    </div>
+    
+    <div class="col-3">
+        Frontend: <br>
+        Bootstrap <i class="fab fa-bootstrap"></i> e EJS
+    </div>
+    
+    <div class="col-3">
+        Infraestrutura: <br>
+        Docker <i class="fa-brands fa-docker"></i>
+    </div>
+
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+
+    Não importa o quão bom programador alguém possa ser: se o usuário final não tiver as ferramentas
+    necessárias instaladas em seu computador para ver o programa desenvolvido e assim testá-lo e avaliá-lo,
+    o trabalho realizado não pode ser considerado concluído. É aqui que entra o Docker, que permite
+    testar qualquer programa em qualquer computador graças aos contêineres.
+    <br />
+
+    &emsp;&emsp; Os contêineres do Docker são, em essência, máquinas virtuais em miniatura. Estão
+    encapsulados e isolados, mas além disso são mais rápidos que as máquinas virtuais porque utilizam
+    muitos menos recursos, graças ao fato de os contêineres atuarem como se fossem mais uma aplicação no
+    computador.
+    <br />
+
+    &emsp;&emsp; Nesta ocasião, fiz uma página web bastante simples com login e cadastro que funcionam
+    graças a um banco de dados MySQL. Tanto o site quanto o MySQL têm cada um seus contêineres,
+    e ambos os contêineres estão dentro da mesma rede. O contêiner web tem uma porta exposta ao host
+    que permite ao usuário testar o site em qualquer navegador de seu computador. O contêiner SQL
+    tem um script .sql com o qual cria o banco de dados, suas tabelas e seus dados na primeira
+    vez que é iniciado.
+    <br />
+    
+    &emsp;&emsp; Para que as alterações que o usuário faz no banco de dados, como criar uma conta
+    nova ao se cadastrar, não se percam depois de fechar os contêineres e sejam persistentes ao longo do
+    tempo, o contêiner SQL utiliza um volume.
+    <br />
+
+    &emsp;&emsp; Por outro lado, existem duas versões para usar com Docker: a versão para produção e a
+    versão para desenvolvimento. Esta última está configurada para reiniciar o servidor a cada
+    alteração no código (hot reload), assim o desenvolvedor pode ver ao vivo as alterações que faz enquanto
+    trabalha, enquanto a primeira versão não tem isso, já que é pensada para ser usada por um
+    usuário final.
+    <br />
+
+</p>
+
+
+<h2>Diagrama Entidade-Relacionamento (DER) do Banco de Dados</h2>
+
+<h4>DER - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER docker - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="487" height="241" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Contêineres no Docker Desktop</h4>
+<img
+  src={url("images/proyectos/docker 1.webp")}
+  alt="Docker Desktop"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1365" height="723" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Home do site</h4>
+<img
+  src={url("images/proyectos/docker 2.webp")}
+  alt="Home do site"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1353" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Versões para produção e desenvolvimento</h4>
+<img
+  src={url("images/proyectos/docker 3.webp")}
+  alt="Versões do Docker"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="182" height="110" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/wtCC2xlm_yM"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Imagens — Configuração e dependências necessárias para que uma aplicação possa ser executada.<br /> 
+  • Contêineres — Instâncias em execução de uma imagem. <br /> 
+  • Portas — Exposição do contêiner para o host. <br /> 
+  • Redes — Conexões virtuais que permitem a comunicação entre contêineres. <br /> 
+  • Volumes — Espaços de armazenamento persistente para conservar os dados fora do ciclo de vida do contêiner. <br /> 
+  • Docker Compose — Ferramenta para definir e executar aplicações multicontêiner por meio de arquivos YAML. <br /> 
+  • Docker Compose Dev — Configuração especial para ambientes de desenvolvimento. <br /> 
+  • Hot Reload — Técnica que reflete alterações no código automaticamente dentro do contêiner, sem a necessidade de reconstruir a imagem. <br /> 
+</p>

@@ -1,0 +1,464 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Sistema web para supermercado on-line que integra a experiência do cliente —com compras, histórico,
+  favoritos, filtros e comprovantes em PDF— junto com um painel de administração que permite gerenciar
+  produtos, ofertas, papéis de usuários e relatórios de vendas, oferecendo uma solução completa desde
+  a compra até a gestão interna.
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/Practica-5---Supermercado" target="_blank">Prática 5</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> e React <i class="fab fa-react"></i>
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+
+Site para um supermercado on-line no qual os clientes podem comprar produtos e ofertas, ver versões detalhadas dos mesmos e marcá-los como favoritos. Os produtos marcados como favoritos aparecem sempre primeiro na lista de produtos a comprar, para que o cliente possa comprá-los mais rápido. Os produtos e ofertas selecionados são adicionados a um carrinho onde o cliente pode remover o que não quiser ou adicionou por engano e/ou modificar a quantidade a comprar.
+<br /><br />
+O que foi comprado pode ser visto no histórico de compras, que tem uma ferramenta para filtrar as compras por data (por padrão, o histórico de compras mostra as compras mais recentes primeiro). O histórico também permite, para cada compra realizada, baixar um arquivo PDF como comprovante, que indica o que foi comprado, quanto foi comprado, o custo e a data da compra.
+<br /><br />
+Para cada ação que o cliente realiza, são enviadas notificações para que ele saiba que suas solicitações foram confirmadas/concluídas.
+<br /><br />
+Os administradores, por sua vez, podem realizar todas essas ações, além de fazer o cadastro, a exclusão e a alteração de produtos e ofertas, mudar o papel dos usuários de cliente para admin ou vice-versa, e acessar relatórios como lucros dos produtos mais vendidos, lucros por mês, quantidade de vendas etc. Isso permite gerenciar o supermercado de forma completa a partir da mesma plataforma.
+<br /><br />
+Em resumo, o projeto integra tanto a parte do usuário quanto a do administrador, mostrando uma aplicação web completa que cobre todo o fluxo de um supermercado on-line: desde a compra até a gestão interna.
+<br /><br />
+
+<strong>OBSERVAÇÃO: OS DADOS DOS CLIENTES SÃO DE TESTE, NÃO SÃO REAIS.</strong>
+
+</p>
+
+
+<h2>Diagrama Entidade-Relacionamento (DER) do Banco de Dados</h2>
+
+<h4>DER - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER supermercado - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1084" height="571" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>ERD - draw.io</h4>
+<img
+  src={url("images/diagramas/DER supermercado - drawio.webp")}
+  alt="ERD 2"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1400" height="550" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/supermercado 1.webp")}
+  alt="Foto 1 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1696" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Ofertas</h4>
+<img
+  src={url("images/proyectos/supermercado 2.webp")}
+  alt="Foto 2 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2058" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Ofertas (logado)</h4>
+<img
+  src={url("images/proyectos/supermercado 3.webp")}
+  alt="Foto 3 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2130" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Produtos</h4>
+<img
+  src={url("images/proyectos/supermercado 4.webp")}
+  alt="Foto 4 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="7069" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Produtos (logado)</h4>
+<img
+  src={url("images/proyectos/supermercado 5.webp")}
+  alt="Foto 5 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="7709" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Contato</h4>
+<img
+  src={url("images/proyectos/supermercado 6.webp")}
+  alt="Foto 6 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="664" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Detalhe da oferta</h4>
+<img
+  src={url("images/proyectos/supermercado 7.webp")}
+  alt="Foto 7 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1228" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Detalhe da oferta (logado)</h4>
+<img
+  src={url("images/proyectos/supermercado 8.webp")}
+  alt="Foto 8 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1266" loading="lazy" decoding="async"
+/>
+<br>
+
+
+
+<h4>Detalhe do produto</h4>
+<img
+  src={url("images/proyectos/supermercado 9.webp")}
+  alt="Foto 9 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1140" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Detalhe do produto (logado)</h4>
+<img
+  src={url("images/proyectos/supermercado 10.webp")}
+  alt="Foto 10 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1503" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Barra de pesquisa</h4>
+<img
+  src={url("images/proyectos/supermercado 11.webp")}
+  alt="Foto 11 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1336" height="194" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Carrinho</h4>
+<img
+  src={url("images/proyectos/supermercado 12.webp")}
+  alt="Foto 12 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1916" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Menu suspenso (admin)</h4>
+<img
+  src={url("images/proyectos/supermercado 13.webp")}
+  alt="Foto 13 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer; max-width:400px; width:100%; height:auto;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="185" height="348" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Perfil</h4>
+<img
+  src={url("images/proyectos/supermercado 14.webp")}
+  alt="Foto 14 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="686" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Perfil (modal de edição)</h4>
+<img
+  src={url("images/proyectos/supermercado 15.webp")}
+  alt="Foto 15 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Histórico de compras</h4>
+<img
+  src={url("images/proyectos/supermercado 16.webp")}
+  alt="Foto 16 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1349" height="1565" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Arquivo PDF de um recibo de compra</h4>
+<img
+  src={url("images/proyectos/supermercado 31.webp")}
+  alt="Foto 31 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="708" height="598" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Produtos favoritos</h4>
+<img
+  src={url("images/proyectos/supermercado 17.webp")}
+  alt="Foto 17 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="768" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de produtos</h4>
+<img
+  src={url("images/proyectos/supermercado 18.webp")}
+  alt="Foto 18 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2265" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de produtos (modal de cadastro)</h4>
+<img
+  src={url("images/proyectos/supermercado 19.webp")}
+  alt="Foto 19 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de produtos (modal de edição)</h4>
+<img
+  src={url("images/proyectos/supermercado 20.webp")}
+  alt="Foto 20 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de ofertas</h4>
+<img
+  src={url("images/proyectos/supermercado 21.webp")}
+  alt="Foto 21 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2154" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de ofertas (modal de cadastro)</h4>
+<img
+  src={url("images/proyectos/supermercado 22.webp")}
+  alt="Foto 22 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de ofertas (modal de edição)</h4>
+<img
+  src={url("images/proyectos/supermercado 23.webp")}
+  alt="Foto 23 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="791" height="1018" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de usuários</h4>
+<img
+  src={url("images/proyectos/supermercado 24.webp")}
+  alt="Foto 24 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Gestão de usuários (consulta de usuário)</h4>
+<img
+  src={url("images/proyectos/supermercado 25.webp")}
+  alt="Foto 25 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="797" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Relatórios</h4>
+<img
+  src={url("images/proyectos/supermercado 26.webp")}
+  alt="Foto 26 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="4362" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Cadastro de usuário</h4>
+<img
+  src={url("images/proyectos/supermercado 27.webp")}
+  alt="Foto 27 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Login</h4>
+<img
+  src={url("images/proyectos/supermercado 28.webp")}
+  alt="Foto 28 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Solicitação de recuperação de senha</h4>
+<img
+  src={url("images/proyectos/supermercado 29.webp")}
+  alt="Foto 29 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Alteração de senha</h4>
+<img
+  src={url("images/proyectos/supermercado 30.webp")}
+  alt="Foto 30 do supermercado"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+
+<h3>Parte 1</h3>
+<iframe
+  src="https://www.youtube.com/embed/36g96kqzqMo"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h3>Parte 2</h3>
+<iframe
+  src="https://www.youtube.com/embed/e0Vst_XXWBY"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p>
+• React — Aprendi a construir a aplicação usando telas e componentes reutilizáveis, o que torna o site mais organizado e fácil de manter. <br />
+• Contexto e estado — Incorporei variáveis de contexto e de estado para lidar com informações globais como o usuário e o carrinho, fazendo com que as alterações se reflitam em toda a aplicação sem necessidade de recarregar. <br />
+• useEffect — Utilizei este hook para executar ações automáticas, como buscar dados do backend ou manter a sessão do usuário ativa caso ele já estivesse logado. <br />
+• Rotas protegidas — Implementei rotas que só podem ser vistas por usuários logados e outras exclusivas para administradores, garantindo segurança e controle de acesso. <br />
+• Notificações — Integrei toasts para dar feedback imediato ao usuário sobre suas ações (exemplo: modificar quantidades ou confirmar compras). <br />
+• Integração completa — Conectei o frontend em React com o backend em Node.js e o banco de dados em MySQL, obtendo um sistema completo que cobre tanto a experiência do cliente quanto a gestão do administrador. <br />
+• Diagramas de banco de dados — Aprendi a projetar diagramas completos do banco de dados utilizando draw.io, o que me permitiu visualizar e organizar melhor as relações entre tabelas e entidades. <br />
+• Seeds de banco de dados — Incorporei a prática de criar seeds para esvaziar o banco de dados ou preenchê-lo com dados de teste, facilitando o desenvolvimento, os testes e a validação do sistema. <br />
+</p>

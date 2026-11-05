@@ -1,0 +1,186 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Site para divulgar uma empresa de transporte
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>:</strong>
+  <a href="https://github.com/Franco2900/Practica-3---Empresa-de-transporte" target="_blank">Prática 3</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados: <br>
+    Nenhum
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> – Font Awesome <i class="fab fa-font-awesome"></i> – Flag Icons <i class="fi fi-ar"></i> – EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Até o momento, todos os meus projetos de prática eram sobre backend, dando pouca importância ao frontend. Eu só
+  o usava para mostrar o funcionamento do programa, e pronto. É por isso que, nesta ocasião, decidi me concentrar
+  mais no frontend do que no backend.
+  <br />
+
+  &emsp;&emsp;Concentrei-me nos estilos de CSS e no design responsivo para que fique adequado em celulares.
+  Também fiz algumas funções com imagens; por exemplo, algumas imagens têm opções
+  que permitem vê-las melhor, seja por meio de um zoom, de uma sobreposição com overlay ou abrindo diretamente a
+  imagem em uma nova aba.
+  <br />
+
+  &emsp;&emsp;Além de fazer um bom design, aproveitei a oportunidade para aprender novos temas como cookies
+  e arquivos locale, com o que adicionei opções para alterar o idioma em que o texto é exibido. Também
+  aprendi como enviar emails automaticamente, assim um usuário pode preencher um formulário no site
+  e o email chega ao endereço desejado.
+  <br />
+</p>
+
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/empresa transporte 1.webp")}
+  alt="Foto 1 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Opções para alterar o idioma</h4>
+<img
+  src={url("images/proyectos/empresa transporte 2.webp")}
+  alt="Foto 2 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="233" height="191" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Site em inglês</h4>
+<img
+  src={url("images/proyectos/empresa transporte 3.webp")}
+  alt="Foto 4 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Site em português</h4>
+<img
+  src={url("images/proyectos/empresa transporte 4.webp")}
+  alt="Foto 4 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1453" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Carga Internacional</h4>
+<img
+  src={url("images/proyectos/empresa transporte 5.webp")}
+  alt="Foto 5 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1557" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Logística</h4>
+<img
+  src={url("images/proyectos/empresa transporte 6.webp")}
+  alt="Foto 6 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2071" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Despacho</h4>
+<img
+  src={url("images/proyectos/empresa transporte 7.webp")}
+  alt="Foto 7 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1570" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Despacho</h4>
+<img
+  src={url("images/proyectos/empresa transporte 8.webp")}
+  alt="Foto 8 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1348" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Projetos especiais</h4>
+<img
+  src={url("images/proyectos/empresa transporte 9.webp")}
+  alt="Foto 9 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1181" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Formulário de contato</h4>
+<img
+  src={url("images/proyectos/empresa transporte 10.webp")}
+  alt="Foto 10 da empresa de transporte"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1438" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/qgEAZhJbhAw"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Cookies — Pequenos arquivos que armazenam informações no navegador do usuário, como preferências. <br /> 
+  • Arquivos locale — Arquivos que contêm traduções de idioma para internacionalizar uma aplicação. <br /> 
+  • Envio automático de emails — Funcionalidade que permite agendar e enviar e-mails automaticamente a partir de uma aplicação. <br /> 
+  • Arquivos .env — Documentos que guardam variáveis de ambiente (como chaves ou configurações) fora do código principal, para maior segurança. <br /> 
+  • Novos módulos de design gráfico: Font Awesome e Flag Icons — Bibliotecas de ícones que facilitam a incorporação de gráficos e bandeiras em interfaces web. <br /> 
+</p>

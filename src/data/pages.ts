@@ -117,6 +117,56 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
       h1: 'Board game store',
     },
   },
+  pt: {
+    home: {
+      title: 'Franco Figueroa | Desenvolvedor Backend Node.js',
+      description:
+        'Portfólio de Franco Figueroa, Licenciado em Sistemas e desenvolvedor backend com Node.js, Express e MySQL. Projetos, CV e contato.',
+      h1: 'Franco Figueroa',
+    },
+    tesis: {
+      title: 'Tese: coleta de revistas científicas | Franco Figueroa',
+      description:
+        'Sistema web que coleta, normaliza e atualiza informações de revistas científicas argentinas em repositórios bibliográficos e gera uma listagem unificada.',
+      h1: 'Tese: coleta de revistas científicas argentinas',
+    },
+    supermercado: {
+      title: 'Supermercado on-line com painel de administração | Franco Figueroa',
+      description:
+        'Sistema web de supermercado on-line com carrinho, favoritos, histórico de compras, comprovantes em PDF e painel de administração com relatórios de vendas.',
+      h1: 'Sistema de supermercado on-line',
+    },
+    casino: {
+      title: 'Jogos de cassino on-line | Franco Figueroa',
+      description:
+        'Site com vários jogos de cassino e sistema de apostas, desenvolvido com Node.js, Express e MongoDB como prática de lógica e estado no backend.',
+      h1: 'Jogos de cassino on-line',
+    },
+    empresaTransporte: {
+      title: 'Site para empresa de transporte | Franco Figueroa',
+      description:
+        'Site institucional para uma empresa de transporte: apresentação de serviços, informações de contato e design responsivo com Bootstrap.',
+      h1: 'Site para uma empresa de transporte',
+    },
+    autoescuela: {
+      title: 'Gestão de autoescola: alunos e aulas | Franco Figueroa',
+      description:
+        'Aplicação web para administrar os alunos e as aulas de uma autoescola, com cadastro, exclusão, alteração e acompanhamento de cada turma.',
+      h1: 'Gestão de alunos e aulas de uma autoescola',
+    },
+    docker: {
+      title: 'Aplicação Node.js implantada com Docker | Franco Figueroa',
+      description:
+        'Aplicação web conectada a um banco de dados MySQL e implantada em contêineres Docker, com o detalhe do Dockerfile e do ambiente de execução.',
+      h1: 'Aplicação web com MySQL implantada em Docker',
+    },
+    tiendaJuegosDeMesa: {
+      title: 'Loja de jogos de tabuleiro com avaliações | Franco Figueroa',
+      description:
+        'Loja on-line de jogos de tabuleiro onde os usuários publicam produtos, escrevem comentários e os avaliam com estrelas. Feita com Node.js e MySQL.',
+      h1: 'Loja de jogos de tabuleiro',
+    },
+  },
 };
 
 /** Mapea el archivo de vista original con la ruta publicada. */

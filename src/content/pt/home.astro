@@ -1,0 +1,230 @@
+---
+import { url } from '../../lib/url';
+import { localizePath, slugPath } from '../../i18n/utils';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1 class="page-title">{h1}</h1>
+  <p class="page-subtitle">Desenvolvedor Backend &middot; Licenciado em Sistemas (UNLa)</p>
+
+<img src={url("images/style/mi cara.webp")} 
+     alt="Franco Figueroa" 
+     class="img-fluid float-end w-25 ms-3 mb-3 img-profile" width="600" height="450">
+
+<h4 id="introduccion">Introdução <i class="fas fa-user"></i> </h4>
+Olá, sou Franco Figueroa, formado em Sistemas pela Universidade Nacional de Lanús (UNLa).
+Atualmente estou dando meus primeiros passos no mercado de trabalho de TI.
+Este é meu portfólio, no qual mostro minhas capacidades como programador e minha experiência por meio de diferentes projetos.
+<br>
+<p>
+Além dos projetos que mostro aqui, também desenvolvo software e programas sob medida conforme as necessidades ou pedidos específicos de cada cliente.
+Gosto de ouvir ideias e transformá-las em soluções tecnológicas práticas, adaptadas a cada situação particular.
+</p>
+
+
+
+<h4 id="habilidades">Minhas habilidades <i class="fas fa-code"></i> </h4>
+Meu ponto mais forte é NodeJS no backend, mas também consigo me virar um pouco no frontend usando EJS.
+O framework que uso para meus projetos web é Express. Costumo usar MySQL para os bancos de dados, mas
+se for preciso sei um pouco de MongoDB. Aqui está um pequeno resumo das minhas habilidades:
+<br>
+
+<div class="row">
+
+     <div class="col-4 skill-card">
+          <strong>Habilidades de Backend</strong> <br>
+          NodeJS <i class="fab fa-node-js"></i> <br>
+          SQL/MySQL <i class="fas fa-database"></i> <br>
+          Python, C++ <i class="fab fa-python"></i> <i class="fa-solid fa-c"></i> <br>
+          Docker <i class="fa-brands fa-docker"></i> <br>
+     </div>
+
+    <div class="col-4 skill-card">
+          <strong>Habilidades de Frontend</strong> <br>
+          HTML5 <i class="fab fa-html5"></i>, CSS3 <i class="fab fa-css3-alt"></i> <br>
+          Bootstrap <i class="fab fa-bootstrap"></i>, Font Awesome <i class="fab fa-font-awesome"></i> <br>
+          EJS <br>
+          React <i class="fab fa-react"></i><br>
+    </div>
+
+    <div class="col-4 skill-card">
+          <strong>Habilidades Comportamentais</strong> <br>
+          Espanhol nativo <i class="fi fi-es"></i> <br>
+          Inglês C1 <i class="fi fi-gb"></i> <br>
+          Comunicação <br>
+          Criatividade aplicada à análise de dados <br>
+    </div>
+
+</div>
+<br>
+
+
+<h4>Certificado de inglês</h4>
+<div class="pdf-link">
+  <a href={url("certificados/EF SET Certificate.pdf")} target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-file-pdf fa-2x" style="color:#dc3545;"></i>
+    <span>Ver certificado em PDF</span>
+  </a>
+</div>
+<br>
+
+<h4 id="contacto">Meus dados de contato <i class="fas fa-envelope"></i> </h4>
+<div class="row">
+
+     <div class="col-4 contact-card">
+          <h6>Email</h6>
+          <img alt="" 
+               src={url("images/style/email.webp")} 
+               class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
+          >
+          <span class="email"></span>
+     </div>
+
+     <div class="col-4 contact-card">
+          <h6>Linkedin</h6>
+          <img alt="" 
+               src={url("images/style/linkedin.webp")} 
+               class="contact-icon border border-dark border-1" width="160" height="160" loading="lazy" decoding="async"
+          >
+          <a 
+               href="https://www.linkedin.com/in/franco-ariel-figueroa-746678363" 
+               target="_blank" 
+               rel="noopener noreferrer"
+          >
+               Ver conta do Linkedin
+          </a>
+     </div>
+
+     <div class="col-4 contact-card">
+          <h6>Curriculum Vitae</h6>
+          <img alt="" 
+               src={url("images/style/cv.webp")} 
+               class="contact-icon border border-dark border-1" width="474" height="474" loading="lazy" decoding="async"
+          >
+          <a 
+               href={url("cv/CV - Franco Ariel Figueroa.pdf")} 
+               target="_blank" 
+               rel="noopener noreferrer"
+          >
+               Ver CV
+          </a>
+     </div>
+
+</div>
+
+<br>
+
+
+<h4 id="proyectos">Meus projetos <i class="fas fa-project-diagram"></i> </h4>
+Estes são alguns projetos que fiz e que servem para mostrar minhas habilidades como programador. Dentro
+do link de cada projeto haverá imagens do projeto, mais um vídeo explicativo e um link para o repositório GitHub, para que
+você possa ver o código.
+<br>
+
+
+<h5>Projetos acadêmicos</h5>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('tesis'), 'pt')}>
+               Tese <br>
+               <img alt="" src={url("images/proyectos/tesis 3-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="1140" loading="lazy" decoding="async">
+          </a>
+     </div>
+
+</div>
+
+<br>
+
+<h5>Projetos pessoais</h5>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('tiendaJuegosDeMesa'), 'pt')}>
+               <span>Loja de jogos de mesa</span>
+               <img alt="" 
+                    src={url("images/proyectos/tienda juegos de mesa 1-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="372" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('casino'), 'pt')}>
+          <span>Cassino</span>
+          <img alt="" 
+               src={url("images/proyectos/casino 1-thumb.webp")} 
+               class="img-uniform border border-dark border-1" width="800" height="676" loading="lazy" decoding="async"
+          >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('empresaTransporte'), 'pt')}>
+          <span>Empresa de transporte</span>
+          <img alt="" 
+               src={url("images/proyectos/empresa transporte 1-thumb.webp")} 
+               class="img-uniform border border-dark border-1" width="800" height="856" loading="lazy" decoding="async"
+          >
+          </a>
+     </div>
+
+
+</div>
+
+<br>
+
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('autoescuela'), 'pt')}>
+               Autoescola <br>
+               <img alt="" 
+                    src={url("images/proyectos/autoescuela 1-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="929" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('docker'), 'pt')}>
+               Docker <br>
+               <img alt="" 
+                    src={url("images/proyectos/docker 1-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="424" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+     <div class="col-4 text-center project-card">
+          <a href={localizePath(slugPath('supermercado'), 'pt')}>
+               Supermercado <br>
+               <img alt="" 
+                    src={url("images/proyectos/supermercado 1-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="999" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+</div>
+
+
+<h4>Clientes <i class="bi bi-people"></i></h4>
+<div class="row">
+
+     <div class="col-4 text-center project-card">
+          <a href="https://franco2900.github.io/VicioMesa/">
+               VicioMesa <br>
+               <img alt="" 
+                    src={url("images/proyectos/viciomesa 1-thumb.webp")} 
+                    class="img-uniform border border-dark border-1" width="800" height="970" loading="lazy" decoding="async"
+               >
+          </a>
+     </div>
+
+</div>

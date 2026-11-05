@@ -1,0 +1,226 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Site para administrar os alunos e as aulas de uma autoescola
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/Practica-4---Autoescuela" target="_blank">Prática 4</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> e EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+
+  Neste projeto quis colocar em prática tudo o que aprendi, tanto no backend quanto no frontend,
+  por isso pode ser visto como um salto do meu primeiro projeto de prática até o atual. Combinei
+  um pouco de todos os meus conhecimentos aprendidos até o momento.
+  <br />
+
+  &emsp;&emsp; Trata-se de um site que serve para divulgar uma autoescola e para que
+  os professores possam gerenciar os dados dos alunos e de suas aulas de qualquer lugar, a
+  qualquer momento, seja no computador ou no celular.
+  <br />
+
+  &emsp;&emsp;Os usuários podem criar, editar e excluir alunos, assim como suas aulas. Só é
+  possível criar aulas nos dias e horários de trabalho habilitados. Cada dia útil tem dois turnos: o 1º
+  turno das 9:00 às 13:00 e o 2º turno das 14:00 às 18:00. Os sábados têm um único turno das 9:00 às 13:00
+  e, aos domingos, não é possível criar aulas.
+  <br />
+
+  &emsp;&emsp;Além dos alunos e suas aulas, os usuários também podem criar, editar e excluir eventos.
+  Eles servem para que não sejam criadas aulas em determinados dias e horários por qualquer motivo, como
+  vistoria veicular (VTV), ausência de um professor em determinado momento ou outro.
+  <br />
+
+  &emsp;&emsp;As aulas têm diferentes filtros para facilitar sua busca. Por padrão, são mostradas
+  todas as aulas do dia atual em diante; as aulas passadas não são mostradas. Os usuários podem
+  buscar aulas em um intervalo de datas determinado, buscar apenas as aulas de hoje ou buscar as aulas
+  de um determinado aluno ao digitar seu nome, sobrenome ou a combinação de ambos (neste último
+  caso, são mostradas as aulas do aluno buscado mais o restante das aulas que existem/existiram dos demais
+  alunos nos horários em que o aluno buscado tem/teve aulas).
+  <br />
+
+  &emsp;&emsp;Por fim, se os alunos tiverem o campo de email preenchido, será enviado automaticamente
+  um email para lembrá-los da próxima aula 24 horas antes.
+  <br />
+
+  <strong>OBSERVAÇÃO: OS DADOS DOS ALUNOS SÃO DE TESTE, NÃO SÃO REAIS</strong>
+
+</p>
+
+
+<h2>Diagrama Entidade-Relacionamento (DER) do Banco de Dados</h2>
+
+<h4>DER - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER autoescuela - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="998" height="451" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/autoescuela 1.webp")}
+  alt="Foto 1 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1577" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Contato</h4>
+<img
+  src={url("images/proyectos/autoescuela 2.webp")}
+  alt="Foto 2 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1066" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Alunos</h4>
+<img
+  src={url("images/proyectos/autoescuela 3.webp")}
+  alt="Foto 3 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1711" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Modal de aulas do aluno</h4>
+<img
+  src={url("images/proyectos/autoescuela 4.webp")}
+  alt="Foto 4 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Modal de pagamentos do aluno</h4>
+<img
+  src={url("images/proyectos/autoescuela 5.webp")}
+  alt="Foto 5 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Modal de modificação do pagamento</h4>
+<img
+  src={url("images/proyectos/autoescuela 6.webp")}
+  alt="Foto 6 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Modal de modificação do aluno (1ª parte)</h4>
+<img
+  src={url("images/proyectos/autoescuela 7.webp")}
+  alt="Foto 7 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Modal de modificação do aluno (2ª parte)</h4>
+<img
+  src={url("images/proyectos/autoescuela 8.webp")}
+  alt="Foto 8 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="644" loading="lazy" decoding="async"
+/>
+<br>
+
+
+
+<h4>Aulas</h4>
+<img
+  src={url("images/proyectos/autoescuela 9.webp")}
+  alt="Foto 9 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1489" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h4>Aulas - Busca por intervalo de datas</h4>
+<img
+  src={url("images/proyectos/autoescuela 10.webp")}
+  alt="Foto 10 da autoescola"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="988" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/oEyTbVFL7UQ"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • Favicon — Ícone do site para abas e favoritos. <br /> 
+  • Modal — Janela modal para mostrar conteúdo ou formulários sem mudar de página. <br /> 
+  • Localização exata com Google Maps — Integração de mapa para mostrar e selecionar localizações precisas. <br /> 
+</p>

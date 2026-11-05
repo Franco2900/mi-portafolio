@@ -1,0 +1,188 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Site no qual é possível publicar jogos de tabuleiro para venda e compra. Os usuários podem
+  escrever comentários sobre os produtos e avaliá-los com estrelas.
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>:</strong>
+  <a href="https://github.com/Franco2900/Practica-1---Tienda-juegos-de-mesa" target="_blank">Prática 1</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend:<br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados:<br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend:<br>
+    Bootstrap <i class="fab fa-bootstrap"></i> e EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Sempre que fazia projetos de prática, era para criar pequenos fragmentos de código e assim entender como funciona
+  um conceito, uma funcionalidade ou um módulo. Os projetos grandes que realizava eram sempre para a universidade e em grupos.
+  Por isso este é meu primeiro grande projeto feito inteiramente por mim.<br />
+
+  &emsp;&emsp;Sites de lojas são uma das primeiras coisas que se pratica, e como gosto muito
+  de jogos de tabuleiro, um dia decidi fazer um site como se fosse um vendedor desses produtos.<br />
+
+  &emsp;&emsp;A seguir, farei uma descrição completa de todas as funcionalidades disponíveis no site.
+  Para começar, o site é dividido nas seguintes seções: Início (ou Home, como preferir chamar);
+  Produtos, que por sua vez se divide em Compra e Venda; Contato, com todos os meios de comunicação e Perguntas frequentes;
+  Entrar e Cadastrar-se, para acessar a conta; e, por fim, Perfil, onde o usuário pode
+  alterar seu nome, sua senha e sua imagem de perfil.<br />
+
+  &emsp;&emsp;Os visitantes não registrados só podem ver a seção de Compra para consultar os produtos disponíveis,
+  mas não podem interagir até fazerem login. Os usuários registrados com papel de usuário comum podem
+  comprar produtos, dar-lhes uma pontuação de até 5 estrelas (o sistema alterará automaticamente a
+  avaliação geral de cada produto sempre que um usuário o avaliar), comprar um ou vários produtos ao
+  mesmo tempo, deixar comentários e responder aos comentários de outros usuários. Os administradores têm as mesmas
+  funções que um usuário comum, além de poderem publicar novos artigos para venda.
+</p>
+
+
+<h2>Diagrama Entidade-Relacionamento (DER) do Banco de Dados</h2>
+
+<h4>DER - phpmyadmin</h4>
+<img
+  src={url("images/diagramas/DER tienda juegos de mesa - phpmyadmin.webp")}
+  alt="ERD 1"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="845" height="563" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 1.webp")}
+  alt="Foto 1 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1349" height="628" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Contato</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 5.webp")}
+  alt="Foto 5 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1257" height="578" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Entrar e Cadastrar-se</h4>
+<div class="row">
+  <div class="col-6">
+    <img
+      src={url("images/proyectos/tienda juegos de mesa 2.webp")}
+      alt="Foto 2 dos jogos de tabuleiro"
+      class="img-uniform border border-dark border-1"
+      style="cursor: pointer;"
+      onclick="mostrarImagenEnNuevaVentana(this)" width="521" height="302" loading="lazy" decoding="async"
+    />
+    <br>
+  </div>
+
+  <div class="col-6">
+    <img
+      src={url("images/proyectos/tienda juegos de mesa 3.webp")}
+      alt="Foto 3 dos jogos de tabuleiro"
+      class="img-uniform border border-dark border-1"
+      style="cursor: pointer;"
+      onclick="mostrarImagenEnNuevaVentana(this)" width="530" height="328" loading="lazy" decoding="async"
+    />
+    <br>
+  </div>
+</div>
+
+<h4>Perfil</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 4.webp")}
+  alt="Foto 4 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="580" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Produto – Compra</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 6.webp")}
+  alt="Foto 6 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1232" height="634" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Produto selecionado</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 7.webp")}
+  alt="Foto 7 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1536" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Produto – Venda</h4>
+<img
+  src={url("images/proyectos/tienda juegos de mesa 8.webp")}
+  alt="Foto 8 dos jogos de tabuleiro"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="866" loading="lazy" decoding="async"
+/>
+<br>
+
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/lW8mQdWcw0g"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p>
+  • Roteamento — Processo de definir as rotas de uma aplicação web, indicando qual conteúdo ou ação é executado de acordo com a URL solicitada. <br />
+  • Métodos GET e POST — Formas de enviar dados entre cliente e servidor: GET para obter informações e POST para enviar ou modificar dados. <br />
+  • EJS — Motor de templates que permite incorporar JavaScript em HTML para gerar páginas dinâmicas. <br />
+  • Middleware — Funções intermediárias que processam as solicitações antes de chegarem ao controlador, úteis para validações, autenticação ou tratamento de erros. <br />
+  • Conexão e trabalho com um banco de dados — Integração da aplicação com sistemas de armazenamento de dados (como SQL ou NoSQL) para salvar, consultar e atualizar informações. <br />
+  • Gerenciamento de sessão de usuário — Mecanismo para manter as informações de um usuário enquanto ele navega na aplicação, como seu estado de login ou preferências. <br />
+</p>

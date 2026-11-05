@@ -1,0 +1,194 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+  Site para coletar, normalizar e atualizar as informações das revistas científicas argentinas
+  em diferentes repositórios bibliográficos de forma automática, e para criar uma listagem unificada
+  de todas as informações coletadas.
+</p>
+
+<p>
+  <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+  <a href="https://github.com/Franco2900/IARCA" target="_blank">IARCA</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+  <div class="col-4">
+    Backend: <br>
+    NodeJS <i class="fab fa-node-js"></i> com o framework Express
+  </div>
+
+  <div class="col-4">
+    Banco de dados: <br>
+    SQL <i class="fas fa-database"></i>
+  </div>
+  
+  <div class="col-4">
+    Frontend: <br>
+    Bootstrap <i class="fab fa-bootstrap"></i> e EJS
+  </div>
+  
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+  Este é o projeto que realizei como trabalho de conclusão para meu curso de Licenciatura em Sistemas na
+  Universidade Nacional de Lanús. Seu nome, IARCA, significa Índice Automatizado de Revistas Científicas
+  Argentinas.
+  <br />
+
+  <h5>Origem do problema</h5>
+  Graças às novas tecnologias da informática, a partir da década de 1990 ocorreu
+  um boom na criação de revistas científicas. A digitalização facilitou a edição
+  e a distribuição dessas publicações, ao mesmo tempo que reduziu significativamente os custos de produção e manutenção.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Quantidade de novas revistas científicas argentinas por década</strong>
+  </div>
+
+  <img
+  src={url("images/proyectos/tesis 1.webp")}
+  alt="Imagem 1 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="966" height="402" loading="lazy" decoding="async"
+  />
+  
+  Fonte: Políticas de promoción del conocimiento y derechos de propiedad intelectual - Centro 
+  Interdisciplinario de Estudios en Ciencia, Tecnología e Innovación (2023)
+  <br>
+
+  &emsp;&emsp; Com novas tecnologias surgem também novos desafios. No caso das revistas
+  científicas, o principal problema é a interoperabilidade entre sistemas devido à falta de um padrão
+  sobre quais metadados utilizar. Cada repositório bibliográfico solicita metadados diferentes e exige regras diferentes.
+  <br />
+  
+  &emsp;&emsp; Esse problema faz com que as revistas científicas argentinas fiquem dispersas em
+  múltiplos repositórios, cada um com seus próprios critérios. Como resultado, não é possível visualizar todas as
+  publicações em um único lugar. Isso gera problemas simples, como desconhecer a quantidade total existente, e também dificuldades mais graves, como a impossibilidade de avaliar corretamente a qualidade editorial.
+  <br><br />
+
+  <h5>Objetivo</h5>
+  O objetivo foi desenvolver um programa que colete e normalize os dados das revistas
+  científicas argentinas para mostrá-los em um único repositório. Embora já existam trabalhos de natureza
+  semelhante, como o banco de dados <a href="https://www.caicyt-conicet.gov.ar/malena/">Malena</a> do CONICET,
+  elaborado por especialistas selecionados, o projeto IARCA se diferencia principalmente porque todo o processo
+  é realizado de forma automática, sem intervenção humana.
+  <br />
+
+  &emsp;&emsp; Para isso, delimitamos quais campos coletar, de quais bancos de dados coletar e aplicamos técnicas de web scraping e uso de API.
+  <br><br />
+
+  <div style="text-align: center;">
+    <strong>Bancos de dados coletados</strong>
+  </div>
+  <img
+  src={url("images/proyectos/tesis 6.webp")}
+  alt="Imagem 6 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1200" height="562" loading="lazy" decoding="async"
+  />
+  <br/>
+
+  <h5>Outras funções</h5>
+  Além da coleta e normalização das informações, é oferecido ao usuário um
+  meio de verificar por conta própria se os dados foram coletados corretamente. Para cada revista
+  científica coletada, é oferecida, junto com seus dados, a URL do site de origem. Ao clicar na URL, o usuário acessa diretamente a fonte.
+  <br>
+  
+  &emsp;&emsp; 
+  Como foram reunidos dados de milhares de revistas científicas, adicionamos diferentes filtros para que um usuário
+  possa buscar uma revista específica (por título, ISSN impresso, ISSN eletrônico ou instituição).
+  <br>
+
+  &emsp;&emsp;
+  O usuário pode baixar todos os dados de um repositório específico ou da listagem final em
+  formato .csv ou .json. Investigamos a legalidade e a ética do web scraping para determinar se era
+  possível publicar os dados coletados, e concluímos que não há problema em o usuário baixá-los, já que provêm de repositórios bibliográficos públicos e não geram prejuízo econômico.
+  (Fonte: Tutorial: Legality and Ethics of Web Scraping - Murray State University).
+  <br>
+
+  &emsp;&emsp;
+  Por fim, a tese foi implantada para que possa ser visualizada on-line. Está disponível no seguinte link: <a href="https://isco.unla.edu.ar/iarca" target="_blank">IARCA</a>.
+  <br />
+
+</p>
+
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Home</h4>
+<img
+  src={url("images/proyectos/tesis 2.webp")}
+  alt="Foto 2 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1970" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Repositório - Núcleo Básico de Revistas Científicas Argentinas</h4>
+<img
+  src={url("images/proyectos/tesis 3.webp")}
+  alt="Foto 3 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1935" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Repositório - Latindex</h4>
+<img
+  src={url("images/proyectos/tesis 4.webp")}
+  alt="Foto 4 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="1912" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h4>Listagem final</h4>
+<img
+  src={url("images/proyectos/tesis 5.webp")}
+  alt="Foto 5 da tese"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1358" height="2797" loading="lazy" decoding="async"
+/>
+<br />
+
+
+<h2 id="video">Vídeos de demonstração <i class="fas fa-video"></i> </h2>
+<iframe
+  src="https://www.youtube.com/embed/-O2fhbP2kHs"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+  style="display: block; margin: 0 auto; width: 100%; height: 500px;"
+></iframe>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p> 
+  • API — Conjunto de funções e protocolos que permitem que diferentes aplicações se comuniquem entre si. <br />
+  • Web Scraping — Técnica para extrair informações de sites de forma automatizada. <br />
+</p>
