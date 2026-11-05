@@ -62,10 +62,10 @@ const { h1 } = Astro.props;
 
 <p>
     El backend está organizado por capas —<code>routes → services → models</code>— y esa separación es
-    deliberada: las validaciones y las reglas de negocio están exclusivamente en <code>services/</code>,
-    nunca en los blueprints ni en los modelos. La persistencia es SQLite con SQLAlchemy, y el esquema se
-    versiona con Flask-Migrate/Alembic en vez de recrearse en cada arranque. La sesión es una cookie
-    firmada de Flask con <code>HttpOnly</code> y <code>SameSite=Lax</code>, y los
+    deliberada: las reglas de negocio viven en <code>services/</code>, nunca en los blueprints ni en los
+    modelos, y los blueprints sólo validan la forma del pedido. La persistencia es SQLite con SQLAlchemy,
+    y el esquema se versiona con Flask-Migrate/Alembic en vez de recrearse en cada arranque. La sesión es
+    una cookie firmada de Flask con <code>HttpOnly</code> y <code>SameSite=Lax</code>, y los
     decoradores <code>@login_required</code> y <code>@require_roles</code> centralizan
     los guards.
 </p>
@@ -150,7 +150,7 @@ const { h1 } = Astro.props;
 <h4>Tema oscuro y design system propio</h4>
 <img
   src={url("images/proyectos/campus virtual 6.webp")}
-  alt="Pantalla de cursos en tema oscuro con el design system del proyecto"
+  alt="Pantalla de inicio de sesión en tema oscuro con los tokens del design system del proyecto"
   class="img-uniform border border-dark border-1"
   style="cursor: pointer;"
   onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="720" loading="lazy" decoding="async"
