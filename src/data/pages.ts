@@ -61,6 +61,12 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
         'Tienda online de juegos de mesa donde los usuarios publican productos, escriben comentarios y los valoran con estrellas. Hecha con Node.js y MySQL.',
       h1: 'Tienda de juegos de mesa',
     },
+    campusVirtual: {
+      title: 'Campus Virtual: gestión académica con chatbot | Franco Figueroa',
+      description:
+        'Sistema de gestión académica con tres roles y un asistente conversacional que consulta datos reales del sistema sin poder modificarlos. Flask, React y RAG local.',
+      h1: 'Campus Virtual: gestión académica con asistente conversacional',
+    },
     notFound: {
       title: 'Página no encontrada | Franco Figueroa',
       description: 'La página que buscás no existe en el portafolio de Franco Figueroa.',
@@ -116,6 +122,12 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
         'Online board game store where users post products, write comments, rate them with stars and reply to each other. Built with Node.js and MySQL.',
       h1: 'Board game store',
     },
+    campusVirtual: {
+      title: 'Campus Virtual: academic management with a chatbot | Franco Figueroa',
+      description:
+        'Academic management system with three roles and a conversational assistant that queries real system data without changing it. Flask, React and local RAG.',
+      h1: 'Campus Virtual: academic management with a conversational assistant',
+    },
   },
   pt: {
     home: {
@@ -165,6 +177,12 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
       description:
         'Loja on-line de jogos de tabuleiro onde os usuários publicam produtos, escrevem comentários e os avaliam com estrelas. Feita com Node.js e MySQL.',
       h1: 'Loja de jogos de tabuleiro',
+    },
+    campusVirtual: {
+      title: 'Campus Virtual: gestão acadêmica com chatbot | Franco Figueroa',
+      description:
+        'Sistema de gestão acadêmica com três papéis e um assistente conversacional que consulta dados reais do sistema sem poder modificá-los. Flask, React e RAG local.',
+      h1: 'Campus Virtual: gestão acadêmica com assistente conversacional',
     },
   },
 };

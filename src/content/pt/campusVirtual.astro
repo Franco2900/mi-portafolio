@@ -1,0 +1,169 @@
+---
+import { url } from '../../lib/url';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+  <h1>{h1}</h1>
+
+<h2 id="resumen">Resumo <i class="fas fa-info-circle"></i> </h2>
+
+<p>
+    Plataforma de gestão acadêmica com três papéis —estudante, professor e administrador— e um
+    assistente conversacional integrado que responde a consultas sobre a plataforma e sobre dados
+    reais do sistema conforme o papel de quem pergunta, sem poder criar, modificar ou corrigir nada.
+    Trabalho Prático Integrador do Curso de IA da UNLa.
+</p>
+
+<p>
+    <strong>Repositório GitHub <i class="fab fa-github"></i>: </strong>
+    <a href="https://github.com/Franco2900/campus-virtual" target="_blank">Campus Virtual</a>
+</p>
+
+<h2 id="tecnologias">Tecnologias utilizadas <i class="bi bi-laptop"></i> </h2>
+
+<div class="row">
+
+    <div class="col-3">
+        Backend: <br>
+        Python <i class="fab fa-python"></i> com o framework Flask
+    </div>
+
+    <div class="col-3">
+        Banco de dados: <br>
+        SQLite <i class="fas fa-database"></i> com SQLAlchemy
+    </div>
+
+    <div class="col-3">
+        Frontend: <br>
+        React <i class="fab fa-react"></i> com Vite
+    </div>
+
+    <div class="col-3">
+        Chatbot: <br>
+        LangChain + Ollama <i class="fas fa-robot"></i> local
+    </div>
+
+</div>
+<br>
+
+<h2 id="descripcion">Descrição completa do projeto <i class="fas fa-align-left"></i> </h2>
+
+<p>
+    O sistema cobre doze casos de uso que vão desde a criação de conta e o login até a correção
+    de tarefas e a consulta de notas. Cada papel vê apenas o que é seu: o administrador gerencia
+    cursos, usuários e inscrições; o professor monta tarefas, corrige entregas e consulta a matriz de
+    notas; o estudante entrega tarefas e vê suas notas. A autorização não fica no cliente:
+    cada endpoint valida a sessão e o papel no lado do servidor.
+</p>
+
+<p>
+    O backend está organizado em camadas —<code>routes → services → models</code>— e essa separação é
+    deliberada: as validações e as regras de negócio estão exclusivamente em <code>services/</code>,
+    nunca nos blueprints nem nos modelos. A persistência é SQLite com SQLAlchemy, e o esquema é
+    versionado com Flask-Migrate/Alembic em vez de ser recriado a cada inicialização. A sessão é um cookie
+    assinado do Flask com <code>HttpOnly</code> e <code>SameSite=Lax</code>, e os decoradores
+    <code>@login_required</code> e <code>@require_roles</code> centralizam os guards.
+</p>
+
+<p>
+    O frontend é React com Vite, organizado por feature: cada caso de uso tem seus componentes, seu
+    cliente de API e suas páginas em <code>src/features/&lt;feature&gt;/</code>. Tem design system
+    próprio com tokens para claro e escuro e uma cor por papel, componentes reutilizáveis e um shell com
+    navbar, sidebar e rotas protegidas. As validações do servidor são a fonte da verdade; o cliente
+    apenas envia e exibe os erros.
+</p>
+
+<p>
+    O assistente conversacional roda contra o Ollama em local com LangChain e um modelo pequeno
+    (<code>qwen3:4b</code>). Em vez de dar a ele acesso livre ao banco, o agente recebe ferramentas
+    somente de leitura e cada uma tem escopo por sessão e por papel, de modo que um estudante não pode
+    consultar as notas de outro. O histórico é persistido e cada usuário pode apagar o próprio. Para as
+    fontes que o administrador carrega, o contexto é recuperado com RAG sobre ChromaDB e embeddings
+    locais. Se o Ollama não estiver em execução, o restante da aplicação continua funcionando: apenas
+    o chat responde com uma mensagem amigável e esse turno não é salvo.
+</p>
+
+<p>
+    O projeto foi construído com um pipeline spec-driven: cada caso de uso foi especificado,
+    implementado, verificado com testes, smoke tests HTTP e evidência visual em claro e escuro, passou
+    por revisão e só então foi arquivado. Ao encerrar o último caso de uso, o backend tinha 321 testes
+    e os doze estavam implementados de ponta a ponta.
+</p>
+
+<h2 id="imagenes">Imagens do projeto <i class="fas fa-images"></i> </h2>
+
+<h4>Painel do administrador</h4>
+<img
+  src={url("images/proyectos/campus virtual 1.webp")}
+  alt="Painel inicial do administrador com o resumo do campus"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="720" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Gestão de cursos e seu estado</h4>
+<img
+  src={url("images/proyectos/campus virtual 2.webp")}
+  alt="Listagem de cursos com seu estado ativo ou inativo"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="876" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Matriz de notas do professor</h4>
+<img
+  src={url("images/proyectos/campus virtual 3.webp")}
+  alt="Matriz de notas por estudante e por tarefa, com as médias"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="899" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Assistente conversacional</h4>
+<img
+  src={url("images/proyectos/campus virtual 4.webp")}
+  alt="Resposta do assistente sobre dados reais do sistema"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="898" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Fontes de conhecimento do chatbot</h4>
+<img
+  src={url("images/proyectos/campus virtual 5.webp")}
+  alt="Tela de administração das fontes que o chatbot usa como contexto"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="720" loading="lazy" decoding="async"
+/>
+<br>
+
+<h4>Tema escuro e design system próprio</h4>
+<img
+  src={url("images/proyectos/campus virtual 6.webp")}
+  alt="Tela de cursos em tema escuro com o design system do projeto"
+  class="img-uniform border border-dark border-1"
+  style="cursor: pointer;"
+  onclick="mostrarImagenEnNuevaVentana(this)" width="1280" height="720" loading="lazy" decoding="async"
+/>
+<br>
+
+<h2 id="aprendizaje">O que aprendi <i class="fas fa-graduation-cap"></i> </h2>
+<p>
+  • Padrão em camadas — Por que as regras de negócio ficam em <code>services/</code> e não nas rotas nem nos modelos.<br />
+  • Blueprints do Flask — Separar a API por domínio em vez de ter um arquivo que cresce sem controle.<br />
+  • Migrações de esquema — Versionar o banco com Alembic em vez de recriá-lo a cada inicialização.<br />
+  • Sessões e autorização — Cookie assinado <code>HttpOnly</code> + <code>SameSite=Lax</code>, e guards por papel no lado do servidor.<br />
+  • Design system com tokens — Um único lugar define claro, escuro e a cor de cada papel.<br />
+  • Tool calling com escopo — Dar ao modelo ferramentas somente de leitura limitadas por papel em vez de acesso livre ao banco.<br />
+  • RAG local — ChromaDB e embeddings para que o assistente responda com as fontes que o administrador carrega.<br />
+  • Pipeline spec-driven — Doze casos de uso encerrados com especificação, testes, evidência visual e revisão antes de arquivá-los.<br />
+</p>

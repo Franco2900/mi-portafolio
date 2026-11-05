@@ -8,6 +8,7 @@ import EmpresaTransporteEs from './es/empresaTransporte.astro';
 import AutoescuelaEs from './es/autoescuela.astro';
 import DockerEs from './es/docker.astro';
 import TiendaJuegosDeMesaEs from './es/tiendaJuegosDeMesa.astro';
+import CampusVirtualEs from './es/campusVirtual.astro';
 
 import HomeEn from './en/home.astro';
 import TesisEn from './en/tesis.astro';
@@ -17,6 +18,7 @@ import EmpresaTransporteEn from './en/empresaTransporte.astro';
 import AutoescuelaEn from './en/autoescuela.astro';
 import DockerEn from './en/docker.astro';
 import TiendaJuegosDeMesaEn from './en/tiendaJuegosDeMesa.astro';
+import CampusVirtualEn from './en/campusVirtual.astro';
 
 import HomePt from './pt/home.astro';
 import TesisPt from './pt/tesis.astro';
@@ -26,6 +28,7 @@ import EmpresaTransportePt from './pt/empresaTransporte.astro';
 import AutoescuelaPt from './pt/autoescuela.astro';
 import DockerPt from './pt/docker.astro';
 import TiendaJuegosDeMesaPt from './pt/tiendaJuegosDeMesa.astro';
+import CampusVirtualPt from './pt/campusVirtual.astro';
 
 /**
  * Cuerpo de cada pagina por idioma. Un idioma puede estar incompleto: las rutas
@@ -41,6 +44,7 @@ export const content = {
     autoescuela: AutoescuelaEs,
     docker: DockerEs,
     tiendaJuegosDeMesa: TiendaJuegosDeMesaEs,
+    campusVirtual: CampusVirtualEs,
   },
   en: {
     home: HomeEn,
@@ -51,6 +55,7 @@ export const content = {
     autoescuela: AutoescuelaEn,
     docker: DockerEn,
     tiendaJuegosDeMesa: TiendaJuegosDeMesaEn,
+    campusVirtual: CampusVirtualEn,
   },
   pt: {
     home: HomePt,
@@ -61,6 +66,7 @@ export const content = {
     autoescuela: AutoescuelaPt,
     docker: DockerPt,
     tiendaJuegosDeMesa: TiendaJuegosDeMesaPt,
+    campusVirtual: CampusVirtualPt,
   },
 };
 
