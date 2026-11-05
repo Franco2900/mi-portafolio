@@ -2,14 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Página principal: español en la raíz, inglés en /en/. Cada URL declara las
-       dos versiones y el x-default, que apunta al español. -->
+  <!-- Página principal: español en la raíz, inglés en /en/ y portugués en /pt/.
+       Cada URL declara las tres versiones y el x-default, que apunta al español. -->
   <url>
     <loc>https://franco2900.github.io/mi-portafolio/</loc>
     <lastmod>2026-11-05</lastmod>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/"/>
   </url>
   <url>
@@ -18,6 +19,16 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/"/>
   </url>
 
@@ -28,6 +39,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tesis.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tesis.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
   </url>
   <url>
@@ -36,6 +48,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tesis.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tesis.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/tesis.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tesis.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tesis.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tesis.html"/>
   </url>
   <url>
@@ -44,6 +66,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tiendaJuegosDeMesa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tiendaJuegosDeMesa.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
   </url>
   <url>
@@ -52,6 +75,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tiendaJuegosDeMesa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tiendaJuegosDeMesa.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/tiendaJuegosDeMesa.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/tiendaJuegosDeMesa.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/tiendaJuegosDeMesa.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/tiendaJuegosDeMesa.html"/>
   </url>
   <url>
@@ -60,6 +93,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/casino.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/casino.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
   </url>
   <url>
@@ -68,6 +102,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/casino.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/casino.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/casino.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/casino.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/casino.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/casino.html"/>
   </url>
   <url>
@@ -76,6 +120,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/empresaTransporte.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/empresaTransporte.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
   </url>
   <url>
@@ -84,6 +129,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/empresaTransporte.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/empresaTransporte.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/empresaTransporte.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/empresaTransporte.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/empresaTransporte.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/empresaTransporte.html"/>
   </url>
   <url>
@@ -92,6 +147,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/autoescuela.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/autoescuela.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
   </url>
   <url>
@@ -100,6 +156,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/autoescuela.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/autoescuela.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/autoescuela.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/autoescuela.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/autoescuela.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/autoescuela.html"/>
   </url>
   <url>
@@ -108,6 +174,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/docker.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/docker.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
   </url>
   <url>
@@ -116,6 +183,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/docker.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/docker.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/docker.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/docker.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/docker.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/docker.html"/>
   </url>
   <url>
@@ -124,6 +201,7 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/supermercado.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/supermercado.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
   </url>
   <url>
@@ -132,6 +210,16 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/supermercado.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/supermercado.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
+  </url>
+  <url>
+    <loc>https://franco2900.github.io/mi-portafolio/pt/supermercado.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://franco2900.github.io/mi-portafolio/en/supermercado.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://franco2900.github.io/mi-portafolio/pt/supermercado.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://franco2900.github.io/mi-portafolio/supermercado.html"/>
   </url>
 
