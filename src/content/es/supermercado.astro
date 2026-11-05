@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['supermercado'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path="supermercado.html"
-  nav="project"
-  css={['css/proyectos.css']}
->
-  <h1>{meta.h1}</h1>
+  <h1>{h1}</h1>
 
 <h2 id="resumen">Resumen <i class="fas fa-info-circle"></i> </h2>
 
@@ -469,4 +463,3 @@ En resumen, el proyecto integra tanto la parte de usuario como la de administrad
 • Seeds de base de datos — Incorporé la práctica de crear seeds para vaciar la base de datos o rellenarla con datos de prueba, facilitando el desarrollo, las pruebas y la validación del sistema. <br />
 </p>
 
-</Base>

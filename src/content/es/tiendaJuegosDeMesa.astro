@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['tiendaJuegosDeMesa'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path="tiendaJuegosDeMesa.html"
-  nav="project"
-  css={['css/proyectos.css']}
->
-  <h1>{meta.h1}</h1>
+  <h1>{h1}</h1>
 
 <h2 id="resumen">Resumen <i class="fas fa-info-circle"></i> </h2>
 
@@ -193,4 +187,3 @@ const meta = pages['tiendaJuegosDeMesa'];
   • Gestión de sesión de usuario — Mecanismo para mantener la información de un usuario mientras navega en la aplicación, como su estado de login o preferencias. <br />
 </p>
 
-</Base>

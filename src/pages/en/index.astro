@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pages } from '../../data/pages';
+import Home from '../../content/en/home.astro';
+
+const meta = pages.en.home;
+---
+
+<Base title={meta.title} description={meta.description} lang="en" slug="home" nav="home" css={['css/index.css']}>
+  <Home h1={meta.h1} />
+</Base>

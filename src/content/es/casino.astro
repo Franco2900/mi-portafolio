@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['casino'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path="casino.html"
-  nav="project"
-  css={['css/proyectos.css']}
->
-  <h1>{meta.h1}</h1>
+  <h1>{h1}</h1>
 
 <h2 id="resumen">Resumen <i class="fas fa-info-circle"></i> </h2>
 
@@ -173,4 +167,3 @@ const meta = pages['casino'];
   • Nuevos módulos de diseño gráfico: Bootstrap Icons — Conjunto de íconos oficiales de Bootstrap para enriquecer el diseño de aplicaciones web. <br /> 
 </p>
 
-</Base>

@@ -1,8 +1,12 @@
 ---
 import { url } from '../lib/url';
+import { localizePath, slugPath } from '../i18n/utils';
+import { hasSlug } from '../content';
+import type { Lang } from '../i18n/ui';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Fondo from '../components/Fondo.astro';
+import LangSwitch from '../components/LangSwitch.astro';
 import NavbarIndex from '../components/NavbarIndex.astro';
 import NavbarProject from '../components/NavbarProject.astro';
 
@@ -11,8 +15,10 @@ interface Props {
   title: string;
   /** Resumen de ~155 caracteres para Google y para las tarjetas al compartir. */
   description: string;
-  /** Ruta relativa de la pagina, usada para armar la URL canonica. '' = home. */
-  path?: string;
+  /** Idioma de la pagina. Define `<html lang>`, `og:locale` y la URL canonica. */
+  lang: Lang;
+  /** Slug de la pagina dentro de su idioma. 'home' = raiz. */
+  slug: string;
   /** Home usa el navbar con anclas internas; los proyectos el de secciones. */
   nav?: 'home' | 'project';
   /** Imagen de la tarjeta al compartir, relativa a la raiz del sitio. */
@@ -25,7 +31,8 @@ interface Props {
 const {
   title,
   description,
-  path = '',
+  lang,
+  slug,
   nav = 'project',
   ogImage = 'images/og/og-home.jpg',
   ogType = 'website',
@@ -33,18 +40,29 @@ const {
 } = Astro.props;
 
 const SITE = 'https://franco2900.github.io/mi-portafolio/';
-const canonical = new URL(path, SITE).href;
+const canonical = new URL(localizePath(slugPath(slug), lang), SITE).href;
 const ogImageUrl = new URL(ogImage, SITE).href;
+const ogLocale = lang === 'es' ? 'es_AR' : 'en_US';
+
+// Alternates solo para las traducciones que existen: un hreflang a una pagina
+// que todavia no se genero es un 404 para los buscadores.
+const defaultUrl = new URL(localizePath(slugPath(slug), 'es'), SITE).href;
+const englishUrl = hasSlug('en', slug)
+  ? new URL(localizePath(slugPath(slug), 'en'), SITE).href
+  : null;
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <link rel="canonical" href={canonical}>
+  <link rel="alternate" hreflang="es" href={defaultUrl}>
+  {englishUrl ? <link rel="alternate" hreflang="en" href={englishUrl}> : null}
+  <link rel="alternate" hreflang="x-default" href={defaultUrl}>
   <link rel="icon" type="image/x-icon" href={url("images/style/favicon.ico")}>
 
   <title>{title}</title>
@@ -53,7 +71,7 @@ const ogImageUrl = new URL(ogImage, SITE).href;
        Tienen que estar en el HTML crudo porque esos bots no ejecutan JavaScript. -->
   <meta property="og:type" content={ogType}>
   <meta property="og:site_name" content="Franco Figueroa">
-  <meta property="og:locale" content="es_AR">
+  <meta property="og:locale" content={ogLocale}>
   <meta property="og:url" content={canonical}>
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
@@ -103,15 +121,17 @@ const ogImageUrl = new URL(ogImage, SITE).href;
 
 <body class="light-mode">
 
-  <Header />
-  {nav === 'home' ? <NavbarIndex /> : <NavbarProject />}
+  <Header lang={lang} />
+  {nav === 'home' ? <NavbarIndex lang={lang} /> : <NavbarProject lang={lang} />}
   <Fondo />
 
   <main id="main-container" class="container">
     <slot />
   </main>
 
-  <Footer />
+  <LangSwitch lang={lang} slug={slug} />
+
+  <Footer lang={lang} />
 
   <!-- Sin Bootstrap JS: el navbar no usa toggler, collapse, modal, dropdown ni tooltip.
        Sin Font Awesome JS: la version CSS ya dibuja los mismos iconos con menos peso.

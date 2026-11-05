@@ -1,26 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
 import { pages } from '../data/pages';
+import { useTranslations } from '../i18n/utils';
 import { url } from '../lib/url';
 
-const meta = pages['notFound'];
+const meta = pages.es['notFound'];
+const t = useTranslations('es');
 // Un 404 se sirve para cualquier ruta faltante, asi que el link de vuelta
 // tiene que ser absoluto respecto del base del sitio, con barra final.
 const home = url('');
 ---
 
-<Base title={meta.title} description={meta.description} path="404.html" nav="project">
+<Base title={meta.title} description={meta.description} lang="es" slug="404" nav="project">
   <h1>{meta.h1}</h1>
 
   <p class="text-center">
-    La dirección que buscás no existe o cambió de lugar.
+    {t('notFound.message')}
   </p>
 
   <div class="text-center my-4">
-    <a class="btn btn-primary" href={home}>Volver al inicio</a>
+    <a class="btn btn-primary" href={home}>{t('notFound.back')}</a>
   </div>
 
   <p class="text-center">
-    También podés escribirme a <span class="email"></span>.
+    {t('notFound.contact')} <span class="email"></span>.
   </p>
 </Base>

@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['home'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path=""
-  nav="home"
-  css={['css/index.css']}
->
-  <h1 class="page-title">{meta.h1}</h1>
+  <h1 class="page-title">{h1}</h1>
   <p class="page-subtitle">Desarrollador Backend &middot; Licenciado en Sistemas (UNLa)</p>
 
 <img src={url("images/style/mi cara.webp")} 
@@ -234,4 +228,3 @@ puedas ver el código.
 
 </div>
 
-</Base>

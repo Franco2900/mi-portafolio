@@ -1,9 +1,18 @@
 ---
 import { url } from '../lib/url';
+import { localizePath, slugPath, useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <header class="container-fluid p-0">
-  <a href={url("index.html")} aria-label="Ir al inicio">
+  <a href={localizePath(slugPath('home'), lang)} aria-label={t('nav.homeAria')}>
     <img src={url("images/style/portafolio.webp")}
          alt="Portafolio de Franco Figueroa"
          class="img-fluid w-100"

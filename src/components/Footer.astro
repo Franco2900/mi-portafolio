@@ -1,15 +1,27 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
 <footer>
   <div class="container-fluid">
 
     <div class="row">
       <div class="col-md-6">
         <i class="bi bi-geo-alt"></i>
-        Ubicación: Buenos Aires, Argentina
+        {t('footer.location')}
       </div>
 
       <div class="col-md-6">
         <i class="bi bi-envelope"></i>
-        Email: <span class="email"></span>
+        {t('footer.email')} <span class="email"></span>
       </div>
     </div>
 
@@ -17,7 +29,7 @@
       <div class="col-md-12">
         <i class="fab fa-github"></i>
         <a href="https://github.com/Franco2900" target="_blank" rel="noopener noreferrer">
-          GitHub: Franco2900
+          {t('footer.github')}
         </a>
       </div>
     </div>

@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['empresaTransporte'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path="empresaTransporte.html"
-  nav="project"
-  css={['css/proyectos.css']}
->
-  <h1>{meta.h1}</h1>
+  <h1>{h1}</h1>
 
 <h2 id="resumen">Resumen <i class="fas fa-info-circle"></i> </h2>
 
@@ -191,4 +185,3 @@ const meta = pages['empresaTransporte'];
   • Nuevos módulos de diseño gráfico: Font Awesome y Flag Icons — Bibliotecas de íconos que facilitan la incorporación de gráficos y banderas en interfaces web. <br /> 
 </p>
 
-</Base>

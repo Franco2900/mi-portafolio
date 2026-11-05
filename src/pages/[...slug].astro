@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { pages } from '../data/pages';
+import { content, slugsFor } from '../content';
+import type { Lang } from '../i18n/ui';
+
+// Una ruta por slug del contenido en espanol: 8 rutas, las mismas URLs de antes.
+// `home` no tiene slug: con `build.format: 'file'` la raiz publica `index.html`.
+export function getStaticPaths() {
+  return slugsFor('es').map((slug) => ({
+    params: { slug: slug === 'home' ? undefined : slug },
+  }));
+}
+
+const lang: Lang = 'es';
+const key = Astro.params.slug ?? 'home';
+const meta = pages[lang][key];
+const bodies = content[lang];
+const Body = bodies[key as keyof typeof bodies];
+---
+
+<Base
+  title={meta.title}
+  description={meta.description}
+  lang={lang}
+  slug={key}
+  nav={key === 'home' ? 'home' : 'project'}
+  css={key === 'home' ? ['css/index.css'] : ['css/proyectos.css']}
+>
+  <Body h1={meta.h1} />
+</Base>

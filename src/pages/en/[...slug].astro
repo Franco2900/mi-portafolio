@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { pages } from '../../data/pages';
+import { content, slugsFor } from '../../content';
+import type { Lang } from '../../i18n/ui';
+
+// Solo los slugs que ya tienen cuerpo en ingles: el sitio puede estar traducido
+// a medias y sigue compilando. El home vive en `en/index.astro`, porque un rest
+// param indefinido dentro de un subdirectorio genera `en.html`, no
+// `en/index.html`.
+export function getStaticPaths() {
+  return slugsFor('en')
+    .filter((slug) => slug !== 'home')
+    .map((slug) => ({ params: { slug } }));
+}
+
+const lang: Lang = 'en';
+const key = Astro.params.slug ?? 'home';
+const meta = pages[lang][key];
+const bodies = content[lang];
+const Body = bodies[key as keyof typeof bodies];
+---
+
+<Base
+  title={meta.title}
+  description={meta.description}
+  lang={lang}
+  slug={key}
+  nav={key === 'home' ? 'home' : 'project'}
+  css={key === 'home' ? ['css/index.css'] : ['css/proyectos.css']}
+>
+  <Body h1={meta.h1} />
+</Base>

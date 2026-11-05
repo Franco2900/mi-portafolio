@@ -1,0 +1,37 @@
+---
+import { localizePath, slugPath } from '../i18n/utils';
+import type { Lang } from '../i18n/ui';
+import { hasSlug } from '../content';
+
+interface Props {
+  lang: Lang;
+  /** Slug de la pagina actual, para que el cambio lleve a la MISMA pagina. */
+  slug: string;
+}
+
+const { lang, slug } = Astro.props;
+
+// Si la pagina todavia no existe en el otro idioma, el enlace cae al home de
+// ese idioma en vez de a un 404.
+const esSlug = hasSlug('es', slug) ? slug : 'home';
+const enSlug = hasSlug('en', slug) ? slug : 'home';
+
+const esHref = localizePath(slugPath(esSlug), 'es');
+const enHref = localizePath(slugPath(enSlug), 'en');
+---
+
+<nav class="container-fluid py-2 text-center" style="background-color: #333;" aria-label={lang === 'es' ? 'Idioma' : 'Language'}>
+  <a
+    class="text-white fw-bold text-decoration-none me-2"
+    href={esHref}
+    aria-current={lang === 'es' ? 'page' : undefined}
+    hreflang="es"
+  >ES</a>
+  <span class="text-white">|</span>
+  <a
+    class="text-white fw-bold text-decoration-none ms-2"
+    href={enHref}
+    aria-current={lang === 'en' ? 'page' : undefined}
+    hreflang="en"
+  >EN</a>
+</nav>

@@ -1,19 +1,13 @@
 ---
-import { url } from '../lib/url';
-import Base from '../layouts/Base.astro';
-import { pages } from '../data/pages';
+import { url } from '../../lib/url';
 
-const meta = pages['tesis'];
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
 ---
-
-<Base
-  title={meta.title}
-  description={meta.description}
-  path="tesis.html"
-  nav="project"
-  css={['css/proyectos.css']}
->
-  <h1>{meta.h1}</h1>
+  <h1>{h1}</h1>
 
 <h2 id="resumen">Resumen <i class="fas fa-info-circle"></i> </h2>
 
@@ -198,4 +192,3 @@ const meta = pages['tesis'];
   • Web Scraping — Técnica para extraer información de sitios web de manera automatizada. <br />
 </p>
 
-</Base>
