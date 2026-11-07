@@ -25,7 +25,7 @@ largest and most recent project being absent is the single biggest gap in that s
 In scope:
 
 - A page body for the new project in the three languages, with the same section structure as the
-  other seven: `Resumen`, `Tecnologías`, `Descripción`, `Imágenes`, `Lo que aprendí`.
+  other seven: `Resumen`, `Tecnologías`, `Descripción`, `Imágenes`, `Video`, `Lo que aprendí`.
 - A card in the academic projects row of each home, next to Tesis.
 - Metadata (`title`, `description`, `h1`) for the three locales and registration in the content
   registry.
@@ -128,11 +128,12 @@ contains an email address.
   `https://drive.google.com/file/d/1KMpxcFd_Npg5A5FFzSr4ny40t8SF-JM5/preview` in an iframe with a
   per-language `title`, `allow="autoplay; fullscreen; encrypted-media"`, `allowfullscreen` and the
   same 500 px height the existing `#video` sections use. The `/preview` endpoint was probed before
-  embedding: HTTP 200, the file's own title in `<title>`, no "Request access" wall. One work unit:
+  embedding: HTTP 200, the file's own title in `<title>`, no "Request access" wall. Two work units:
 
   | Commit | Work unit |
   | --- | --- |
   | `bb5479d` | `feat(proyectos): embed the Campus Virtual demo video in three languages` |
+  | `9dbf198` | `docs(proyectos): record the Campus Virtual demo video work unit` |
 
   Parity moved from 73 to 77 tags with no divergence between the languages, because the iframe is
   identical apart from its translated `title`.
