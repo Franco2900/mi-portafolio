@@ -1,6 +1,6 @@
 # Feature: Campus Virtual project page
 
-**Status:** done — the page is live in the three languages; the demo video and a reseed upstream remain
+**Status:** done — the page is live in the three languages, demo video included; a reseed upstream remains
 **Created:** 2026-11-05
 **Branch:** astro-migration
 
@@ -31,11 +31,11 @@ In scope:
   registry.
 - Three sitemap groups with `es` / `en` / `pt-BR` / `x-default` alternates.
 - Six screenshots plus a card thumbnail, converted to WebP.
+- A `Video` section on the three pages, between `Imágenes` and `Lo que aprendí`, embedding the
+  author's demo video from Google Drive.
 
 Out of scope:
 
-- The demo video. The author records it later; the page has no video section and the
-  `NavbarProject` `#video` anchor leads nowhere on this one page.
 - Any change to the seven existing pages beyond the home cards.
 - Anything inside `codigo/`. It is a local, unversioned copy of `Franco2900/campus-virtual`; it is
   in `.git/info/exclude` and only its evidence images are read.
@@ -75,6 +75,7 @@ Delegated direct, with a deliberate exception.
 - [x] T7 Add the three sitemap groups.
 - [x] T8 Verify end to end over HTTP in the three languages, and review the pages visually.
 - [x] T9 Run an independent adversarial verification pass and fix what it found.
+- [x] T10 Add the demo video section to the three pages and verify it renders.
 
 ## Acceptance criteria
 
@@ -99,7 +100,8 @@ python "C:\Users\Administrador\AppData\Local\Temp\opencode\cv_verify.py"
 `cv_verify.py` is the orchestrator-owned end-to-end check. It fetches the three pages over HTTP and
 asserts, per language: status, `<html lang>`, the four alternates in order, `og:locale`, the language
 switcher with exactly one `aria-current`, the six images, that every internal reference resolves
-against the page's own URL, and that no email address is rendered. It then checks the home cards in
+against the page's own URL, the video section with its Drive embed and iframe `title`, and that no
+email address is rendered. It then checks the home cards in
 the three languages, the sitemap (27 URLs, four alternates each, symmetry, `x-default`, all 200),
 structural parity across the three source files, and that none of the files this change touched
 contains an email address.
@@ -122,6 +124,19 @@ contains an email address.
 
   Ten files: three page bodies, seven images, three homes, `pages.ts`, `index.ts`, `sitemap.xml`.
 
+- 2026-11-06: T10 done. The demo video is public on Google Drive, so the section embeds
+  `https://drive.google.com/file/d/1KMpxcFd_Npg5A5FFzSr4ny40t8SF-JM5/preview` in an iframe with a
+  per-language `title`, `allow="autoplay; fullscreen; encrypted-media"`, `allowfullscreen` and the
+  same 500 px height the existing `#video` sections use. The `/preview` endpoint was probed before
+  embedding: HTTP 200, the file's own title in `<title>`, no "Request access" wall. One work unit:
+
+  | Commit | Work unit |
+  | --- | --- |
+  | `bb5479d` | `feat(proyectos): embed the Campus Virtual demo video in three languages` |
+
+  Parity moved from 73 to 77 tags with no divergence between the languages, because the iframe is
+  identical apart from its translated `title`.
+
 ### Verification results
 
 ```
@@ -132,13 +147,18 @@ build                                    28 page(s)
 --page en/campusVirtual.html             0 / 17 broken
 --page pt/campusVirtual.html             0 / 17 broken
 cv_verify.py                             VERDICT: verified end to end in the three languages
-structural parity                        73 tags / 26 class-id / 43 attributes, identical x3
+structural parity                        77 tags / 26 class-id / 43 attributes, identical x3
 sitemap                                  27 <loc>, 9 symmetric groups, all 200
 images                                   7 WebP, source dimensions preserved
+video section                            3 pages, Drive embed + nav anchor + iframe title
 ```
 
 Visual review: desktop at 1400 px in the three languages, the home, and a real 390 px layout through
 an iframe. The images, the switcher, the tables and the dark theme all render correctly.
+
+The video section was reviewed the same way after T10: at 1400 px the Drive player renders with its
+play button and fullscreen control between `Imágenes` and `Lo que aprendí`, and at a real 390 px the
+iframe keeps the full page width without overflow.
 
 After the two decisions were applied the whole check ran again: 28 pages, `cv_verify.py` passing in
 the three languages, every internal reference resolving, and a scan for text glued to an inline
@@ -170,7 +190,6 @@ ChromaDB + `nomic-embed-text` and the Ollama-down behaviour. It found three issu
 
 ## Known gaps
 
-- No video section, and the navbar's `#video` item leads nowhere on this page.
 - Receipt-driven review could not run. `gentle-ai review assess` reports `risk: high` with reason
   `unassessable`, because opencode is not an eligible runtime for immutable receipt review, and
   `review status` fails the same way with `immutable_review_transport_unsupported`,
@@ -180,8 +199,10 @@ ChromaDB + `nomic-embed-text` and the Ollama-down behaviour. It found three issu
 
 ## Follow-ups
 
-- Record the demo video and add the section.
-- The two decisions the verification left open are settled; nothing is pending on the page itself.
+- The two decisions the verification left open are settled, and the demo video is published on the
+  page; nothing is pending on the page itself.
+- The video lives in Google Drive. If that file is ever moved, made private or deleted, all three
+  pages break at once, because they share the same file id.
 - Upstream, in `campus-virtual`: reseed the demo data and re-capture the `design-system/`
   screenshots, which all still show the smoke-test row.
 - Receipt-driven review will not run in this runtime; that is an environment limitation, not a debt
