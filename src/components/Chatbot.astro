@@ -1,0 +1,73 @@
+---
+import { chatbot } from '../data/chatbot';
+import { localizePath, slugPath } from '../i18n/utils';
+import { url } from '../lib/url';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { copy, entries } = chatbot[lang];
+
+/** Las seis preguntas que se ofrecen como boton: las que mas sirven a quien evalua el perfil. */
+const SUGGESTED_IDS = ['who', 'projects', 'campus-virtual', 'skills', 'available', 'contact'];
+
+const suggested = SUGGESTED_IDS.map((id) => entries.find((entry) => entry.id === id)).filter(
+  (entry): entry is (typeof entries)[number] => Boolean(entry),
+);
+
+/** Resuelve el destino de un enlace en el build: pagina de proyecto o ancla del home. */
+const resolveHref = (link: { slug?: string; hash?: string }): string =>
+  link.slug ? localizePath(slugPath(link.slug), lang) : (link.hash ?? '');
+
+/**
+ * El set viaja dentro de la pagina: sin fetch, sin backend, sin clave de API.
+ * El `<` se escapa para que ningun texto pueda cerrar la etiqueta script.
+ */
+const payload = JSON.stringify({
+  copy,
+  entries: entries.map((entry) => ({
+    id: entry.id,
+    question: entry.question,
+    aliases: entry.aliases,
+    answer: entry.answer,
+    links: (entry.links ?? []).map((link) => ({ label: link.label, href: resolveHref(link) })),
+  })),
+}).replace(/</g, '\\u003c');
+---
+
+<h4 id="asistente">{copy.title} <i class="fas fa-robot"></i> </h4>
+<p class="chatbot-intro">{copy.subtitle}</p>
+
+<div class="chatbot" data-chatbot>
+  <div class="chatbot-log" data-chatbot-log aria-live="polite"></div>
+
+  <form class="chatbot-form" data-chatbot-form>
+    <label class="visually-hidden" for="chatbot-input">{copy.placeholder}</label>
+    <input
+      id="chatbot-input"
+      class="form-control"
+      type="text"
+      autocomplete="off"
+      placeholder={copy.placeholder}
+      data-chatbot-input
+    />
+    <button class="btn btn-primary" type="submit">{copy.send}</button>
+  </form>
+
+  <div class="chatbot-suggestions" data-chatbot-suggestions>
+    <p class="chatbot-suggestions-title">{copy.suggestionsTitle}</p>
+    {suggested.map((entry) => (
+      <button type="button" class="chatbot-chip" data-chatbot-chip={entry.question}>
+        {entry.question}
+      </button>
+    ))}
+  </div>
+
+  <p class="chatbot-note">{copy.disclaimer}</p>
+</div>
+
+<script type="application/json" id="chatbot-data" is:inline set:html={payload}></script>
+<script is:inline src={url('js/chatbot.js')}></script>
