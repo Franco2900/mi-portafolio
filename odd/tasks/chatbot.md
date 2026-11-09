@@ -80,6 +80,10 @@ Delegated direct.
 - [ ] T9 Independent verification pass. **Not run.** The delegation route was unavailable
       (provider usage limit), so every check below was executed by the orchestrator inline. The
       checks are reproducible and their output is recorded, but no second pair of eyes ran.
+- [x] T10 Remove `cnc` and `cobol-plans`, on the author's decision.
+- [x] T11 Correct the `campus-virtual` answer in the three locales: it is a course assignment, not
+      the degree's capstone.
+- [x] T12 Write `AGENTS.md` and expand `README.md`.
 
 ## Acceptance criteria
 
@@ -118,7 +122,7 @@ Plus a headless run of the page that asks three questions per locale and asserts
   | cnc | kept, flagged to the author as a removal candidate |
   | — | added `campus-virtual`, `source-code`, `available` |
 
-  Net: 12 → 15 entries, same for the three locales.
+  Net: 12 → 15 entries, same for the three locales. T10 later takes it to 13.
 - 2026-11-07: T2–T6 done. `src/data/chatbot.ts` (551 lines, 15 entries × 3 locales plus copy),
   `public/js/chatbot.js` (IIFE, no dependencies), `src/components/Chatbot.astro`,
   `public/css/index.css` (+ about 150 lines), three home bodies, three route files, the navbar and
@@ -136,6 +140,20 @@ Plus a headless run of the page that asks three questions per locale and asserts
   about 540 px). The form stacks and the chips wrap at 390 px with no horizontal overflow.
 - 2026-11-07: Committed as work units: `b8e2e20` (data, component, script, styles) and `fc0a62c`
   (three homes, three routes, navbar, dictionary). This document closes the third.
+- 2026-11-07: T10 done. `cnc` and `cobol-plans` removed from the three locales: 15 → 13 entries.
+  `cnc` was about something the site never mentions; `cobol-plans` shadowed `cobol` and overstated
+  a skill the author describes as basic. "¿Qué planes tenés con COBOL?" now resolves to `cobol`
+  (score 0.70 through the bare alias), which is the right answer.
+- 2026-11-07: T11 done. The `campus-virtual` answer was wrong in a way the audit missed: Campus
+  Virtual is not the degree's capstone, it is a practical assignment from a UNLa course on software
+  development and AI agent architecture. The answer now says so, and states what the course was
+  actually about — the programmer orchestrates and reviews agents instead of writing the code.
+  `projects` and `studies-portfolio` repeated the capstone claim and were corrected too, otherwise
+  the same file would contradict itself.
+- 2026-11-07: T12 done. `AGENTS.md` covers the non-negotiables, routing, i18n, the checklist for a
+  new project page, the assistant's contract, the Astro whitespace trap, verification and git
+  conventions. `README.md` now explains how the site is assembled and how the assistant works,
+  instead of only listing commands.
 
 ## Findings
 
@@ -150,6 +168,12 @@ Plus a headless run of the page that asks three questions per locale and asserts
   Both the data tag and the script tag use `is:inline`, which keeps Astro from rewriting them.
 - `.chatbot-log:empty { display: none }` keeps an empty bordered box out of the first paint; the
   log appears with the first question.
+- The audit missed one wrong fact that only the author could catch: Campus Virtual is not the
+  degree's capstone. It is a practical assignment from a UNLa course on software development and AI
+  agent architecture, and the point of the exercise was orchestrating agents, not writing code. The
+  project pages already said "Curso de IA"; only the assistant's answers were wrong.
+- Two entries for one basic skill shadow each other. `cobol` and `cobol-plans` proved it: the second
+  one added no fact, it only inflated the first.
 
 ## Known gaps
 
