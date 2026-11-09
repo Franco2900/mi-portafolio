@@ -118,7 +118,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Qué construiste?',
         ],
         answer:
-          'Ocho proyectos, entre académicos y personales: Campus Virtual, mi trabajo integrador de la carrera y el más grande de todos; la tesis; la tienda de juegos de mesa; el casino; la empresa de transporte; la autoescuela; el supermercado; y Docker. Además desarrollo VicioMesa para un cliente. Cada página de proyecto tiene imágenes, video explicativo y enlace al repositorio.',
+          'Ocho proyectos, entre académicos y personales: Campus Virtual, el trabajo práctico del curso de IA de la UNLa y el más grande de todos; la tesis; la tienda de juegos de mesa; el casino; la empresa de transporte; la autoescuela; el supermercado; y Docker. Además desarrollo VicioMesa para un cliente. Cada página de proyecto tiene imágenes, video explicativo y enlace al repositorio.',
         links: [{ label: 'Ver todos los proyectos', hash: '#proyectos' }],
       },
       {
@@ -150,13 +150,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Sí, tengo conocimientos básicos de COBOL y estoy profundizando en su sintaxis y estructura. Mi objetivo es aplicarlo en entornos empresariales y bancarios, donde sigue siendo muy usado. Estoy haciendo ejercicios prácticos que muestran cómo integrar COBOL con tecnologías modernas, para conectar el mundo legacy con el desarrollo actual.',
       },
       {
-        id: 'cnc',
-        question: '¿Qué estás estudiando además de programación?',
-        aliases: ['¿Qué es CNC?', '¿Estudiás CNC?', '¿Qué más estudiás?', 'CNC'],
-        answer:
-          'Estoy aprendiendo CNC, el control numérico computarizado que se usa en máquinas industriales. Me interesa porque combina software con procesos físicos de manufactura, y me da una visión más amplia de cómo la informática se aplica más allá del desarrollo web.',
-      },
-      {
         id: 'ai',
         question: '¿Te interesa la inteligencia artificial?',
         aliases: [
@@ -170,17 +163,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
-        id: 'cobol-plans',
-        question: '¿Qué planes tenés con COBOL?',
-        aliases: [
-          '¿Para qué querés aprender COBOL?',
-          '¿Seguís con COBOL?',
-          '¿Qué querés hacer con COBOL?',
-        ],
-        answer:
-          'Mi plan es seguir avanzando en COBOL y en el ecosistema mainframe, aprendiendo JCL, DB2 y CICS. Quiero construir proyectos que muestren cómo se desarrollan aplicaciones empresariales completas en ese entorno, y abrir oportunidades en sectores como banca y seguros, donde COBOL sigue siendo clave.',
-      },
-      {
         id: 'studies-portfolio',
         question: '¿Cómo relacionás tus estudios con tu portafolio?',
         aliases: [
@@ -188,7 +170,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Cómo aplicás lo que estudiaste?',
         ],
         answer:
-          'El portafolio muestra las dos puntas: los proyectos de la facultad, como la tesis y Campus Virtual, y los personales, hechos por mi cuenta. Campus Virtual es el ejemplo más claro: doce casos de uso, backend por capas, frontend en React y un asistente con IA, todo especificado, testeado y documentado antes de darlo por cerrado.',
+          'El portafolio muestra las dos puntas: los proyectos de la facultad, como la tesis; los de cursos, como Campus Virtual; y los personales, hechos por mi cuenta. Campus Virtual es el ejemplo más claro: doce casos de uso, backend por capas, frontend en React y un asistente con IA, todo especificado, testeado y documentado antes de darlo por cerrado.',
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -201,7 +183,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Cuál es tu mejor proyecto?',
         ],
         answer:
-          'Es mi trabajo práctico integrador de la carrera y el proyecto más grande del portafolio. Una plataforma de gestión académica con tres roles —estudiante, profesor y administrador— y un asistente conversacional que responde según el rol de quien pregunta, sin poder crear, modificar ni calificar nada. Backend en Flask organizado por capas, frontend en React con Vite, y doce casos de uso cerrados con especificación, tests y evidencia visual.',
+          'Es un trabajo práctico de un curso de "Desarrollo de software y arquitectura de agentes con IA" de la UNLa. El trabajo consistió en construir un programa con agentes de IA que se encargan de la creación del código: el rol del programador ya no es escribir el código, sino gestionar, orquestar, estructurar y revisar el trabajo que hacen los agentes. El resultado es una plataforma de gestión académica con tres roles —estudiante, profesor y administrador— y un asistente conversacional que responde según el rol de quien pregunta, sin poder crear, modificar ni calificar nada.',
         links: [{ label: 'Ver el proyecto', slug: 'campusVirtual' }],
       },
       {
@@ -290,7 +272,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'What projects have you built?',
         aliases: ['Show me your projects', 'Projects', 'What have you built?'],
         answer:
-          'Eight projects, academic and personal: Campus Virtual, my capstone project and the largest one; the thesis; the board-game store; the casino; the transport company; the driving school; the supermarket; and Docker. I also build VicioMesa for a client. Every project page has screenshots, a demo video and a link to the repository.',
+          'Eight projects, academic and personal: Campus Virtual, the practical assignment from the UNLa AI course and the largest one; the thesis; the board-game store; the casino; the transport company; the driving school; the supermarket; and Docker. I also build VicioMesa for a client. Every project page has screenshots, a demo video and a link to the repository.',
         links: [{ label: 'See all projects', hash: '#proyectos' }],
       },
       {
@@ -316,13 +298,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
           "Yes, I have basic COBOL knowledge and I'm going deeper into its syntax and structure. My goal is to apply it in enterprise and banking environments, where it is still widely used. I'm working through practical exercises that show how to integrate COBOL with modern technologies, bridging the legacy world and current development.",
       },
       {
-        id: 'cnc',
-        question: 'What are you studying besides programming?',
-        aliases: ['What is CNC?', 'Are you studying CNC?', 'What else are you learning?'],
-        answer:
-          "I'm learning CNC, the computer numerical control used in industrial machines. It interests me because it combines software with physical manufacturing processes, and it gives me a broader view of how computing applies beyond web development.",
-      },
-      {
         id: 'ai',
         question: 'Are you interested in artificial intelligence?',
         aliases: [
@@ -336,13 +311,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
         links: [{ label: 'See Campus Virtual', slug: 'campusVirtual' }],
       },
       {
-        id: 'cobol-plans',
-        question: 'What are your plans with COBOL?',
-        aliases: ['Why do you want to learn COBOL?', 'Are you still working on COBOL?'],
-        answer:
-          'My plan is to keep advancing in COBOL and the mainframe ecosystem, learning JCL, DB2 and CICS. I want to build projects that show how complete enterprise applications are developed in that environment, and to open opportunities in sectors such as banking and insurance, where COBOL is still key.',
-      },
-      {
         id: 'studies-portfolio',
         question: 'How do your studies connect to your portfolio?',
         aliases: [
@@ -350,7 +318,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'How do you apply what you studied?',
         ],
         answer:
-          'The portfolio shows both ends: the university projects, like the thesis and Campus Virtual, and the personal ones, built on my own. Campus Virtual is the clearest example: twelve use cases, a layered backend, a React frontend and an AI assistant, all specified, tested and documented before it was closed.',
+          'The portfolio shows both ends: the university projects, like the thesis; the course projects, like Campus Virtual; and the personal ones, built on my own. Campus Virtual is the clearest example: twelve use cases, a layered backend, a React frontend and an AI assistant, all specified, tested and documented before it was closed.',
         links: [{ label: 'See Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -363,7 +331,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           "What's your best project?",
         ],
         answer:
-          'It is my university capstone project and the largest one in the portfolio. An academic management platform with three roles — student, teacher and administrator — and a conversational assistant that answers according to the role of whoever asks, without being able to create, modify or grade anything. A layered Flask backend, a React frontend with Vite, and twelve use cases closed with specification, tests and visual evidence.',
+          'It is a practical assignment from a course on "Software development and agent architecture with AI" at UNLa. The work consisted of building a program with AI agents that handle the creation of the code: the programmer\'s role is no longer writing code, but managing, orchestrating, structuring and reviewing the work the agents do. The result is an academic management platform with three roles — student, teacher and administrator — and a conversational assistant that answers according to the role of whoever asks, without being able to create, modify or grade anything.',
         links: [{ label: 'See the project', slug: 'campusVirtual' }],
       },
       {
@@ -449,7 +417,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'Que projetos você já fez?',
         aliases: ['Mostre seus projetos', 'Projetos', 'O que você construiu?'],
         answer:
-          'Oito projetos, entre acadêmicos e pessoais: Campus Virtual, meu trabalho de conclusão e o maior de todos; a tese; a loja de jogos de tabuleiro; o cassino; a empresa de transporte; a autoescola; o supermercado; e Docker. Também desenvolvo o VicioMesa para um cliente. Cada página de projeto tem imagens, vídeo explicativo e link para o repositório.',
+          'Oito projetos, entre acadêmicos e pessoais: Campus Virtual, o trabalho prático do curso de IA da UNLa e o maior de todos; a tese; a loja de jogos de tabuleiro; o cassino; a empresa de transporte; a autoescola; o supermercado; e Docker. Também desenvolvo o VicioMesa para um cliente. Cada página de projeto tem imagens, vídeo explicativo e link para o repositório.',
         links: [{ label: 'Ver todos os projetos', hash: '#projetos' }],
       },
       {
@@ -475,13 +443,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Sim, tenho conhecimentos básicos de COBOL e estou me aprofundando na sua sintaxe e estrutura. Meu objetivo é aplicá-lo em ambientes empresariais e bancários, onde ainda é muito usado. Estou fazendo exercícios práticos que mostram como integrar COBOL com tecnologias modernas, para conectar o mundo legado ao desenvolvimento atual.',
       },
       {
-        id: 'cnc',
-        question: 'O que você está estudando além de programação?',
-        aliases: ['O que é CNC?', 'Você estuda CNC?', 'O que mais você estuda?'],
-        answer:
-          'Estou aprendendo CNC, o controle numérico computadorizado usado em máquinas industriais. Me interessa porque combina software com processos físicos de manufatura, e me dá uma visão mais ampla de como a informática se aplica além do desenvolvimento web.',
-      },
-      {
         id: 'ai',
         question: 'Você se interessa por inteligência artificial?',
         aliases: [
@@ -495,13 +456,6 @@ export const chatbot: Record<Lang, ChatLocale> = {
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
-        id: 'cobol-plans',
-        question: 'Quais são seus planos com COBOL?',
-        aliases: ['Por que você quer aprender COBOL?', 'Você continua com COBOL?'],
-        answer:
-          'Meu plano é continuar avançando em COBOL e no ecossistema mainframe, aprendendo JCL, DB2 e CICS. Quero construir projetos que mostrem como se desenvolvem aplicações empresariais completas nesse ambiente, e abrir oportunidades em setores como bancos e seguros, onde COBOL continua sendo chave.',
-      },
-      {
         id: 'studies-portfolio',
         question: 'Como você relaciona seus estudos com o portfólio?',
         aliases: [
@@ -509,7 +463,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Como você aplica o que estudou?',
         ],
         answer:
-          'O portfólio mostra as duas pontas: os projetos da faculdade, como a tese e o Campus Virtual, e os pessoais, feitos por conta própria. O Campus Virtual é o exemplo mais claro: doze casos de uso, backend em camadas, frontend em React e um assistente com IA, tudo especificado, testado e documentado antes de ser encerrado.',
+          'O portfólio mostra as duas pontas: os projetos da faculdade, como a tese; os de cursos, como o Campus Virtual; e os pessoais, feitos por conta própria. O Campus Virtual é o exemplo mais claro: doze casos de uso, backend em camadas, frontend em React e um assistente com IA, tudo especificado, testado e documentado antes de ser encerrado.',
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -522,7 +476,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Qual é o seu melhor projeto?',
         ],
         answer:
-          'É meu trabalho de conclusão de curso e o maior projeto do portfólio. Uma plataforma de gestão acadêmica com três papéis — estudante, professor e administrador — e um assistente conversacional que responde conforme o papel de quem pergunta, sem poder criar, modificar ou dar notas. Backend em Flask organizado em camadas, frontend em React com Vite, e doze casos de uso encerrados com especificação, testes e evidência visual.',
+          'É um trabalho prático de um curso de "Desenvolvimento de software e arquitetura de agentes com IA" da UNLa. O trabalho consistiu em construir um programa com agentes de IA que se encarregam da criação do código: o papel do programador já não é escrever o código, mas gerenciar, orquestrar, estruturar e revisar o trabalho que os agentes fazem. O resultado é uma plataforma de gestão acadêmica com três papéis — estudante, professor e administrador — e um assistente conversacional que responde conforme o papel de quem pergunta, sem poder criar, modificar ou dar notas.',
         links: [{ label: 'Ver o projeto', slug: 'campusVirtual' }],
       },
       {
