@@ -1,56 +1,159 @@
 # mi-portafolio
 
-Portafolio personal de Franco Figueroa — Licenciado en Sistemas, desarrollador
-backend con Node.js, Express y MySQL.
+Portafolio personal de Franco Figueroa — Licenciado en Sistemas, desarrollador backend con Node.js,
+Express y MySQL.
 
 Sitio publicado: https://franco2900.github.io/mi-portafolio/
+
+## Qué es
+
+Un sitio **estático**: no hay servidor, ni base de datos, ni framework de frontend. Astro recorre
+`src/` en el build, arma cada página como HTML plano y la deja en `dist/`. Eso es lo único que se
+publica. Como no hay nada que ejecutar del lado del servidor, el sitio entra entero en GitHub Pages
+y no cuesta nada mantenerlo.
+
+Hay tres idiomas:
+
+| Idioma | Prefijo | Ejemplo |
+| --- | --- | --- |
+| Español (por defecto) | `/` | `/mi-portafolio/casino.html` |
+| Inglés | `/en/` | `/mi-portafolio/en/casino.html` |
+| Portugués | `/pt/` | `/mi-portafolio/pt/casino.html` |
+
+## Cómo se arma una página
+
+Cada ruta es la combinación de tres piezas:
+
+1. **El cuerpo** — `src/content/<idioma>/<slug>.astro`: el HTML de esa página en ese idioma.
+2. **Los metadatos** — `src/data/pages.ts`: `<title>`, meta description y `<h1>`, por página y por
+   idioma.
+3. **El molde** — `src/layouts/Base.astro`: un único shell con el `<head>`, el header, la navbar, el
+   footer y los scripts. Todas las páginas lo comparten.
+
+`src/content/index.ts` es el registro que une idioma + slug con su cuerpo. Las rutas se generan a
+partir de ese registro, así que si una página no está ahí, no existe.
+
+Los archivos de `src/pages/` solo hacen de puente:
+
+- `[...slug].astro` — las nueve rutas en español, con la home en la raíz.
+- `en/index.astro`, `en/[...slug].astro` — lo mismo para inglés.
+- `pt/index.astro`, `pt/[...slug].astro` — lo mismo para portugués.
+- `404.astro` — la única página sin idioma.
+
+`build.format: 'preserve'` mantiene las URLs publicadas como `<pagina>.html`, igual que antes de la
+migración a Astro, y publica las portadas de idioma como `<idioma>/index.html`. Por eso los enlaces
+viejos y el sitemap siguen funcionando sin redirecciones.
+
+## Textos: prosa contra interfaz
+
+- **Prosa larga** (descripciones, explicaciones, "lo que aprendí") vive en
+  `src/content/<idioma>/<slug>.astro`.
+- **Etiquetas cortas** (títulos de navegación, botones, mensajes del 404) viven en `src/i18n/ui.ts` y
+  se leen con `useTranslations(lang)`.
+
+Separarlos evita que un diccionario se llene de párrafos y que una página se llene de strings
+sueltos.
+
+## Rutas y enlaces
+
+El sitio no vive en la raíz del dominio, sino en el subpath `/mi-portafolio`. Por eso ningún enlace
+interno se escribe a mano: todos pasan por `url()` (`src/lib/url.ts`), que antepone el base.
+
+```astro
+import { url } from '../../lib/url';
+
+<img src={url('images/style/mi cara.webp')} alt="Franco Figueroa">
+```
+
+Para enlazar a otra página en el mismo idioma se usa `localizePath(slugPath('casino'), lang)`.
+`slugPath` convierte el slug en el nombre del archivo publicado y `localizePath` agrega el prefijo
+del idioma. Ninguno de los dos necesita saber cuál es el base.
+
+Un detalle que rompe sitios enteros: si el visitante entra a `/mi-portafolio` **sin** barra final, el
+navegador resuelve los `src` relativos contra `/` y se cae todo — CSS, imágenes y páginas hermanas.
+Por eso los enlaces son absolutos bajo el base y no relativos.
+
+## El asistente
+
+La home tiene un asistente que responde preguntas sobre el perfil, los proyectos y el contacto.
+
+No es un modelo de lenguaje: es un set curado de 13 preguntas por idioma
+(`src/data/chatbot.ts`), con sus respuestas ya escritas. El componente `Chatbot.astro` las mete en
+la página como JSON y `public/js/chatbot.js` compara la pregunta del visitante contra ese set en el
+navegador. Sin red, sin claves, sin costo, y sin poder inventar nada: si no encuentra una respuesta
+suficientemente parecida, lo dice.
+
+Las respuestas se arman una vez y viajan dentro del HTML. Un visitante no dispara ninguna petición
+al preguntar.
 
 ## Stack
 
 - [Astro](https://astro.build) como generador de sitio estático.
 - Bootstrap 5, Bootstrap Icons, Font Awesome y flag-icons (por CDN).
-- Sin framework de frontend: las páginas se generan como HTML plano.
+- JavaScript plano en `public/js/`, sin bundler ni dependencias.
+- Imágenes ya optimizadas en WebP.
 
 ## Estructura
 
 ```
 src/
-  layouts/Base.astro        head, meta tags, header, navbar, footer
-  components/               header, navbars, footer, fondo animado
-  data/pages.ts             <title>, meta description y <h1> de cada pagina
-  pages/                    una pagina por proyecto -> <nombre>.html
+  layouts/Base.astro        head, meta tags, header, navbar, footer, scripts
+  components/               header, navbars, footer, fondo animado, selector de idioma, asistente
+  content/index.ts          registro idioma -> slug -> cuerpo de la página
+  content/<idioma>/         el HTML de cada página en cada idioma
+  data/pages.ts             <title>, meta description y <h1> de cada página
+  data/chatbot.ts           el set de preguntas y respuestas del asistente
+  i18n/                     idiomas, etiquetas BCP 47 y textos cortos de interfaz
+  lib/url.ts                url(): antepone el base a cada ruta interna
+  pages/                    rutas: español en la raíz, inglés y portugués con prefijo
 public/
   css/                      hojas de estilo (se sirven tal cual)
-  js/                       zoom de imagenes
-  images/                   imagenes ya optimizadas en WebP
+  js/                       asistente y zoom de imágenes
+  images/                   imágenes ya optimizadas en WebP
   cv/, certificados/        PDFs descargables
   robots.txt, sitemap.xml
 ```
 
 ## Comandos
 
+Windows: `npm` y `npx` se llaman `npm.cmd` y `npx.cmd`.
+
 ```bash
-npm install      # primera vez
-npm run dev      # http://localhost:4321/mi-portafolio/
-npm run build    # genera dist/
-npm run preview  # sirve dist/ localmente
+npm.cmd install      # primera vez
+npm.cmd run dev      # http://localhost:4321/mi-portafolio/
+npm.cmd run build    # genera dist/ (28 páginas)
+npm.cmd run preview  # sirve dist/ localmente
 ```
+
+## Verificación
+
+Un build sano imprime `28 page(s) built`. Si el número cambia, o se agregó una página o algo se
+rompió.
+
+Para comprobar que no hay enlaces ni imágenes rotas en lo que se tocó:
+
+```bash
+python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page index.html
+```
+
+El script no es recursivo: se le pasa `--page <idioma>/<slug>.html` por cada página revisada.
 
 ## Deploy
 
-El deploy corre en GitHub Actions (`.github/workflows/deploy.yml`) y publica
-`dist/` en GitHub Pages.
+El deploy corre en GitHub Actions (`.github/workflows/deploy.yml`) en cada push a `main`: instala,
+buildea, sube `dist/` y publica en GitHub Pages.
 
-**Requiere una configuracion manual, una sola vez:** en el repositorio,
-Settings -> Pages -> Source: **GitHub Actions**. Mientras esa opcion no este
-seleccionada, el sitio publicado es el que se sirve desde la rama `main`.
+**Requiere una configuración manual, una sola vez:** en el repositorio, Settings → Pages → Source:
+**GitHub Actions**. Mientras esa opción no esté seleccionada, el sitio publicado es el que se sirve
+desde la rama `main` y un push no lo actualiza.
 
 ## Notas
 
-- Las URLs publicadas se mantienen igual que antes de la migracion
-  (`build.format: 'file'` en `astro.config.mjs`), asi no se rompen enlaces ni el
-  sitemap.
-- `base: '/mi-portafolio'` en la config apunta al subpath de GitHub Pages. Si el
-  sitio pasa a un dominio propio, hay que cambiarlo a `/`.
-- Las imagenes nuevas conviene agregarlas con `<Image />` de `astro:assets` para
-  que se optimicen solas en el build.
+- Las URLs publicadas se mantienen igual que antes de la migración (`build.format: 'preserve'` en
+  `astro.config.mjs`), así no se rompen enlaces ni el sitemap.
+- `base: '/mi-portafolio'` en la config apunta al subpath de GitHub Pages. Si el sitio pasa a un
+  dominio propio, hay que cambiarlo a `/`.
+- Las imágenes nuevas conviene agregarlas con `<Image />` de `astro:assets` para que se optimicen
+  solas en el build.
+- Las reglas para trabajar en el repo (convenciones, i18n, verificación, commits) están en
+  `AGENTS.md`.
