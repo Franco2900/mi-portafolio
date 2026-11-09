@@ -86,6 +86,12 @@ suficientemente parecida, lo dice.
 Las respuestas se arman una vez y viajan dentro del HTML. Un visitante no dispara ninguna petición
 al preguntar.
 
+Para que el set no quede escondido, seis preguntas se ofrecen como botones a la vista y las otras
+siete viven en un desplegable «Ver todas las preguntas», agrupadas por perfil, tecnologías y
+proyectos. Es un `<details>` nativo: se abre sin JavaScript y trae teclado y accesibilidad resueltos.
+Los botones del desplegable están en el DOM desde el principio, así que responden igual que los seis
+de arriba.
+
 ## Stack
 
 - [Astro](https://astro.build) como generador de sitio estático.

@@ -12,11 +12,29 @@ const { lang } = Astro.props;
 const { copy, entries } = chatbot[lang];
 
 /** Las seis preguntas que se ofrecen como boton: las que mas sirven a quien evalua el perfil. */
-const SUGGESTED_IDS = ['who', 'projects', 'campus-virtual', 'skills', 'available', 'contact'];
+const PRIMARY_IDS = ['who', 'projects', 'campus-virtual', 'skills', 'available', 'contact'];
 
-const suggested = SUGGESTED_IDS.map((id) => entries.find((entry) => entry.id === id)).filter(
-  (entry): entry is (typeof entries)[number] => Boolean(entry),
-);
+/**
+ * El resto del set, agrupado por tema dentro de un `<details>`. Se usa el
+ * desplegable nativo y no un boton con JavaScript: funciona sin JS, ya trae
+ * teclado y accesibilidad, y no agrega codigo.
+ */
+const GROUP_IDS: { title: string; ids: string[] }[] = [
+  { title: copy.groupProfile, ids: ['services', 'studies', 'languages'] },
+  { title: copy.groupTech, ids: ['cobol', 'ai'] },
+  { title: copy.groupProjects, ids: ['studies-portfolio', 'source-code'] },
+];
+
+const pick = (id: string) => entries.find((entry) => entry.id === id);
+const isEntry = (
+  entry: (typeof entries)[number] | undefined,
+): entry is (typeof entries)[number] => Boolean(entry);
+
+const suggested = PRIMARY_IDS.map(pick).filter(isEntry);
+const groups = GROUP_IDS.map((group) => ({
+  title: group.title,
+  entries: group.ids.map(pick).filter(isEntry),
+}));
 
 /** Resuelve el destino de un enlace en el build: pagina de proyecto o ancla del home. */
 const resolveHref = (link: { slug?: string; hash?: string }): string =>
@@ -65,6 +83,22 @@ const payload = JSON.stringify({
       </button>
     ))}
   </div>
+
+  <details class="chatbot-more">
+    <summary class="chatbot-more-summary">{copy.allQuestions}</summary>
+    <div class="chatbot-more-body">
+      {groups.map((group) => (
+        <div class="chatbot-group">
+          <p class="chatbot-group-title">{group.title}</p>
+          {group.entries.map((entry) => (
+            <button type="button" class="chatbot-chip" data-chatbot-chip={entry.question}>
+              {entry.question}
+            </button>
+          ))}
+        </div>
+      ))}
+    </div>
+  </details>
 
   <p class="chatbot-note">{copy.disclaimer}</p>
 </div>

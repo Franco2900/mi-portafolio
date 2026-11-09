@@ -29,6 +29,11 @@ export interface ChatCopy {
   title: string;
   subtitle: string;
   suggestionsTitle: string;
+  /** Etiqueta del desplegable que muestra el set completo. */
+  allQuestions: string;
+  groupProfile: string;
+  groupTech: string;
+  groupProjects: string;
   placeholder: string;
   send: string;
   fallback: string;
@@ -47,6 +52,10 @@ export const chatbot: Record<Lang, ChatLocale> = {
       subtitle:
         'Preguntá lo que quieras sobre mi perfil, mis proyectos o cómo contactarme. Responde al instante, sin salir de la página.',
       suggestionsTitle: 'Podés empezar por acá:',
+      allQuestions: 'Ver todas las preguntas',
+      groupProfile: 'Perfil',
+      groupTech: 'Tecnologías',
+      groupProjects: 'Proyectos',
       placeholder: 'Escribí tu pregunta...',
       send: 'Enviar',
       fallback:
@@ -216,6 +225,10 @@ export const chatbot: Record<Lang, ChatLocale> = {
       subtitle:
         'Ask anything about my profile, my projects or how to reach me. It answers instantly, without leaving the page.',
       suggestionsTitle: 'You can start here:',
+      allQuestions: 'See all questions',
+      groupProfile: 'Profile',
+      groupTech: 'Technologies',
+      groupProjects: 'Projects',
       placeholder: 'Type your question...',
       send: 'Send',
       fallback:
@@ -364,6 +377,10 @@ export const chatbot: Record<Lang, ChatLocale> = {
       subtitle:
         'Pergunte o que quiser sobre meu perfil, meus projetos ou como falar comigo. Responde na hora, sem sair da página.',
       suggestionsTitle: 'Você pode começar por aqui:',
+      allQuestions: 'Ver todas as perguntas',
+      groupProfile: 'Perfil',
+      groupTech: 'Tecnologias',
+      groupProjects: 'Projetos',
       placeholder: 'Escreva sua pergunta...',
       send: 'Enviar',
       fallback:

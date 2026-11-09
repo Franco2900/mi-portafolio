@@ -84,6 +84,8 @@ Delegated direct.
 - [x] T11 Correct the `campus-virtual` answer in the three locales: it is a course assignment, not
       the degree's capstone.
 - [x] T12 Write `AGENTS.md` and expand `README.md`.
+- [x] T13 Surface the whole set: six primary chips plus a native `<details>` with the other seven
+      grouped by topic, in the three locales.
 
 ## Acceptance criteria
 
@@ -154,6 +156,16 @@ Plus a headless run of the page that asks three questions per locale and asserts
   new project page, the assistant's contract, the Astro whitespace trap, verification and git
   conventions. `README.md` now explains how the site is assembled and how the assistant works,
   instead of only listing commands.
+- 2026-11-09: T13 done. Only six of thirteen questions were reachable from the chips, so the rest
+  was invisible unless the visitor guessed the wording. `Chatbot.astro` now splits the set into
+  `PRIMARY_IDS` (six, visible) and `GROUP_IDS` (seven, inside a native `<details>` grouped as
+  Profile / Technologies / Projects). Four keys were added to `ChatCopy`: `allQuestions`,
+  `groupProfile`, `groupTech`, `groupProjects`, in the three locales.
+  Verified: build 28 pages; the three homes carry 6 primary + 7 grouped = 13 unique chips; the
+  headless harness still resolves all ten sampled questions and falls back on nonsense; clicking a
+  grouped chip answers and leaves the disclosure open; at a real 390 px (iframe) `clientWidth`,
+  `body.scrollWidth` and `documentElement.scrollWidth` all read 390 with no overflowing element;
+  `check_refs.py` 0/34 broken in the three homes.
 
 ## Findings
 
@@ -174,6 +186,14 @@ Plus a headless run of the page that asks three questions per locale and asserts
   project pages already said "Curso de IA"; only the assistant's answers were wrong.
 - Two entries for one basic skill shadow each other. `cobol` and `cobol-plans` proved it: the second
   one added no fact, it only inflated the first.
+- A native `<details>` beats a JavaScript toggle for "see the rest": it needs no script, works with
+  JS disabled, and the keyboard and screen-reader behaviour come free. The grouped chips are in the
+  DOM from the first paint, so the existing `querySelectorAll('[data-chatbot-chip]')` binds them
+  without a line of new code.
+- Edge headless on Windows refuses to lay out below about 540 px even with `--window-size=390`, and
+  silently reports `clientWidth: 540` while the screenshot is 390 wide — the crop looks like a CSS
+  overflow bug that does not exist. The honest mobile check is an iframe 390 px wide, with the
+  measurements printed inside the frame.
 
 ## Known gaps
 

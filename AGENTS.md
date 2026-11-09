@@ -109,13 +109,21 @@ missing step 6 makes it invisible to search engines.
 
 `src/data/chatbot.ts` is the whole brain: 13 entries per locale, each with a canonical `question`,
 `aliases`, an `answer` and optional `links`. `src/components/Chatbot.astro` renders the section,
-six suggestion chips and the JSON payload. `public/js/chatbot.js` matches the visitor's question
-locally, with no network access.
+the JSON payload, six primary chips and a native `<details>` holding the other seven grouped by
+topic. `public/js/chatbot.js` matches the visitor's question locally, with no network access.
+
+The chip lists are two constants in the component: `PRIMARY_IDS` (always visible) and `GROUP_IDS`
+(inside the `<details>`, with the group headings taken from `copy.groupProfile`, `copy.groupTech`
+and `copy.groupProjects`). Every entry must appear exactly once across the two. The grouped chips
+live in the DOM from the start, so the matcher binds them with the same `querySelectorAll` even
+while the disclosure is closed.
 
 It is deliberately **not** a language model. Every answer is curated prose. When adding an entry:
 
 - Add it to all three locales, same `id`, same position.
 - Write aliases the way a visitor would actually type, without accents or punctuation.
+- Add the new `id` to `PRIMARY_IDS` or to one of the `GROUP_IDS` lists, otherwise the entry exists
+  in the payload but no chip ever offers it.
 - Link with `slug` for a project page or `hash` for an anchor on the home — exactly one of the two.
 - The matcher answers with the highest-scoring entry above `0.55`, otherwise the fallback. Two
   entries that a visitor cannot tell apart will shadow each other; check the pair you add.

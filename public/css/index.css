@@ -312,6 +312,45 @@ iframe {
   color: #fff;
 }
 
+/* Desplegable con el resto del set, agrupado por tema. */
+.chatbot-more {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid #dee2e6;
+}
+
+.chatbot-more-summary {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #0d6efd; /* azul Bootstrap */
+  cursor: pointer;
+}
+
+.chatbot-more-summary:hover {
+  text-decoration: underline;
+}
+
+.chatbot-more-body {
+  margin-top: 10px;
+}
+
+.chatbot-group {
+  margin-bottom: 10px;
+}
+
+.chatbot-group:last-child {
+  margin-bottom: 0;
+}
+
+.chatbot-group-title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6c757d;
+  margin-bottom: 6px;
+}
+
 .chatbot-note {
   font-size: 0.8rem;
   color: #6c757d;
