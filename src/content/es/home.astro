@@ -1,11 +1,14 @@
 ---
+import Chatbot from '../../components/Chatbot.astro';
 import { url } from '../../lib/url';
+import type { Lang } from '../../i18n/ui';
 
 interface Props {
   h1: string;
+  lang: Lang;
 }
 
-const { h1 } = Astro.props;
+const { h1, lang } = Astro.props;
 ---
   <h1 class="page-title">{h1}</h1>
   <p class="page-subtitle">Desarrollador Backend &middot; Licenciado en Sistemas (UNLa)</p>
@@ -220,6 +223,12 @@ puedas ver el código.
 
 </div>
 
+
+<br>
+
+<Chatbot lang={lang} />
+
+<br>
 
 <h4>Clientes <i class="bi bi-people"></i></h4>
 <div class="row">

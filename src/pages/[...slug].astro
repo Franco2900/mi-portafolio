@@ -27,5 +27,5 @@ const Body = bodies[key as keyof typeof bodies];
   nav={key === 'home' ? 'home' : 'project'}
   css={key === 'home' ? ['css/index.css'] : ['css/proyectos.css']}
 >
-  <Body h1={meta.h1} />
+  <Body h1={meta.h1} lang={lang} />
 </Base>
