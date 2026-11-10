@@ -34,7 +34,7 @@ export const pages: Record<Lang, Record<string, PageMeta>> = {
     casino: {
       title: 'Juegos de casino online | Franco Figueroa',
       description:
-        'Sitio web con varios juegos de casino y sistema de apuestas, desarrollado con Node.js, Express y MySQL como práctica de lógica y estado en el backend.',
+        'Sitio web con varios juegos de casino y sistema de apuestas, desarrollado con Node.js, Express y MongoDB como práctica de lógica y estado en el backend.',
       h1: 'Juegos de casino online',
     },
     empresaTransporte: {
