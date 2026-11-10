@@ -154,7 +154,7 @@ is no dark mode.
 - A JPEG converted to WebP keeps its pixels but loses the EXIF orientation tag. The profile photo is
   a 2556×3408 portrait stored with orientation 8, so a plain conversion produced a sideways
   600×450 file that looked horizontal everywhere. Run `ImageOps.exif_transpose` before resizing;
-  the file is now a real 600×800 portrait and `.img-profile` crops it to a square for the circle.
+  the file is now a real 600×800 portrait and `.img-profile` shows it whole, without cropping.
 
 ## Verification before saying it is done
 
