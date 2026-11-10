@@ -144,13 +144,13 @@ Evidencia visual (headless Edge, 1400x2200, mismo servidor):
 - El email y el teléfono también estaban en crudo en `json/preguntasChatbot.json`,
   en el stash (`97f61a4`), **no publicado**. La reescritura limpió el número del
   stash; el email sigue ahí. Si el chatbot se commitea tal cual, se publica.
-- **Código muerto preexistente en `public/js/zoomImagenes.js`**: de las 3 funciones,
-  `hacerZoomImagen` y `mostrarImagenEnOverlay` no las llama nadie y la segunda
-  depende de `#overlay` y `#overlay-img`, elementos que **no existen en ninguna
-  página ni existieron nunca** (verificado en `6d19d99`). No se tocó a propósito:
-  parece una funcionalidad a medio hacer, no basura. Si se la llama, rompe con
-  `Cannot read properties of null`.
-- `body class="light-mode"` no lo usa nada: es una clase muerta en `layout.css`.
+- **Código muerto preexistente en `public/js/zoomImagenes.js`** — resuelto el 2026-11-10: de las 3
+  funciones, `hacerZoomImagen` y `mostrarImagenEnOverlay` no las llamaba nadie y la segunda dependía
+  de `#overlay` y `#overlay-img`, elementos que no existen en ninguna página ni existieron nunca
+  (verificado en `6d19d99`). El archivo quedó con `mostrarImagenEnNuevaVentana`, la única que usan
+  los `onclick` de las imágenes de proyecto; el archivo no se puede borrar.
+- `body class="light-mode"` no lo usaba nada — resuelto el 2026-11-10: se sacó la clase de
+  `Base.astro` y las reglas `.light-mode` y `.dark-mode` de `layout.css`.
 - `google7c8b7bd2a76e855d.html` no tiene metadata a propósito: es el stub de
   verificación de Search Console. Por eso el chequeo de metadata corre con
   `--ignore 'google*.html'`.

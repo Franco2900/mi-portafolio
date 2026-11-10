@@ -68,18 +68,3 @@ footer {
   color: white;
   width: 100%;
 }
-
-
-/* Modo claro */
-.light-mode {
-  background-color: white;
-  color: black;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Modo oscuro */
-.dark-mode {
-  background-color: #111;
-  color: #eee;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
