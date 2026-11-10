@@ -31,6 +31,12 @@ h1.page-title + .page-subtitle {
 }
 
 .img-profile {
+    /* La foto es un retrato 3:4 y el marco es cuadrado: sin esto el círculo
+       quedaría estirado en elipse. `cover` recorta el alto y `object-position`
+       deja la cara centrada. */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 25%;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }

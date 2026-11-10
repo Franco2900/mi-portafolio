@@ -151,6 +151,10 @@ is no dark mode.
 - `set:html` is for trusted, pre-serialized strings only (the assistant payload). Escape `<` before
   injecting JSON into a `<script>` tag.
 - `is:inline` keeps Astro from processing a script tag. Both assistant tags use it on purpose.
+- A JPEG converted to WebP keeps its pixels but loses the EXIF orientation tag. The profile photo is
+  a 2556×3408 portrait stored with orientation 8, so a plain conversion produced a sideways
+  600×450 file that looked horizontal everywhere. Run `ImageOps.exif_transpose` before resizing;
+  the file is now a real 600×800 portrait and `.img-profile` crops it to a square for the circle.
 
 ## Verification before saying it is done
 
