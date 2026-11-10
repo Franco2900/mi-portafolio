@@ -12,17 +12,22 @@ const { lang } = Astro.props;
 const { copy, entries } = chatbot[lang];
 
 /** Las seis preguntas que se ofrecen como boton: las que mas sirven a quien evalua el perfil. */
-const PRIMARY_IDS = ['who', 'projects', 'campus-virtual', 'skills', 'available', 'contact'];
+const PRIMARY_IDS = ['who', 'projects', 'skills', 'services', 'available', 'contact'];
 
 /**
- * El resto del set, agrupado por tema dentro de un `<details>`. Se usa el
- * desplegable nativo y no un boton con JavaScript: funciona sin JS, ya trae
- * teclado y accesibilidad, y no agrega codigo.
+ * El set completo, agrupado por tema. Los seis principales tambien estan aca:
+ * al abrir el desplegable se ocultan los de arriba (ver `.chatbot:has(...)` en
+ * index.css) y las trece quedan juntas en su categoria. El desplegable es el
+ * `<details>` nativo: funciona sin JS, ya trae teclado y accesibilidad.
  */
 const GROUP_IDS: { title: string; ids: string[] }[] = [
-  { title: copy.groupProfile, ids: ['services', 'studies', 'languages'] },
-  { title: copy.groupTech, ids: ['cobol', 'ai'] },
-  { title: copy.groupProjects, ids: ['studies-portfolio', 'source-code'] },
+  { title: copy.groupProfile, ids: ['who', 'services', 'studies', 'languages'] },
+  { title: copy.groupTech, ids: ['skills', 'cobol', 'ai'] },
+  {
+    title: copy.groupProjects,
+    ids: ['projects', 'campus-virtual', 'studies-portfolio', 'source-code'],
+  },
+  { title: copy.groupContact, ids: ['contact', 'available'] },
 ];
 
 const pick = (id: string) => entries.find((entry) => entry.id === id);

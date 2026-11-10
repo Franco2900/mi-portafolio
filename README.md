@@ -86,11 +86,12 @@ suficientemente parecida, lo dice.
 Las respuestas se arman una vez y viajan dentro del HTML. Un visitante no dispara ninguna petición
 al preguntar.
 
-Para que el set no quede escondido, seis preguntas se ofrecen como botones a la vista y las otras
-siete viven en un desplegable «Ver todas las preguntas», agrupadas por perfil, tecnologías y
-proyectos. Es un `<details>` nativo: se abre sin JavaScript y trae teclado y accesibilidad resueltos.
-Los botones del desplegable están en el DOM desde el principio, así que responden igual que los seis
-de arriba.
+Para que el set no quede escondido, seis preguntas se ofrecen como botones a la vista y las trece
+están agrupadas por tema en un desplegable «Ver todas las preguntas»: perfil, tecnologías, proyectos
+y contacto. Al abrirlo, los seis botones de arriba desaparecen y esas mismas preguntas aparecen
+dentro de su categoría, así no se leen dos veces. Es un `<details>` nativo y el ocultamiento es una
+regla CSS (`:has`): se abre sin JavaScript y trae teclado y accesibilidad resueltos. El script
+engancha todos los botones por igual, así que los del desplegable responden como los de arriba.
 
 ## Stack
 

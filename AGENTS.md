@@ -109,21 +109,27 @@ missing step 6 makes it invisible to search engines.
 
 `src/data/chatbot.ts` is the whole brain: 13 entries per locale, each with a canonical `question`,
 `aliases`, an `answer` and optional `links`. `src/components/Chatbot.astro` renders the section,
-the JSON payload, six primary chips and a native `<details>` holding the other seven grouped by
-topic. `public/js/chatbot.js` matches the visitor's question locally, with no network access.
+the JSON payload, six primary chips and a native `<details>` that holds all 13 grouped by topic.
+`public/js/chatbot.js` matches the visitor's question locally, with no network access.
 
-The chip lists are two constants in the component: `PRIMARY_IDS` (always visible) and `GROUP_IDS`
-(inside the `<details>`, with the group headings taken from `copy.groupProfile`, `copy.groupTech`
-and `copy.groupProjects`). Every entry must appear exactly once across the two. The grouped chips
-live in the DOM from the start, so the matcher binds them with the same `querySelectorAll` even
-while the disclosure is closed.
+The chip lists are two constants in the component: `PRIMARY_IDS` (the six shown by default) and
+`GROUP_IDS` (all 13, with the headings taken from `copy.groupProfile`, `copy.groupTech`,
+`copy.groupProjects` and `copy.groupContact`). `GROUP_IDS` is the complete set, so every entry
+appears in exactly one group, and the six primary ones appear twice in the DOM on purpose: when the
+disclosure opens, `.chatbot:has(.chatbot-more[open]) .chatbot-suggestions` hides the top block and
+the same six are already waiting in their category. The grouped chips live in the DOM from the
+start, so the matcher binds them with the same `querySelectorAll` even while the disclosure is
+closed.
 
 It is deliberately **not** a language model. Every answer is curated prose. When adding an entry:
 
 - Add it to all three locales, same `id`, same position.
 - Write aliases the way a visitor would actually type, without accents or punctuation.
-- Add the new `id` to `PRIMARY_IDS` or to one of the `GROUP_IDS` lists, otherwise the entry exists
-  in the payload but no chip ever offers it.
+- Add the new `id` to exactly one `GROUP_IDS` list, otherwise the entry exists in the payload but no
+  chip ever offers it. Add it to `PRIMARY_IDS` only if it deserves one of the six slots above.
+- Do not rank the projects against each other in the answers. Campus Virtual was once called "the
+  largest" and "the clearest example" in three answers, and the author corrected it: it is one
+  project among eight.
 - Link with `slug` for a project page or `hash` for an anchor on the home — exactly one of the two.
 - The matcher answers with the highest-scoring entry above `0.55`, otherwise the fallback. Two
   entries that a visitor cannot tell apart will shadow each other; check the pair you add.

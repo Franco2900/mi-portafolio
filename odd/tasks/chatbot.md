@@ -86,6 +86,8 @@ Delegated direct.
 - [x] T12 Write `AGENTS.md` and expand `README.md`.
 - [x] T13 Surface the whole set: six primary chips plus a native `<details>` with the other seven
       grouped by topic, in the three locales.
+- [x] T14 On the author's correction: opening the disclosure moves the six primary chips into their
+      categories, and Campus Virtual stops being ranked above the other projects.
 
 ## Acceptance criteria
 
@@ -166,6 +168,23 @@ Plus a headless run of the page that asks three questions per locale and asserts
   grouped chip answers and leaves the disclosure open; at a real 390 px (iframe) `clientWidth`,
   `body.scrollWidth` and `documentElement.scrollWidth` all read 390 with no overflowing element;
   `check_refs.py` 0/34 broken in the three homes.
+- 2026-11-10: T14 done. Two changes, both from the author's review of T13.
+  First, the disclosure now holds all thirteen entries in four groups (Profile 4, Technologies 3,
+  Projects 4, Contact 2); `GROUP_IDS` is the complete set and `PRIMARY_IDS` is a subset of it. A
+  `:has()` rule hides the six primary chips while the disclosure is open, so they reappear inside
+  their category instead of being listed twice. `ChatCopy` gained `groupContact` in the three
+  locales.
+  Second, the answers stopped ranking Campus Virtual. The author's own text replaced the `projects`
+  answer (the list starts with the thesis, no "largest of them all", VicioMesa dropped) and the
+  `source-code` answer (no Campus Virtual CI sentence). `studies-portfolio` no longer calls it "the
+  clearest example" — it now says the idea is the same in every project — and its link points at
+  the projects anchor instead of the Campus Virtual page. `ai` now introduces it as "one of the
+  projects, Campus Virtual". `campus-virtual` itself left `PRIMARY_IDS`; `services` took the slot.
+  Verified: build 28 pages; 6 primary chips without Campus Virtual; 4 groups of 4/3/4/2 = 13 unique
+  questions in the three locales; the headless harness still resolves the ten sampled questions and
+  falls back on nonsense; a grouped chip answers and leaves the disclosure open; at a real 390 px
+  (iframe) the three width readings stay at 390 with no overflowing element;
+  `check_refs.py` 0/34 broken in the three homes.
 
 ## Findings
 
@@ -194,6 +213,12 @@ Plus a headless run of the page that asks three questions per locale and asserts
   silently reports `clientWidth: 540` while the screenshot is 390 wide — the crop looks like a CSS
   overflow bug that does not exist. The honest mobile check is an iframe 390 px wide, with the
   measurements printed inside the frame.
+- A primary chip is a ranking too. Six chips out of thirteen read as "these six are the important
+  ones", and Campus Virtual held a slot while seven entries had none — the same over-emphasis as
+  the "largest of them all" sentence, only in the UI. The slot went to `services`.
+- Once the disclosure holds every entry, the six primary chips are duplicates in the DOM. Hiding
+  them with `.chatbot:has(.chatbot-more[open])` needs no listener and no new script; on a browser
+  without `:has()` the chips simply show twice, which is the harmless failure direction.
 
 ## Known gaps
 

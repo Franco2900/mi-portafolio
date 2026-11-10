@@ -312,11 +312,26 @@ iframe {
   color: #fff;
 }
 
-/* Desplegable con el resto del set, agrupado por tema. */
+/* Desplegable con el set completo, agrupado por tema. */
 .chatbot-more {
   margin-top: 6px;
   padding-top: 10px;
   border-top: 1px solid #dee2e6;
+}
+
+/*
+ * Con el desplegable abierto, las seis principales se esconden de arriba:
+ * ya estan dentro de su categoria y se verian repetidas. `:has()` evita un
+ * listener de JavaScript; sin soporte solo se ven duplicadas, nunca de menos.
+ */
+.chatbot:has(.chatbot-more[open]) .chatbot-suggestions {
+  display: none;
+}
+
+.chatbot:has(.chatbot-more[open]) .chatbot-more {
+  margin-top: 12px;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .chatbot-more-summary {

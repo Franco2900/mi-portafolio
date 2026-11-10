@@ -34,6 +34,7 @@ export interface ChatCopy {
   groupProfile: string;
   groupTech: string;
   groupProjects: string;
+  groupContact: string;
   placeholder: string;
   send: string;
   fallback: string;
@@ -56,6 +57,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
       groupProfile: 'Perfil',
       groupTech: 'Tecnologías',
       groupProjects: 'Proyectos',
+      groupContact: 'Contacto',
       placeholder: 'Escribí tu pregunta...',
       send: 'Enviar',
       fallback:
@@ -127,7 +129,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Qué construiste?',
         ],
         answer:
-          'Ocho proyectos, entre académicos y personales: Campus Virtual, el trabajo práctico del curso de IA de la UNLa y el más grande de todos; la tesis; la tienda de juegos de mesa; el casino; la empresa de transporte; la autoescuela; el supermercado; y Docker. Además desarrollo VicioMesa para un cliente. Cada página de proyecto tiene imágenes, video explicativo y enlace al repositorio.',
+          'Ocho proyectos, entre académicos y personales: la tesis; el Campus Virtual; la tienda de juegos de mesa; el casino; la empresa de transporte; la autoescuela; el supermercado; y Docker. Cada página de proyecto tiene imágenes, video explicativo y enlace al repositorio.',
         links: [{ label: 'Ver todos los proyectos', hash: '#proyectos' }],
       },
       {
@@ -168,7 +170,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Trabajaste con modelos de lenguaje?',
         ],
         answer:
-          'Sí, y ya está aplicada en el portafolio: Campus Virtual tiene un asistente conversacional integrado que corre con LangChain y Ollama, recupera contexto desde ChromaDB y le da al modelo herramientas de sólo lectura limitadas por rol. Además sigo estudiando modelos de lenguaje y análisis de datos para integrarlos en aplicaciones reales.',
+          'Sí, y ya está aplicada en el portafolio: uno de los proyectos, el Campus Virtual, tiene un asistente conversacional integrado que corre con LangChain y Ollama, recupera contexto desde ChromaDB y le da al modelo herramientas de sólo lectura limitadas por rol. Además sigo estudiando modelos de lenguaje y análisis de datos para integrarlos en aplicaciones reales.',
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -179,8 +181,8 @@ export const chatbot: Record<Lang, ChatLocale> = {
           '¿Cómo aplicás lo que estudiaste?',
         ],
         answer:
-          'El portafolio muestra las dos puntas: los proyectos de la facultad, como la tesis; los de cursos, como Campus Virtual; y los personales, hechos por mi cuenta. Campus Virtual es el ejemplo más claro: doce casos de uso, backend por capas, frontend en React y un asistente con IA, todo especificado, testeado y documentado antes de darlo por cerrado.',
-        links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
+          'El portafolio muestra las dos puntas: los proyectos de la facultad, como la tesis; los de cursos, como el Campus Virtual; y los personales, hechos por mi cuenta. En todos la idea es la misma: contar el problema, las decisiones y el resultado, no solo el código.',
+        links: [{ label: 'Ver proyectos', hash: '#proyectos' }],
       },
       {
         id: 'campus-virtual',
@@ -200,7 +202,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: '¿Puedo ver el código de los proyectos?',
         aliases: ['¿Dónde está el código?', '¿Tenés GitHub?', 'Repositorios', 'Código fuente'],
         answer:
-          'Sí. Cada página de proyecto enlaza a su repositorio en GitHub, y mi perfil es github.com/Franco2900. El código de Campus Virtual es público y tiene su pipeline de integración continua.',
+          'Sí. Cada página de proyecto enlaza a su repositorio en GitHub, y mi perfil es github.com/Franco2900.',
         links: [{ label: 'Ver proyectos', hash: '#proyectos' }],
       },
       {
@@ -229,6 +231,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
       groupProfile: 'Profile',
       groupTech: 'Technologies',
       groupProjects: 'Projects',
+      groupContact: 'Contact',
       placeholder: 'Type your question...',
       send: 'Send',
       fallback:
@@ -285,7 +288,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'What projects have you built?',
         aliases: ['Show me your projects', 'Projects', 'What have you built?'],
         answer:
-          'Eight projects, academic and personal: Campus Virtual, the practical assignment from the UNLa AI course and the largest one; the thesis; the board-game store; the casino; the transport company; the driving school; the supermarket; and Docker. I also build VicioMesa for a client. Every project page has screenshots, a demo video and a link to the repository.',
+          'Eight projects, academic and personal: the thesis; Campus Virtual; the board-game store; the casino; the transport company; the driving school; the supermarket; and Docker. Every project page has screenshots, a demo video and a link to the repository.',
         links: [{ label: 'See all projects', hash: '#proyectos' }],
       },
       {
@@ -320,7 +323,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Have you worked with language models?',
         ],
         answer:
-          "Yes, and it is already applied in this portfolio: Campus Virtual ships an integrated conversational assistant that runs on LangChain and Ollama, retrieves context from ChromaDB and gives the model role-scoped read-only tools. I'm also studying language models and data analysis to integrate them into real applications.",
+          "Yes, and it is already applied in this portfolio: one of the projects, Campus Virtual, ships an integrated conversational assistant that runs on LangChain and Ollama, retrieves context from ChromaDB and gives the model role-scoped read-only tools. I'm also studying language models and data analysis to integrate them into real applications.",
         links: [{ label: 'See Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -331,8 +334,8 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'How do you apply what you studied?',
         ],
         answer:
-          'The portfolio shows both ends: the university projects, like the thesis; the course projects, like Campus Virtual; and the personal ones, built on my own. Campus Virtual is the clearest example: twelve use cases, a layered backend, a React frontend and an AI assistant, all specified, tested and documented before it was closed.',
-        links: [{ label: 'See Campus Virtual', slug: 'campusVirtual' }],
+          'The portfolio shows both ends: the university projects, like the thesis; the course projects, like Campus Virtual; and the personal ones, built on my own. In all of them the idea is the same: show the problem, the decisions and the result, not just the code.',
+        links: [{ label: 'See projects', hash: '#proyectos' }],
       },
       {
         id: 'campus-virtual',
@@ -352,7 +355,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'Can I see the project code?',
         aliases: ['Where is the code?', 'Are you on GitHub?', 'Repositories', 'Source code'],
         answer:
-          "Yes. Every project page links to its GitHub repository, and my profile is github.com/Franco2900. Campus Virtual's code is public and runs a continuous integration pipeline.",
+          'Yes. Every project page links to its GitHub repository, and my profile is github.com/Franco2900.',
         links: [{ label: 'See projects', hash: '#proyectos' }],
       },
       {
@@ -381,6 +384,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
       groupProfile: 'Perfil',
       groupTech: 'Tecnologias',
       groupProjects: 'Projetos',
+      groupContact: 'Contato',
       placeholder: 'Escreva sua pergunta...',
       send: 'Enviar',
       fallback:
@@ -434,7 +438,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'Que projetos você já fez?',
         aliases: ['Mostre seus projetos', 'Projetos', 'O que você construiu?'],
         answer:
-          'Oito projetos, entre acadêmicos e pessoais: Campus Virtual, o trabalho prático do curso de IA da UNLa e o maior de todos; a tese; a loja de jogos de tabuleiro; o cassino; a empresa de transporte; a autoescola; o supermercado; e Docker. Também desenvolvo o VicioMesa para um cliente. Cada página de projeto tem imagens, vídeo explicativo e link para o repositório.',
+          'Oito projetos, entre acadêmicos e pessoais: a tese; o Campus Virtual; a loja de jogos de tabuleiro; o cassino; a empresa de transporte; a autoescola; o supermercado; e Docker. Cada página de projeto tem imagens, vídeo explicativo e link para o repositório.',
         links: [{ label: 'Ver todos os projetos', hash: '#projetos' }],
       },
       {
@@ -469,7 +473,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Você já trabalhou com modelos de linguagem?',
         ],
         answer:
-          'Sim, e ela já está aplicada no portfólio: o Campus Virtual tem um assistente conversacional integrado que roda com LangChain e Ollama, recupera contexto do ChromaDB e dá ao modelo ferramentas de apenas leitura limitadas por papel. Além disso, sigo estudando modelos de linguagem e análise de dados para integrá-los em aplicações reais.',
+          'Sim, e ela já está aplicada no portfólio: um dos projetos, o Campus Virtual, tem um assistente conversacional integrado que roda com LangChain e Ollama, recupera contexto do ChromaDB e dá ao modelo ferramentas de apenas leitura limitadas por papel. Além disso, sigo estudando modelos de linguagem e análise de dados para integrá-los em aplicações reais.',
         links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
       },
       {
@@ -480,8 +484,8 @@ export const chatbot: Record<Lang, ChatLocale> = {
           'Como você aplica o que estudou?',
         ],
         answer:
-          'O portfólio mostra as duas pontas: os projetos da faculdade, como a tese; os de cursos, como o Campus Virtual; e os pessoais, feitos por conta própria. O Campus Virtual é o exemplo mais claro: doze casos de uso, backend em camadas, frontend em React e um assistente com IA, tudo especificado, testado e documentado antes de ser encerrado.',
-        links: [{ label: 'Ver Campus Virtual', slug: 'campusVirtual' }],
+          'O portfólio mostra as duas pontas: os projetos da faculdade, como a tese; os de cursos, como o Campus Virtual; e os pessoais, feitos por conta própria. Em todos a ideia é a mesma: mostrar o problema, as decisões e o resultado, não só o código.',
+        links: [{ label: 'Ver projetos', hash: '#projetos' }],
       },
       {
         id: 'campus-virtual',
@@ -501,7 +505,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         question: 'Posso ver o código dos projetos?',
         aliases: ['Onde está o código?', 'Você tem GitHub?', 'Repositórios', 'Código-fonte'],
         answer:
-          'Sim. Cada página de projeto tem link para o seu repositório no GitHub, e meu perfil é github.com/Franco2900. O código do Campus Virtual é público e tem seu pipeline de integração contínua.',
+          'Sim. Cada página de projeto tem link para o seu repositório no GitHub, e meu perfil é github.com/Franco2900.',
         links: [{ label: 'Ver projetos', hash: '#projetos' }],
       },
       {
