@@ -92,6 +92,14 @@ resolvable.
   its published file name (`home` becomes the empty string).
 - A locale may be incomplete and still compile: routes are generated from the keys present in
   `content/index.ts`. In practice all three are kept complete.
+- The chosen language is remembered in `localStorage` under `mi-portafolio:lang`. `public/js/lang.js`
+  runs in the `<head>`, without `defer`, so the redirect happens before the first paint; its data
+  (current locale, default locale, home path per locale) travels as attributes of its own `<script>`
+  tag, read through `document.currentScript`, because the DOM does not exist yet. Two rules keep it
+  from breaking shared links: it only redirects from the default-locale home, never from an explicit
+  `/en/` or `/pt/` URL, and it only stores what the visitor clicks in the selector, never the locale
+  they happened to land on. The key is prefixed because `franco2900.github.io` is one origin for
+  every GitHub Pages repo of the author.
 
 ### Adding a project page
 

@@ -44,6 +44,12 @@ Los archivos de `src/pages/` solo hacen de puente:
 migración a Astro, y publica las portadas de idioma como `<idioma>/index.html`. Por eso los enlaces
 viejos y el sitemap siguen funcionando sin redirecciones.
 
+El idioma que elige el visitante en el selector queda guardado en `localStorage` (clave
+`mi-portafolio:lang`) y se vuelve a aplicar cuando entra por la raíz del sitio. Dos reglas: solo se
+redirige desde la home en español, nunca desde una URL explícita `/en/` o `/pt/` (si alguien comparte
+una página en inglés, se respeta), y solo se guarda lo que el visitante elige con un clic. Sin
+cookies, sin backend y sin banner.
+
 ## Textos: prosa contra interfaz
 
 - **Prosa larga** (descripciones, explicaciones, "lo que aprendí") vive en

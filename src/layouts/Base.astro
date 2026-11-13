@@ -54,6 +54,12 @@ const alternates = locales
   }));
 
 const defaultUrl = new URL(localizePath(slugPath(slug), defaultLang), SITE).href;
+
+// Home de cada idioma, como ruta publicada. Es lo unico que necesita el script
+// del idioma recordado: desde donde puede redirigir y hacia donde.
+const homeHrefs = Object.fromEntries(
+  locales.map((code) => [code, localizePath(slugPath('home'), code)]),
+);
 ---
 
 <!DOCTYPE html>
@@ -120,6 +126,18 @@ const defaultUrl = new URL(localizePath(slugPath(slug), defaultLang), SITE).href
   <link rel="stylesheet" href={url("css/fondo.css")}>
   <link rel="stylesheet" href={url("css/footer.css")}>
   {css.map((href) => <link rel="stylesheet" href={url(href)} />)}
+
+  <!-- Idioma recordado: va en el head, sin `defer`, para redirigir antes de
+       pintar. Si espera al DOM, la pagina aparece en un idioma y salta al otro.
+       Los datos viajan como atributos de este tag: `document.currentScript` los
+       lee sin depender de un DOM que todavia no existe. -->
+  <script
+    is:inline
+    src={url("js/lang.js")}
+    data-locale={lang}
+    data-default-locale={defaultLang}
+    data-homes={JSON.stringify(homeHrefs)}
+  ></script>
 </head>
 
 <body>
@@ -136,7 +154,7 @@ const defaultUrl = new URL(localizePath(slugPath(slug), defaultLang), SITE).href
 
   <!-- Sin Bootstrap JS: el navbar no usa toggler, collapse, modal, dropdown ni tooltip.
        Sin Font Awesome JS: la version CSS ya dibuja los mismos iconos con menos peso.
-       El sitio queda con un solo script propio (el zoom de imagenes). -->
+       El sitio queda con dos scripts propios: el zoom de imagenes y el idioma recordado. -->
   <script is:inline src={url("js/zoomImagenes.js")}></script>
 
   <!-- El email se arma en runtime para no dejarlo en texto plano en el HTML. -->

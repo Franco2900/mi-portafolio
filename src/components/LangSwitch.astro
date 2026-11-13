@@ -21,6 +21,7 @@ const targetOf = (code: Lang) => (hasSlug(code, slug) ? slug : 'home');
 <nav
   class="lang-switch d-flex flex-wrap justify-content-center gap-2 py-2"
   aria-label={t('nav.language')}
+  data-lang-switcher
 >
   {locales.map((code) => (
     <a
@@ -30,6 +31,7 @@ const targetOf = (code: Lang) => (hasSlug(code, slug) ? slug : 'home');
       href={localizePath(slugPath(targetOf(code)), code)}
       hreflang={languages[code].tag}
       aria-current={code === lang ? 'page' : undefined}
+      data-lang={code}
     >
       <span class={`fi fi-${languages[code].flag}`} aria-hidden="true"></span>
       <span>{languages[code].name}</span>
