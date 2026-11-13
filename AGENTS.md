@@ -46,6 +46,7 @@ src/
   pages/
     [...slug].astro         Spanish routes (home is the root)
     404.astro               the only page with no locale
+    sitemap.xml.ts          sitemap endpoint, generated from the content registry
     en/index.astro          English home
     en/[...slug].astro      English project pages
     pt/index.astro          Portuguese home
@@ -63,7 +64,9 @@ public/
   js/                       browser scripts, served as-is
   images/                   WebP images
   cv/, certificados/        downloadable PDFs
-  sitemap.xml, robots.txt
+  robots.txt                points at the sitemap
+scripts/
+  verify-chatbot.js         independent check of the assistant
 odd/tasks/                  feature documents (objective, tasks, verification, decisions)
 ```
 
@@ -108,10 +111,12 @@ resolvable.
 3. Add metadata for the three in `src/data/pages.ts`.
 4. Add the images under `public/images/proyectos/` (WebP, no spaces in new file names).
 5. Add the card to the three home bodies, in the same row and position.
-6. Add the URL to `public/sitemap.xml`.
+6. Nothing else: the sitemap is generated from the registry, so a page registered in step 2 is
+   listed automatically.
 
-Missing step 2 or 3 makes the route throw at build time; missing step 5 makes the page unreachable;
-missing step 6 makes it invisible to search engines.
+Missing step 2 or 3 makes the route throw at build time; missing step 5 makes the page unreachable.
+Step 2 also puts the page in the sitemap; a page that is in `dist/` but not in the registry cannot
+exist, because the route comes from the registry.
 
 ## The assistant
 
@@ -169,19 +174,28 @@ is no dark mode.
 ```bash
 npm.cmd run build
 python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page index.html
+node scripts/verify-chatbot.js
 ```
 
-`check_refs.py` is not recursive: pass `--page <lang>/<slug>.html` for every page you touched. It
-reports `0 / N broken` when every `href` and `src` resolves under both forms of the base.
+`check_refs.py` walks every `.html` in `dist/`, resolves each reference against the URL of its own
+page and checks that every `<loc>` in the sitemap exists on disk. It reports `0 / N broken` when every
+`href` and `src` resolves under both forms of the base. `--all` runs it over HTTP against a live
+server; `--meta` audits metadata and on-disk references without one.
+
+`verify-chatbot.js` reads the assistant payload from the three built homes and runs the real matcher
+in a minimal DOM: every question and alias must land on its own entry, every anchor and project link
+must resolve, and a question outside the set must return the fallback.
 
 Also worth checking: the built HTML actually contains what you added, and no page lost its section
 anchors. `dist/` is the source of truth, not the dev server.
 
 ## Deploy
 
-`.github/workflows/deploy.yml` runs on every push to `main`: `npm ci`, `npm run build`, upload
-`dist/`, deploy. It requires, once, **Settings → Pages → Source: GitHub Actions**. Until that is
-selected, the published site is the one served from the `main` branch and a push will not update it.
+`.github/workflows/deploy.yml` runs on every push to `main`: `npm ci`, `npm run build`, the two
+checks above against `dist/` with the preview server up, upload `dist/`, deploy. A push with a broken
+reference, a stale sitemap or a broken assistant link fails before publishing. It requires, once,
+**Settings → Pages → Source: GitHub Actions**. Until that is selected, the published site is the one
+served from the `main` branch and a push will not update it.
 
 ## Git conventions
 

@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -33,8 +33,40 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Un push roto no llega a producción: si una referencia, un metadato o una
+      # URL del sitemap no resuelve, el job falla acá y no se sube nada.
+      - name: Verify build
+        env:
+          BASE: http://localhost:4321/mi-portafolio
+        run: |
+          set -euo pipefail
+
+          # Metadatos y referencias contra el disco: cubre las tres locales.
+          python3 .opencode/skills/visual-qa/scripts/check_refs.py \
+            --dist dist --base "$BASE" --meta --ignore 'google*.html'
+
+          # El asistente: set completo, enlaces, anclas y el matcher real.
+          node scripts/verify-chatbot.js
+
+          # Referencias reales por HTTP, como las resuelve un navegador. El
+          # preview se levanta en segundo plano y se espera a que responda.
+          npm run preview -- --port 4321 > preview.log 2>&1 &
+          ready=0
+          for _ in $(seq 1 40); do
+            if curl -sf -o /dev/null "$BASE/"; then ready=1; break; fi
+            sleep 1
+          done
+          if [ "$ready" -ne 1 ]; then
+            echo "::error::preview did not answer on $BASE"
+            cat preview.log
+            exit 1
+          fi
+
+          python3 .opencode/skills/visual-qa/scripts/check_refs.py \
+            --dist dist --base "$BASE" --all --ignore 'google*.html'
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
@@ -47,4 +79,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -1,6 +1,6 @@
 # Feature: portfolio assistant (curated Q&A chatbot)
 
-**Status:** complete, except T9 (independent pass) — see Known gaps
+**Status:** complete (T9 closed 2026-11-12 by a mechanical independent pass)
 **Created:** 2026-11-06
 **Branch:** astro-migration
 **Locator:** `odd/tasks/chatbot.md` (repo-relative)
@@ -77,9 +77,13 @@ Delegated direct.
 - [x] T6 Style the section in `public/css/index.css` to match the existing cards.
 - [x] T7 Build and verify the three languages over HTTP.
 - [x] T8 Review visually at 1400 px and at a real 390 px.
-- [ ] T9 Independent verification pass. **Not run.** The delegation route was unavailable
-      (provider usage limit), so every check below was executed by the orchestrator inline. The
-      checks are reproducible and their output is recorded, but no second pair of eyes ran.
+- [x] T9 Independent verification pass. Run 2026-11-12 as `scripts/verify-chatbot.js`: it reads the
+      payload from the three built homes and executes the real `public/js/chatbot.js` in a minimal
+      DOM, so it shares no code with the component or the matcher. It checks the structure of the
+      set, unique ids, aliases without collisions, links, chips, disclosure, fallback, absence of
+      network calls and of `innerHTML`, and that every question and every alias lands on its own
+      entry. It found one broken link: the three Portuguese entries pointed at `#projetos`, an id
+      that only exists as `#proyectos` in the home. Fixed in `src/data/chatbot.ts`.
 - [x] T10 Remove `cnc` and `cobol-plans`, on the author's decision.
 - [x] T11 Correct the `campus-virtual` answer in the three locales: it is a course assignment, not
       the degree's capstone.
@@ -106,6 +110,7 @@ npm.cmd run build
 python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page index.html
 python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page en/index.html
 python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page pt/index.html
+node scripts/verify-chatbot.js
 ```
 
 Plus a headless run of the page that asks three questions per locale and asserts the answers.
@@ -185,6 +190,15 @@ Plus a headless run of the page that asks three questions per locale and asserts
   falls back on nonsense; a grouped chip answers and leaves the disclosure open; at a real 390 px
   (iframe) the three width readings stay at 390 with no overflowing element;
   `check_refs.py` 0/34 broken in the three homes.
+- 2026-11-12: T9 closed. `scripts/verify-chatbot.js` runs the real matcher over the payload that
+  ships in the three homes, with a minimal DOM and no import from the source. It found the one bug
+  the previous passes could not see: three Portuguese links pointed at `#projetos`, but the anchor
+  in every home is `#proyectos`, so "Ver todos os projetos" did nothing. `check_refs.py` never saw
+  it because it ignores `#` references. Fixed, and the script now runs in the deploy workflow.
+  Result after the fix: all checks pass — 13 entries per locale with the same ids and order,
+  aliases without collisions, links and anchors resolving, the 13 chips present, the 4 groups, the
+  fallback for questions outside the set, no network and no `innerHTML`, and 64/64, 55/55, 55/55
+  questions and aliases landing on their own entry.
 
 ## Findings
 
@@ -223,10 +237,11 @@ Plus a headless run of the page that asks three questions per locale and asserts
 ## Known gaps
 
 - Receipt-driven review does not run in this runtime (same limitation recorded in
-  `odd/tasks/campus-virtual.md`). Verification is the build, the HTTP checks and an independent
-  pass.
-- T9 is the one task not closed: no independent pass ran, because the delegation route was
-  unavailable. Everything else was verified by the orchestrator itself.
+  `odd/tasks/campus-virtual.md`). Verification is the build, the HTTP checks and the independent
+  script.
+- T9 is closed by a mechanical pass, not by a second person or model reading the text. The script
+  proves the set is internally consistent and that the matcher resolves every phrase; it cannot
+  judge whether an answer reads well. That judgement stays with the author.
 
 ## Follow-ups
 

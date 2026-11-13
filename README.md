@@ -119,12 +119,15 @@ src/
   i18n/                     idiomas, etiquetas BCP 47 y textos cortos de interfaz
   lib/url.ts                url(): antepone el base a cada ruta interna
   pages/                    rutas: español en la raíz, inglés y portugués con prefijo
+  pages/sitemap.xml.ts      sitemap generado desde el registro de contenido
 public/
   css/                      hojas de estilo (se sirven tal cual)
   js/                       asistente y zoom de imágenes
   images/                   imágenes ya optimizadas en WebP
   cv/, certificados/        PDFs descargables
-  robots.txt, sitemap.xml
+  robots.txt                apunta al sitemap
+scripts/
+  verify-chatbot.js         verificación independiente del asistente
 ```
 
 ## Comandos
@@ -149,12 +152,23 @@ Para comprobar que no hay enlaces ni imágenes rotas en lo que se tocó:
 python .opencode/skills/visual-qa/scripts/check_refs.py --dist dist --base http://localhost:4321/mi-portafolio --page index.html
 ```
 
-El script no es recursivo: se le pasa `--page <idioma>/<slug>.html` por cada página revisada.
+El script es recursivo: sin `--page` recorre las tres locales, resuelve cada referencia contra la URL
+de su propia página y verifica que cada `<loc>` del sitemap exista en `dist/`. Para el asistente:
+
+```bash
+node scripts/verify-chatbot.js
+```
+
+Lee el set que quedó dentro de las tres homes, ejecuta el matcher real y comprueba que cada pregunta
+y cada alias caiga en su propia entrada, que las anclas existan y que una pregunta fuera del set
+devuelva el fallback.
 
 ## Deploy
 
 El deploy corre en GitHub Actions (`.github/workflows/deploy.yml`) en cada push a `main`: instala,
-buildea, sube `dist/` y publica en GitHub Pages.
+buildea, verifica y publica en GitHub Pages. El paso de verificación corre los dos chequeos de
+arriba contra `dist/`, con el preview levantado, así que un push con una referencia rota o con el
+sitemap desincronizado falla antes de llegar a producción.
 
 **Requiere una configuración manual, una sola vez:** en el repositorio, Settings → Pages → Source:
 **GitHub Actions**. Mientras esa opción no esté seleccionada, el sitio publicado es el que se sirve
