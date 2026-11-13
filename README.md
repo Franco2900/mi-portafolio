@@ -130,6 +130,36 @@ scripts/
   verify-chatbot.js         verificación independiente del asistente
 ```
 
+## Imágenes y diagramas
+
+Las fotos y el arte decorativo van en WebP y se redimensionan al tamaño más grande en que se muestran.
+
+**Los diagramas son la excepción, y la excepción es una regla.** Los diagramas entidad-relación de
+`public/images/diagramas/` no son decoración: se leen celda por celda —nombres de tablas, columnas,
+claves, cardinalidades— y al hacer clic se abre el archivo a tamaño completo (`zoomImagenes()` en
+`public/js/zoomImagenes.js` abre `imagen.src`, así que el visitante recibe la resolución real del
+archivo). En los diagramas manda la calidad, por encima del peso y de la velocidad de carga. No se
+reducen, no se recomprimen y no se reemplazan por una versión "más liviana" para ahorrar unos
+kilobytes: un diagrama de 200 KB es barato, un diagrama donde no se leen los nombres de las columnas
+no sirve para nada.
+
+Para convertir un diagrama desde su fuente original sin tocar sus píxeles:
+
+```python
+from PIL import Image
+Image.open(src).convert('RGB').save(out, 'WEBP', lossless=True, method=6)
+```
+
+Después se reabre el resultado y se compara con la fuente usando `ImageChops.difference`: el bounding
+box tiene que ser `None` y los tamaños tienen que coincidir. Los PNG de phpMyAdmin pesan menos en WebP
+sin pérdida; los JPG pesan un poco más, y está bien: el WebP sin pérdida guarda exactamente los
+píxeles decodificados, sin una segunda generación de pérdida.
+
+El `<img>` declara el tamaño real en píxeles con `width` y `height`, igual en las tres locales;
+`.img-uniform` usa `height: auto`, así que esos números son la proporción que reserva el navegador.
+Las fuentes sin tocar se guardan fuera de `public/`, porque todo lo que está ahí se copia a `dist/` y
+se publica.
+
 ## Comandos
 
 Windows: `npm` y `npx` se llaman `npm.cmd` y `npx.cmd`.

@@ -155,6 +155,34 @@ lives in `public/css/` and is linked by the layout: `layout.css`, `fondo.css`, `
 surfaces, `border-radius: 8px`, soft shadow, `#0d6efd` for accents, `#6c757d` for muted text. There
 is no dark mode.
 
+### Images
+
+Photos and decorative art are optimized: WebP, resized to the largest size they are ever displayed at.
+
+**Diagrams are the exception, and the exception is a rule.** The entity-relationship diagrams in
+`public/images/diagramas/` are not decoration: a visitor reads them cell by cell — table names,
+columns, keys, cardinalities — and clicks one to open the file at full size (`zoomImagenes()` in
+`public/js/zoomImagenes.js` opens `imagen.src`, so the intrinsic resolution is what the visitor
+actually gets). For diagrams, quality beats size and beats speed. Never downscale, never
+re-compress, never swap in a "lighter" version to win a few kilobytes. A 200 KB diagram is cheap; a
+diagram whose column names cannot be read is worthless.
+
+Convert a diagram from its original source without touching its pixels:
+
+```python
+from PIL import Image
+Image.open(src).convert('RGB').save(out, 'WEBP', lossless=True, method=6)
+```
+
+Then reopen the result and compare it against the source with `ImageChops.difference` — the bounding
+box must be `None` and the sizes must match. PNG screenshots of phpMyAdmin shrink under lossless WebP;
+JPEG sources grow a little, which is fine and expected, because lossless re-encodes the decoded pixels
+with no second generation loss.
+
+The `<img>` must declare the real pixel size in `width` and `height`, identical in all three locales.
+`.img-uniform` uses `height: auto`, so those numbers are the aspect ratio the browser reserves. Keep
+the untouched sources out of `public/`: everything there is copied into `dist/` and published.
+
 ## Astro gotchas
 
 - Astro trims whitespace at line edges. An inline element (`<a>`, `<code>`, `<strong>`) that must sit
