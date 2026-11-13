@@ -439,7 +439,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         aliases: ['Mostre seus projetos', 'Projetos', 'O que você construiu?'],
         answer:
           'Oito projetos, entre acadêmicos e pessoais: a tese; o Campus Virtual; a loja de jogos de tabuleiro; o cassino; a empresa de transporte; a autoescola; o supermercado; e Docker. Cada página de projeto tem imagens, vídeo explicativo e link para o repositório.',
-        links: [{ label: 'Ver todos os projetos', hash: '#projetos' }],
+        links: [{ label: 'Ver todos os projetos', hash: '#proyectos' }],
       },
       {
         id: 'contact',
@@ -485,7 +485,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         ],
         answer:
           'O portfólio mostra as duas pontas: os projetos da faculdade, como a tese; os de cursos, como o Campus Virtual; e os pessoais, feitos por conta própria. Em todos a ideia é a mesma: mostrar o problema, as decisões e o resultado, não só o código.',
-        links: [{ label: 'Ver projetos', hash: '#projetos' }],
+        links: [{ label: 'Ver projetos', hash: '#proyectos' }],
       },
       {
         id: 'campus-virtual',
@@ -506,7 +506,7 @@ export const chatbot: Record<Lang, ChatLocale> = {
         aliases: ['Onde está o código?', 'Você tem GitHub?', 'Repositórios', 'Código-fonte'],
         answer:
           'Sim. Cada página de projeto tem link para o seu repositório no GitHub, e meu perfil é github.com/Franco2900.',
-        links: [{ label: 'Ver projetos', hash: '#projetos' }],
+        links: [{ label: 'Ver projetos', hash: '#proyectos' }],
       },
       {
         id: 'available',
